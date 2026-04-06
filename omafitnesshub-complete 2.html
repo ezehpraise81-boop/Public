@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oma Fitness Hub</title>
+<meta name="description" content="Fashion · Beauty · Wellness · Fitness · Nutrition — Oma Fitness Hub">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#E8457A;--pink-l:#F07AA0;--pink-p:#FDE8F2;--pink-b:#F5C6D8;
+  --bg:#FDF5F8;--white:#fff;--dark:#3D0A20;--text:#3D1A28;--muted:#A07088;--div:#F5C6D8
+}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* ══ NAV ══ */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;background:rgba(253,245,248,.97);backdrop-filter:blur(12px);border-bottom:.5px solid var(--div);position:sticky;top:0;z-index:300;gap:1rem;flex-wrap:wrap}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;color:var(--pink);cursor:pointer;flex-shrink:0}
+.nav-links{display:flex;gap:0;background:var(--pink-p);border-radius:100px;padding:4px}
+.nl{padding:.42rem 1rem;border-radius:100px;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:.76rem;color:var(--muted);cursor:pointer;transition:all .2s;letter-spacing:.3px;white-space:nowrap}
+.nl.on,.nl:hover{background:var(--white);color:var(--pink);box-shadow:0 1px 6px rgba(232,69,122,.12)}
+.nav-write{background:var(--pink);color:#fff;border:none;padding:.5rem 1.2rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.76rem;cursor:pointer;transition:opacity .2s;flex-shrink:0}
+.nav-write:hover{opacity:.85}
+
+/* ══ PAGE SYSTEM ══ */
+.pg{display:none}.pg.on{display:block}
+
+/* ══ BUTTONS ══ */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:.75rem 1.6rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.83rem;cursor:pointer;border:none;transition:all .2s}
+.btn-p{background:var(--pink);color:#fff}.btn-p:hover{opacity:.88;transform:translateY(-2px)}
+.btn-g{background:transparent;color:var(--text);border:.5px solid var(--pink-b)}.btn-g:hover{border-color:var(--pink);color:var(--pink)}
+.btn-w{background:#fff;color:var(--pink)}.btn-w:hover{opacity:.88}
+.btn-sm{padding:.5rem 1.1rem;font-size:.75rem}
+
+/* ══ HOME ══ */
+.hero{min-height:88vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 5%;gap:3rem}
+.htag{display:inline-flex;align-items:center;gap:8px;background:var(--pink-p);border:.5px solid var(--pink-b);padding:.38rem 1rem;border-radius:100px;font-size:.68rem;color:var(--pink);letter-spacing:1px;margin-bottom:1.3rem;text-transform:uppercase}
+.htag::before{content:'';width:6px;height:6px;background:var(--pink);border-radius:50%;animation:pu 1.5s infinite;flex-shrink:0}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5.5vw,6rem);line-height:.95;letter-spacing:2px;color:var(--dark);margin-bottom:1.2rem}
+h1 span{color:var(--pink)}
+.hdesc{color:var(--muted);font-size:.9rem;line-height:1.78;max-width:420px;margin-bottom:1.9rem}
+.hbtns{display:flex;gap:.8rem;flex-wrap:wrap}
+.hstats{display:flex;gap:2rem;margin-top:2.4rem;padding-top:2.4rem;border-top:.5px solid var(--div)}
+.stn{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--pink);line-height:1}
+.stl{font-size:.68rem;color:var(--muted);margin-top:3px;letter-spacing:.5px}
+.hvis{display:flex;flex-direction:column;gap:.9rem}
+.hvc{background:var(--white);border:.5px solid var(--pink-b);border-radius:18px;padding:1.5rem;box-shadow:0 4px 28px rgba(232,69,122,.07);position:relative;overflow:hidden}
+.hvc::before{content:'';position:absolute;top:-50px;right:-50px;width:170px;height:170px;background:radial-gradient(circle,rgba(232,69,122,.07) 0%,transparent 70%);border-radius:50%}
+.clbl{font-size:.62rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.7rem}
+.rw{display:flex;align-items:center;gap:1.2rem;margin:.7rem 0}
+.rsv{transform:rotate(-90deg)}.rtr{fill:none;stroke:var(--pink-p);stroke-width:8}.rfil{fill:none;stroke:var(--pink);stroke-width:8;stroke-linecap:round;stroke-dasharray:251;stroke-dashoffset:63}
+.rpct{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--dark)}
+.rsub{font-size:.7rem;color:var(--muted);margin-top:2px}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:.9rem}
+.mi{background:var(--pink-p);border-radius:9px;padding:.65rem;text-align:center}
+.mv{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--dark)}
+.mn{font-size:.6rem;color:var(--muted);margin-top:2px}
+.mb{height:3px;border-radius:10px;margin-top:5px}
+.mr2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.mc{background:var(--white);border:.5px solid var(--pink-b);border-radius:13px;padding:1rem}
+.mci{width:30px;height:30px;background:var(--pink-p);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-bottom:.55rem}
+.mct{font-size:.74rem;color:var(--text);font-weight:500}
+.mcs{font-size:.63rem;color:var(--muted)}
+.mcb{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--pink);margin-top:3px}
+
+/* TICKER */
+.ticker{background:var(--pink);padding:.62rem 0;overflow:hidden;display:flex}
+.ti{display:flex;gap:3rem;animation:sc 22s linear infinite;white-space:nowrap}
+.ti span{font-family:'Bebas Neue',sans-serif;font-size:.88rem;color:#fff;letter-spacing:2px}
+@keyframes sc{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.sec{padding:4rem 5%}
+.slbl{font-size:.64rem;color:var(--pink);letter-spacing:2px;text-transform:uppercase;margin-bottom:.6rem}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,3.2vw,3rem);line-height:1;letter-spacing:1.5px;margin-bottom:.7rem;color:var(--dark)}
+.sdsc{color:var(--muted);font-size:.86rem;max-width:450px;line-height:1.75;margin-bottom:2rem}
+
+/* ══ ARTICLE PREVIEW CARDS ══ */
+.agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.acard{background:var(--white);border:.5px solid var(--pink-b);border-radius:16px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .15s,box-shadow .2s;display:flex;flex-direction:column}
+.acard:hover{border-color:var(--pink-l);transform:translateY(-4px);box-shadow:0 10px 32px rgba(232,69,122,.1)}
+.acard-img{height:140px;background:linear-gradient(135deg,#3D0A20,#E8457A);display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden;flex-shrink:0}
+.acard-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(61,10,32,.4))}
+.acard-cat-badge{position:absolute;top:.7rem;left:.7rem;background:rgba(255,255,255,.92);color:var(--pink);font-size:.58rem;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;font-weight:500;z-index:1}
+.acard-body{padding:1.2rem;flex:1;display:flex;flex-direction:column}
+.acat{font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);margin-bottom:.38rem}
+.atit{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.5px;color:var(--dark);line-height:1.2;margin-bottom:.5rem}
+.aexc{font-size:.74rem;color:var(--muted);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.amet{display:flex;align-items:center;gap:.5rem;margin-top:.85rem;padding-top:.75rem;border-top:.5px solid var(--div);font-size:.63rem;color:var(--muted)}
+.aread-btn{margin-left:auto;background:var(--pink-p);color:var(--pink);border:none;padding:3px 10px;border-radius:100px;font-size:.62rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s}
+.aread-btn:hover{background:var(--pink);color:#fff}
+.aact{display:flex;gap:4px}
+.abtn{background:none;border:none;padding:2px 6px;border-radius:6px;cursor:pointer;font-size:.62rem;color:var(--muted);transition:background .15s,color .15s;font-family:'DM Sans',sans-serif}
+.abtn:hover{background:var(--pink-p);color:var(--pink)}
+.abtn.del:hover{background:#fde8e8;color:#c0392b}
+.no-art{text-align:center;padding:3rem;color:var(--muted);font-size:.85rem;grid-column:1/-1}
+
+/* SERVICES */
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.scard{background:var(--white);border:.5px solid var(--pink-b);border-radius:16px;padding:1.6rem;transition:border-color .2s,transform .2s}
+.scard:hover{border-color:var(--pink);transform:translateY(-3px)}
+.scard.feat{border-color:var(--pink);background:var(--pink-p)}
+.sico{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.9rem;background:rgba(232,69,122,.1)}
+.stitl{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:1px;margin-bottom:.4rem;color:var(--dark)}
+.sdsc2{font-size:.76rem;color:var(--muted);line-height:1.65}
+
+/* CTA */
+.cta{margin:0 5%;background:var(--pink);border-radius:22px;padding:3rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+.cta h2{color:#fff}.cta p{color:rgba(255,255,255,.75);font-size:.84rem;margin-top:.5rem}
+
+/* ══ ARTICLES PAGE ══ */
+.ph{padding:2.2rem 5% 1.5rem;border-bottom:.5px solid var(--div);background:var(--white)}
+.ph h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);letter-spacing:1.5px;color:var(--dark)}
+.ph h1 em{color:var(--pink);font-style:italic}
+.ph p{color:var(--muted);font-size:.82rem;margin-top:.45rem}
+.frow{display:flex;gap:6px;flex-wrap:wrap;padding:1.1rem 5%;background:var(--white);border-bottom:.5px solid var(--div)}
+.chip{background:var(--bg);border:1px solid var(--pink-b);color:var(--muted);font-size:.68rem;padding:4px 13px;border-radius:100px;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif}
+.chip.on,.chip:hover{background:var(--pink);color:#fff;border-color:var(--pink)}
+.amain{max-width:1000px;margin:2rem auto 4rem;padding:0 5%}
+
+/* FEATURED ARTICLE */
+.feat-wrap{margin-bottom:2.5rem}
+.feat-lbl{font-size:.62rem;color:var(--pink);letter-spacing:2px;text-transform:uppercase;margin-bottom:.8rem}
+.feat-card{background:var(--white);border:.5px solid var(--pink-b);border-radius:20px;overflow:hidden;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s;display:grid;grid-template-columns:1fr 1fr}
+.feat-card:hover{border-color:var(--pink-l);box-shadow:0 10px 40px rgba(232,69,122,.1);transform:translateY(-2px)}
+.feat-img{background:linear-gradient(135deg,#3D0A20 0%,#8C2050 50%,#E8457A 100%);display:flex;align-items:center;justify-content:center;font-size:5rem;min-height:260px;position:relative}
+.feat-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent,rgba(253,245,248,.05))}
+.feat-content{padding:2rem;display:flex;flex-direction:column;justify-content:center}
+.feat-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--pink-b);line-height:1;margin-bottom:.5rem}
+.feat-cat{font-size:.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);margin-bottom:.5rem}
+.feat-tit{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.5px;color:var(--dark);line-height:1.15;margin-bottom:.7rem}
+.feat-exc{font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem}
+.feat-meta{display:flex;align-items:center;gap:.6rem;font-size:.7rem;color:var(--muted);flex-wrap:wrap}
+.feat-readbtn{display:inline-flex;align-items:center;gap:5px;background:var(--pink);color:#fff;border:none;padding:.55rem 1.2rem;border-radius:100px;font-size:.75rem;font-family:'DM Sans',sans-serif;cursor:pointer;transition:opacity .2s;margin-top:.8rem;width:fit-content}
+.feat-readbtn:hover{opacity:.88}
+
+/* ARTICLES GRID */
+.arts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+
+/* ══ READ / ARTICLE PAGE ══ */
+.rpage{max-width:760px;margin:0 auto;padding:2rem 5% 4rem}
+.back{display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:.8rem;cursor:pointer;padding:0;margin-bottom:2rem;transition:color .15s}
+.back:hover{color:var(--pink)}
+.r-hero{background:linear-gradient(135deg,#3D0A20 0%,#8C2050 50%,#E8457A 100%);border-radius:20px;height:300px;display:flex;align-items:center;justify-content:center;font-size:6rem;margin-bottom:2rem;position:relative;overflow:hidden}
+.r-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(61,10,32,.5))}
+.rcat{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--pink);margin-bottom:.65rem;display:flex;align-items:center;gap:8px}
+.rcat-badge{background:var(--pink-p);color:var(--pink);padding:4px 14px;border-radius:100px;font-size:.65rem;letter-spacing:1px}
+.rtit{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4.5vw,3.5rem);letter-spacing:1px;color:var(--dark);line-height:1.05;margin-bottom:1rem}
+.rmeta{display:flex;align-items:center;gap:.85rem;font-size:.75rem;color:var(--muted);padding-bottom:1.5rem;border-bottom:.5px solid var(--div);margin-bottom:2rem;flex-wrap:wrap}
+.adot{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--pink),#8C2050);display:flex;align-items:center;justify-content:center;font-size:.62rem;color:#fff;font-weight:500;flex-shrink:0}
+.rmeta-info{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.rmeta-badge{background:var(--pink-p);color:var(--pink);padding:3px 10px;border-radius:100px;font-size:.65rem}
+
+/* ARTICLE BODY — rich reading experience */
+.rbody{font-size:1rem;line-height:1.9;color:var(--text)}
+.rbody h2{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:1px;color:var(--dark);margin:2.2rem 0 .9rem;padding-top:1rem;border-top:.5px solid var(--div)}
+.rbody h2:first-child{border-top:none;margin-top:0}
+.rbody p{margin-bottom:1.2rem;font-size:.97rem}
+.rbody ul,.rbody ol{margin:.85rem 0 .85rem 1.5rem}
+.rbody li{margin-bottom:.55rem;font-size:.92rem;color:var(--muted);line-height:1.7}
+.rbody li::marker{color:var(--pink)}
+.rbody blockquote{border-left:4px solid var(--pink);padding:1rem 1.4rem;background:var(--pink-p);border-radius:0 14px 14px 0;margin:1.5rem 0;font-style:italic;color:var(--muted);font-size:.95rem;line-height:1.75}
+.rbody strong{color:var(--dark);font-weight:500}
+.rbody em{color:var(--pink-l);font-style:italic}
+.rbody hr{border:none;border-top:.5px solid var(--div);margin:2rem 0}
+
+/* progress bar */
+.read-progress{position:fixed;top:0;left:0;height:3px;background:var(--pink);z-index:400;transition:width .1s;width:0}
+
+/* read footer */
+.read-footer{margin-top:3rem;padding-top:2rem;border-top:.5px solid var(--div)}
+.read-footer-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--dark);margin-bottom:1.2rem;letter-spacing:1px}
+.read-more-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
+.rm-card{background:var(--white);border:.5px solid var(--pink-b);border-radius:14px;padding:1.1rem;cursor:pointer;transition:border-color .2s,transform .15s}
+.rm-card:hover{border-color:var(--pink);transform:translateY(-2px)}
+.rm-cat{font-size:.58rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);margin-bottom:.35rem}
+.rm-tit{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.5px;color:var(--dark);line-height:1.2}
+.rm-meta{font-size:.62rem;color:var(--muted);margin-top:.5rem}
+.read-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+
+/* ══ WRITE PAGE ══ */
+.ewrap{max-width:760px;margin:2rem auto 4rem;padding:0 5%}
+.elbl{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--pink);margin-bottom:.45rem}
+.etit{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px;color:var(--dark);margin-bottom:.5rem}
+.esubt{font-size:.84rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.65}
+.ecard{background:var(--white);border:.5px solid var(--div);border-radius:18px;padding:1.8rem}
+.fgrp{margin-bottom:1.2rem}
+.flbl{font-size:.65rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;display:block}
+.finp,.fsel{width:100%;background:var(--bg);border:1px solid var(--pink-b);border-radius:11px;padding:.7rem .95rem;font-family:'DM Sans',sans-serif;font-size:.86rem;font-weight:300;color:var(--text);outline:none;transition:border-color .2s;appearance:none}
+.finp:focus,.fsel:focus{border-color:var(--pink)}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.toolbar{display:flex;gap:4px;flex-wrap:wrap;padding:.55rem;background:var(--pink-p);border-radius:10px;margin-bottom:.55rem;align-items:center}
+.tb{background:var(--white);border:.5px solid var(--pink-b);border-radius:6px;padding:4px 11px;font-size:.7rem;font-family:'DM Sans',sans-serif;color:var(--text);cursor:pointer;transition:all .15s}
+.tb:hover{background:var(--pink);color:#fff;border-color:var(--pink)}
+.tb-sep{width:1px;height:18px;background:var(--pink-b);margin:0 3px}
+.ceditor{width:100%;background:var(--bg);border:1px solid var(--pink-b);border-radius:11px;padding:1rem;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:300;color:var(--text);outline:none;min-height:320px;line-height:1.8;transition:border-color .2s}
+.ceditor:focus{border-color:var(--pink)}
+.ceditor:empty::before{content:attr(data-placeholder);color:var(--muted);pointer-events:none}
+.ceditor h2{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px;color:var(--dark);margin:.8rem 0 .4rem}
+.ceditor blockquote{border-left:3px solid var(--pink);padding:.6rem 1rem;background:var(--pink-p);border-radius:0 8px 8px 0;margin:.7rem 0;color:var(--muted);font-style:italic}
+.ceditor ul{margin:.5rem 0 .5rem 1.3rem}
+.eftr{display:flex;justify-content:space-between;align-items:center;margin-top:1.3rem;padding-top:1.3rem;border-top:.5px solid var(--div);flex-wrap:wrap;gap:.8rem}
+.wc{font-size:.7rem;color:var(--muted)}
+.ebtns{display:flex;gap:8px}
+.bcl{background:transparent;border:1px solid var(--div);color:var(--muted);padding:.58rem 1.2rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer;transition:all .18s}
+.bcl:hover{border-color:var(--pink);color:var(--pink)}
+.bpub{background:var(--pink);color:#fff;border:none;padding:.58rem 1.8rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;transition:opacity .2s,transform .15s;display:flex;align-items:center;gap:6px}
+.bpub:hover{opacity:.88;transform:translateY(-1px)}
+.write-tip{margin-top:.9rem;padding:.9rem 1.1rem;background:var(--pink-p);border-radius:12px;border:.5px solid var(--pink-b);font-size:.75rem;color:var(--muted);line-height:1.65}
+.write-tip strong{color:var(--dark)}
+
+/* ══ PROFILE PAGE ══ */
+.pcover{height:200px;background:linear-gradient(135deg,#3D0A20 0%,#8C2050 42%,#E8457A 100%);position:relative;overflow:hidden}
+.cpat{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0px,rgba(255,255,255,.03) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(255,255,255,.03) 0px,rgba(255,255,255,.03) 1px,transparent 1px,transparent 20px)}
+.corb{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,192,210,.2) 0%,transparent 70%)}
+.prfhd{background:var(--white);border-bottom:.5px solid var(--div);padding:0 2.5rem 1.8rem;position:relative}
+.avwrap{position:absolute;top:-54px;left:2.5rem}
+.av{width:108px;height:108px;border-radius:50%;border:4px solid var(--white);background:linear-gradient(135deg,var(--pink),#8C2050);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--pink-p);box-shadow:0 4px 20px rgba(232,69,122,.2);position:relative}
+.vbadge{position:absolute;bottom:3px;right:3px;width:24px;height:24px;background:var(--pink);border-radius:50%;border:3px solid var(--white);display:flex;align-items:center;justify-content:center;font-size:.58rem;color:#fff}
+.pmeta{padding-top:4.2rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem}
+.pname{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:var(--dark);letter-spacing:.5px;line-height:1.1}
+.phand{font-size:.74rem;color:var(--pink);letter-spacing:1.5px;margin-top:2px}
+.ptagl{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--muted);margin-top:.3rem}
+.fbtn{background:var(--pink);color:#fff;border:none;padding:.58rem 1.5rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer;transition:opacity .2s}
+.fbtn:hover{opacity:.85}
+.pstats{display:flex;gap:2rem;margin-top:1.2rem;padding-top:1.2rem;border-top:.5px solid var(--div)}
+.psn{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--dark);line-height:1}
+.psl{font-size:.62rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:3px}
+.pbio{margin-top:.9rem;font-size:.82rem;color:var(--muted);line-height:1.75;max-width:520px}
+.ptags{display:flex;flex-wrap:wrap;gap:7px;margin-top:.85rem}
+.ptag{background:var(--pink-p);color:var(--pink);border:.5px solid var(--pink-b);font-size:.64rem;padding:4px 12px;border-radius:100px;letter-spacing:.5px}
+.pcont{max-width:980px;margin:2rem auto 4rem;padding:0 5%}
+.pcol2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
+.pcard{background:var(--white);border:.5px solid var(--div);border-radius:16px;overflow:hidden}
+.pch{padding:1.1rem 1.3rem .65rem;border-bottom:.5px solid var(--div);display:flex;align-items:center;gap:9px}
+.pcico{width:28px;height:28px;background:var(--pink-p);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.pctit{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--dark);letter-spacing:.3px}
+.pcsub{font-size:.6rem;color:var(--pink);letter-spacing:1.5px;text-transform:uppercase;margin-top:1px}
+.pcb{padding:1.1rem 1.3rem}
+.sdiv{display:flex;align-items:center;gap:.8rem;margin:1.5rem 0 1.1rem}
+.sdivl{flex:1;height:1px;background:var(--div)}
+.sdivtxt{font-family:'Cormorant Garamond',serif;font-size:.68rem;color:var(--pink);letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.p-tips{display:flex;flex-direction:column;gap:.7rem}
+.p-tip{display:flex;gap:10px;align-items:flex-start;padding:.72rem;background:var(--bg);border-radius:10px;border:.5px solid var(--pink-b)}
+.p-tipn{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--pink-b);line-height:1;min-width:20px}
+.p-tipt{font-size:.76rem;color:var(--text);line-height:1.6}
+.p-tipt strong{font-weight:500;color:var(--dark)}
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.bitem{background:var(--bg);border-radius:10px;border:.5px solid var(--pink-b);padding:.8rem;text-align:center}
+.bico{font-size:1.25rem;margin-bottom:.3rem}
+.bnm{font-size:.72rem;font-weight:500;color:var(--dark)}
+.bds{font-size:.64rem;color:var(--muted);margin-top:2px;line-height:1.4}
+.tline{display:flex;flex-direction:column}
+.tli{display:flex;align-items:flex-start;gap:10px;padding:.72rem 0;border-bottom:.5px solid var(--div)}
+.tli:last-child{border-bottom:none}
+.tltm{font-size:.62rem;color:var(--pink);min-width:52px;padding-top:2px;text-align:right}
+.tldot{width:7px;height:7px;border-radius:50%;background:var(--pink-b);margin-top:5px;flex-shrink:0}
+.tlnm{font-size:.76rem;font-weight:500;color:var(--dark)}
+.tldc{font-size:.68rem;color:var(--muted);margin-top:2px;line-height:1.5}
+.wweek{display:flex;flex-direction:column}
+.wday{display:flex;align-items:center;gap:.85rem;padding:.75rem 0;border-bottom:.5px solid var(--div)}
+.wday:last-child{border-bottom:none}
+.wdl{font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);min-width:32px}
+.wdf{font-size:.76rem;font-weight:500;color:var(--dark);flex:1}
+.wdd{font-size:.66rem;color:var(--muted)}
+.wbdg{font-size:.6rem;padding:2px 8px;border-radius:100px;letter-spacing:.4px;white-space:nowrap}
+.bstr{background:#FCE8F2;color:#A03060}.bcar{background:#E8F0F5;color:#2A6080}.brst{background:#F5F0F5;color:#907090}.bhi{background:#FCE0EC;color:#8C3050}
+.macrow{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:.9rem}
+.macbox{background:var(--bg);border-radius:10px;padding:.75rem;text-align:center;border:.5px solid var(--pink-b)}
+.macv{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--pink);line-height:1}
+.macl{font-size:.6rem;color:var(--muted);margin-top:3px}
+.macbr{height:3px;background:var(--pink-b);border-radius:10px;margin-top:6px;overflow:hidden}
+.macbf{height:100%;border-radius:10px;background:var(--pink)}
+.fashg{display:flex;flex-direction:column;gap:.8rem}
+.fi{display:flex;gap:10px;align-items:flex-start;padding:.8rem;background:var(--bg);border-radius:11px;border:.5px solid var(--pink-b)}
+.fico{width:32px;height:32px;background:var(--pink-p);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.ftl{font-size:.77rem;font-weight:500;color:var(--dark);margin-bottom:2px}
+.fdc{font-size:.7rem;color:var(--muted);line-height:1.55}
+.qcard{background:linear-gradient(135deg,#3D0A20 0%,#8C2050 100%);border-radius:16px;padding:2.2rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.2rem}
+.qcard::before{content:'\201C';position:absolute;top:-20px;left:1.2rem;font-family:'Cormorant Garamond',serif;font-size:9rem;color:rgba(255,192,210,.08);line-height:1}
+.qtxt{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;font-weight:300;color:var(--bg);line-height:1.5;position:relative}
+.qauth{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--pink-l);margin-top:1rem;position:relative}
+.pftr{text-align:center;padding:1.8rem 0 .8rem;font-size:.68rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;border-top:.5px solid var(--div)}
+.ptxt{color:var(--pink)}
+
+/* MODAL */
+.moverlay{display:none;position:fixed;inset:0;background:rgba(61,10,32,.45);z-index:500;align-items:center;justify-content:center}
+.moverlay.on{display:flex}
+.modal{background:var(--white);border-radius:18px;padding:1.7rem;max-width:360px;width:90%}
+.mtit{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--dark);margin-bottom:.5rem}
+.mtxt{font-size:.8rem;color:var(--muted);line-height:1.6}
+.mbtns{display:flex;gap:8px;justify-content:flex-end;margin-top:1.2rem}
+.mcancel{background:transparent;border:1px solid var(--div);color:var(--muted);padding:.48rem 1.1rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.76rem;cursor:pointer}
+.mdel{background:#c0392b;color:#fff;border:none;padding:.48rem 1.2rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.76rem;cursor:pointer}
+
+/* FOOTER */
+footer{padding:1.8rem 5%;border-top:.5px solid var(--div);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;background:var(--white);margin-top:3rem}
+.fc2{font-size:.72rem;color:var(--muted)}
+.fl{display:flex;gap:1.4rem}
+.fl span{font-size:.72rem;color:var(--muted);cursor:pointer;transition:color .2s}
+.fl span:hover{color:var(--pink)}
+
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding:2.5rem 5%}
+  .hvis,.mr2{display:none}
+  .agrid,.sgrid,.pcol2,.arts-grid,.read-more-grid{grid-template-columns:1fr}
+  .feat-card{grid-template-columns:1fr}
+  .feat-img{min-height:180px}
+  .frow2{grid-template-columns:1fr}
+  nav{flex-wrap:wrap}.nav-links{order:3;width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- READING PROGRESS BAR -->
+<div class="read-progress" id="read-progress"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo" onclick="go('home')">OMA FITNESS HUB</div>
+  <ul class="nav-links">
+    <li><button class="nl on" id="nl-home" onclick="go('home')">🏠 Home</button></li>
+    <li><button class="nl" id="nl-articles" onclick="go('articles')">📰 Articles</button></li>
+    <li><button class="nl" id="nl-profile" onclick="go('profile')">👤 Profile</button></li>
+    <li><button class="nl" id="nl-write" onclick="go('write')">✍️ Write</button></li>
+    <li><button class="nl" id="nl-shop" onclick="go('shop')">💼 Work With Me</button></li>
+  </ul>
+  <button class="nav-write" onclick="go('write')">✦ New Article</button>
+</nav>
+
+<!-- ══════════ HOME PAGE ══════════ -->
+<div id="pg-home" class="pg on">
+  <section class="hero">
+    <div>
+      <div class="htag">Fashion · Beauty · Wellness · Fitness</div>
+      <h1>TRAIN <span>HARD.</span><br>GLOW <span>BRIGHT.</span><br>LIVE WELL.</h1>
+      <p class="hdesc">Your all-in-one wellness destination — empowering women through fashion, beauty & self-care, and guiding men to peak performance through smart training & nutrition.</p>
+      <div class="hbtns">
+        <button class="btn btn-p" onclick="go('articles')">📰 Read Articles</button>
+        <button class="btn btn-g" onclick="go('write')">✍️ Write a Post</button>
+        <button class="btn btn-p" style="background:var(--dark)" onclick="go('shop')">💼 Work With Me</button>
+      </div>
+      <div class="hstats">
+        <div><div class="stn">2,400+</div><div class="stl">Members</div></div>
+        <div><div class="stn">98%</div><div class="stl">Satisfaction</div></div>
+        <div><div class="stn">15+</div><div class="stl">Expert Trainers</div></div>
+      </div>
+    </div>
+    <div class="hvis">
+      <div class="hvc">
+        <div class="clbl">Today's Progress</div>
+        <div class="rw">
+          <svg width="82" height="82" class="rsv"><circle class="rtr" cx="41" cy="41" r="37"/><circle class="rfil" cx="41" cy="41" r="37"/></svg>
+          <div><div class="rpct">75%</div><div class="rsub">Daily goal reached</div><div class="rsub" style="color:var(--pink);font-size:.62rem;margin-top:2px">1,890 / 2,500 kcal</div></div>
+        </div>
+        <div class="mg">
+          <div class="mi"><div class="mv">142g</div><div class="mn">Protein</div><div class="mb" style="background:var(--pink)"></div></div>
+          <div class="mi"><div class="mv">210g</div><div class="mn">Carbs</div><div class="mb" style="background:#5DCAA5"></div></div>
+          <div class="mi"><div class="mv">58g</div><div class="mn">Fat</div><div class="mb" style="background:#EF9F27"></div></div>
+        </div>
+      </div>
+      <div class="mr2">
+        <div class="mc"><div class="mci">🔥</div><div class="mct">Calories burned</div><div class="mcs">Today's workout</div><div class="mcb">640</div></div>
+        <div class="mc"><div class="mci">⚡</div><div class="mct">Workout streak</div><div class="mcs">Keep it up!</div><div class="mcb">12 days</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="ti">
+    <span>FASHION TIPS</span><span>★</span><span>BEAUTY ROUTINES</span><span>★</span><span>WELLNESS</span><span>★</span><span>STRENGTH TRAINING</span><span>★</span><span>NUTRITION PLANS</span><span>★</span><span>HEALTHY LIVING</span><span>★</span>
+    <span>FASHION TIPS</span><span>★</span><span>BEAUTY ROUTINES</span><span>★</span><span>WELLNESS</span><span>★</span><span>STRENGTH TRAINING</span><span>★</span><span>NUTRITION PLANS</span><span>★</span><span>HEALTHY LIVING</span><span>★</span>
+  </div></div>
+
+  <section class="sec">
+    <div class="slbl">✦ Latest from the hub</div>
+    <h2>FRESH ARTICLES</h2>
+    <p class="sdsc">Click any article to read the full post. Write yours and it appears here instantly.</p>
+    <div class="agrid" id="home-grid"></div>
+    <div style="text-align:center;margin-top:1.8rem">
+      <button class="btn btn-g" onclick="go('articles')">View All Articles →</button>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="slbl">✦ What we offer</div>
+    <h2>EVERYTHING YOU NEED</h2>
+    <p class="sdsc">Science-backed fitness and beauty services designed to help you build the life you've always wanted.</p>
+    <div class="sgrid">
+      <div class="scard feat"><div class="sico">💪</div><div class="stitl">Personal Training</div><p class="sdsc2">One-on-one coaching tailored to your body, goals, and schedule. Our certified trainers guide every step.</p></div>
+      <div class="scard"><div class="sico">🥗</div><div class="stitl">Nutrition Plans</div><p class="sdsc2">Custom meal plans built around your calorie targets and macros. No guesswork — just real results.</p></div>
+      <div class="scard"><div class="sico">✨</div><div class="stitl">Beauty & Self-Care</div><p class="sdsc2">Curated routines, fashion tips, and wellness guides to help every woman glow from within.</p></div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <div><h2>READY TO TRANSFORM?</h2><p>Personal training, nutrition plans, beauty guides & 1-on-1 coaching — all delivered online.</p></div>
+    <button class="btn btn-w" onclick="go('shop')">💼 View Services & Prices →</button>
+  </div>
+  <footer>
+    <div class="logo" style="font-size:1.1rem;cursor:pointer" onclick="go('home')">OMA FITNESS HUB</div>
+    <div class="fc2">© 2026 Oma Fitness Hub. All rights reserved.</div>
+    <div class="fl"><span onclick="go('articles')">Articles</span><span onclick="go('profile')">Profile</span><span onclick="go('write')">Write</span></div>
+  </footer>
+</div>
+
+<!-- ══════════ ARTICLES PAGE ══════════ -->
+<div id="pg-articles" class="pg">
+  <div class="ph">
+    <div class="slbl">✦ The Hub</div>
+    <h1>OUR <em>ARTICLES</em></h1>
+    <p>Click any article to read the full post — Fashion · Beauty · Wellness · Fitness · Nutrition</p>
+  </div>
+  <div class="frow" id="art-filters">
+    <button class="chip on" onclick="filterArts('All',this)">All</button>
+    <button class="chip" onclick="filterArts('Fashion',this)">👗 Fashion</button>
+    <button class="chip" onclick="filterArts('Beauty',this)">💄 Beauty</button>
+    <button class="chip" onclick="filterArts('Wellness',this)">🌸 Wellness</button>
+    <button class="chip" onclick="filterArts('Healthy Living',this)">🌿 Healthy Living</button>
+    <button class="chip" onclick="filterArts('Fitness',this)">🏋️ Fitness</button>
+    <button class="chip" onclick="filterArts('Nutrition',this)">🥗 Nutrition</button>
+    <button class="chip" onclick="filterArts('Mindset & Motivation',this)">🧠 Mindset</button>
+  </div>
+  <div class="amain">
+    <div class="feat-wrap" id="art-featured"></div>
+    <div class="arts-grid" id="art-grid"></div>
+  </div>
+  <footer>
+    <div class="logo" style="font-size:1.1rem;cursor:pointer" onclick="go('home')">OMA FITNESS HUB</div>
+    <div class="fc2">© 2026 Oma Fitness Hub. All rights reserved.</div>
+    <div class="fl"><span onclick="go('home')">Home</span><span onclick="go('write')">Write</span><span onclick="go('profile')">Profile</span></div>
+  </footer>
+</div>
+
+<!-- ══════════ READ / ARTICLE PAGE ══════════ -->
+<div id="pg-read" class="pg">
+  <div class="rpage">
+    <button class="back" onclick="go('articles')">← Back to Articles</button>
+    <div class="r-hero" id="r-hero"><span id="r-emoji" style="position:relative;z-index:1;font-size:5rem">📖</span></div>
+    <div class="rcat"><span class="rcat-badge" id="r-cat-badge"></span></div>
+    <div class="rtit" id="r-tit"></div>
+    <div class="rmeta">
+      <div class="adot" id="r-adot"></div>
+      <div class="rmeta-info" id="r-meta-info"></div>
+    </div>
+    <div class="rbody" id="r-body"></div>
+    <div class="read-footer">
+      <div class="read-footer-title">MORE ARTICLES YOU'LL LOVE</div>
+      <div class="read-more-grid" id="r-more"></div>
+      <div class="read-actions">
+        <button class="btn btn-p" onclick="go('articles')">← All Articles</button>
+        <button class="btn btn-g" onclick="go('write')">✍️ Write Your Own</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="logo" style="font-size:1.1rem;cursor:pointer" onclick="go('home')">OMA FITNESS HUB</div>
+    <div class="fc2">© 2026 Oma Fitness Hub. All rights reserved.</div>
+    <div class="fl"><span onclick="go('articles')">Articles</span><span onclick="go('write')">Write</span></div>
+  </footer>
+</div>
+
+<!-- ══════════ WRITE PAGE ══════════ -->
+<div id="pg-write" class="pg">
+  <div class="ewrap">
+    <div class="elbl">✦ Create Article</div>
+    <div class="etit" id="write-heading">Share Your Knowledge</div>
+
+    <!-- IMPORT OPTIONS BANNER -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
+      <!-- PASTE OPTION -->
+      <div style="background:var(--white);border:1px solid var(--pink-b);border-radius:16px;padding:1.3rem">
+        <div style="font-size:.66rem;color:var(--pink);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.5rem">📋 Option 1 — Paste Your Content</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:.9rem">Already have an article written? Copy it from anywhere — Notes, Word, Google Docs — and paste it straight into the editor below.</p>
+        <button class="btn btn-g" style="font-size:.75rem;padding:.5rem 1.1rem" onclick="document.getElementById('w-content').focus();toast('📋 Just paste (Ctrl+V or ⌘+V) into the editor!')">📋 Paste Into Editor</button>
+      </div>
+      <!-- FILE UPLOAD OPTION -->
+      <div style="background:var(--white);border:1px solid var(--pink-b);border-radius:16px;padding:1.3rem">
+        <div style="font-size:.66rem;color:var(--pink);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.5rem">&#128193; Option 2 &mdash; Upload Any File</div>
+        <p style="font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:.9rem">Upload <strong>PDF, PowerPoint, Word, Image or Text</strong> files &mdash; they load straight into your article.</p>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:.9rem">
+          <span style="background:#fde8e8;color:#c0392b;font-size:.62rem;padding:3px 9px;border-radius:100px">&#128196; PDF</span>
+          <span style="background:#e8f0fe;color:#1a73e8;font-size:.62rem;padding:3px 9px;border-radius:100px">&#128202; PowerPoint</span>
+          <span style="background:#e8f5e9;color:#2e7d32;font-size:.62rem;padding:3px 9px;border-radius:100px">&#128221; Word/Text</span>
+          <span style="background:var(--pink-p);color:var(--pink);font-size:.62rem;padding:3px 9px;border-radius:100px">&#128247; Images</span>
+          <span style="background:#f3e5f5;color:#7b1fa2;font-size:.62rem;padding:3px 9px;border-radius:100px">&#127912; Illustrations</span>
+        </div>
+        <div id="drop-zone" style="border:2px dashed var(--pink-b);border-radius:12px;padding:1.5rem;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg)"
+          ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)"
+          onclick="document.getElementById('file-input').click()">
+          <div style="font-size:1.8rem;margin-bottom:.4rem">&#128194;</div>
+          <div style="font-size:.78rem;color:var(--text);font-weight:500;margin-bottom:.2rem">Drag &amp; drop your file here</div>
+          <div style="font-size:.7rem;color:var(--muted)">or click to browse &middot; PDF, PPTX, DOCX, TXT, JPG, PNG, GIF, SVG</div>
+          <input type="file" id="file-input" accept=".pdf,.pptx,.ppt,.docx,.doc,.txt,.md,.jpg,.jpeg,.png,.gif,.webp,.svg,.bmp" style="display:none" onchange="loadFile(event)">
+        </div>
+        <div id="file-status" style="font-size:.72rem;color:var(--muted);margin-top:.6rem;min-height:18px"></div>
+      </div>
+    </div>
+
+    <!-- TEMPLATE LOADER -->
+    <div style="background:var(--pink-p);border:.5px solid var(--pink-b);border-radius:14px;padding:1.1rem;margin-bottom:1.5rem">
+      <div style="font-size:.66rem;color:var(--pink);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.7rem">✦ Option 3 — Load a Long Article Template</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="chip on" onclick="loadTemplate('fashion')">👗 Fashion</button>
+        <button class="chip" onclick="loadTemplate('beauty')">💄 Beauty</button>
+        <button class="chip" onclick="loadTemplate('wellness')">🌸 Wellness</button>
+        <button class="chip" onclick="loadTemplate('fitness')">🏋️ Fitness</button>
+        <button class="chip" onclick="loadTemplate('nutrition')">🥗 Nutrition</button>
+        <button class="chip" onclick="loadTemplate('mindset')">🧠 Mindset</button>
+      </div>
+      <p style="font-size:.72rem;color:var(--muted);margin-top:.6rem;line-height:1.5">Click a template above → it loads a full structured article with headings and sections already filled in. Just edit the text and publish!</p>
+    </div>
+
+    <div class="ecard">
+      <div class="fgrp">
+        <label class="flbl">Article Title *</label>
+        <input type="text" id="w-title" class="finp" placeholder="Give your article a compelling title…">
+      </div>
+      <div class="frow2">
+        <div class="fgrp">
+          <label class="flbl">Category *</label>
+          <select id="w-cat" class="fsel">
+            <option value="">Select a category…</option>
+            <option>Fashion</option><option>Beauty</option><option>Wellness</option>
+            <option>Healthy Living</option><option>Fitness</option><option>Nutrition</option>
+            <option>Mindset &amp; Motivation</option>
+          </select>
+        </div>
+        <div class="fgrp">
+          <label class="flbl">Author Name</label>
+          <input type="text" id="w-author" class="finp" value="Oma Fitness Hub">
+        </div>
+      </div>
+      <div class="fgrp">
+        <label class="flbl">Article Content * <span style="color:var(--muted);font-size:.62rem;letter-spacing:0;text-transform:none">— write, paste, upload, or use a template above</span></label>
+        <div class="toolbar">
+          <button class="tb" onclick="fmt('bold')"><b>B</b></button>
+          <button class="tb" onclick="fmt('italic')"><i>I</i></button>
+          <button class="tb" onclick="fmt('underline')"><u>U</u></button>
+          <div class="tb-sep"></div>
+          <button class="tb" onclick="fmtH()">H2 Heading</button>
+          <button class="tb" onclick="fmtUl()">• Bullets</button>
+          <button class="tb" onclick="fmtOl()">1. Numbered</button>
+          <div class="tb-sep"></div>
+          <button class="tb" onclick="fmtQ()">❝ Quote</button>
+          <button class="tb" onclick="fmtHr()">― Divider</button>
+        </div>
+        <div id="w-content" class="ceditor" contenteditable="true" data-placeholder="✍️ Start writing here, paste your content, upload a file, or click a template above to get started instantly…"></div>
+      </div>
+      <div class="eftr">
+        <div class="wc" id="wc">0 words · ~0 min read</div>
+        <div class="ebtns">
+          <button class="bcl" onclick="clearWrite()">Clear</button>
+          <button class="bpub" onclick="publish()">🌸 Publish Article</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="logo" style="font-size:1.1rem;cursor:pointer" onclick="go('home')">OMA FITNESS HUB</div>
+    <div class="fc2">© 2026 Oma Fitness Hub. All rights reserved.</div>
+    <div class="fl"><span onclick="go('home')">Home</span><span onclick="go('articles')">Articles</span></div>
+  </footer>
+</div>
+
+<!-- ══════════ PROFILE PAGE ══════════ -->
+<div id="pg-profile" class="pg">
+  <div class="pcover">
+    <div class="cpat"></div>
+    <div class="corb" style="width:340px;height:340px;top:-120px;right:4%"></div>
+    <div class="corb" style="width:210px;height:210px;bottom:-65px;left:13%"></div>
+  </div>
+  <div class="prfhd">
+    <div class="avwrap"><div class="av" style="padding:0;overflow:hidden"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGQAZADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDzJkKOVYYI61NAwBGat6vB0nQezf41noea+/acXY+JvzI17V+npWpbScisG2kxitS2lPFdEWpIxejN62kBArTt5F44FYFtL05rRt5cVjOBpGRu27jgcVfgkHHSsS3lHrV+CWuacTeMmbkEg46Vegdfb8qwoJenNX4JunNc8omsZGzHIBjgflVqKRfQflWPDMPXNW45eBzWEom8ZmtHIuc8VYjdfQVlRyYAwasJNWLgaqZpq6/5FShlPXFZiTeh5qUTH1rNwLUmaAYdgKdvX+6PyqiJj604TcdanlY+cuFl/uimF19AKreePWmtLnvQohzlh2TGePyqCV1A7flUEk3HWq8sxwQDVxgS5D55Bgjj8qzLyZQp6flTricDJzWTcymSTA+6P510wgYTmRuQzFiAc03A9B+VOoxWxhdjcD0FG0egpaKAuwwPQUvHoPypKWkF2HHoPypcD0FJSimO4/jHQUmB6CkpVPrSC7FAGRwKdgelN5opjux2B6CnYXHQflTQaUUhXYu0egoAHp+lKDmlHWlcLsTA9B+VGB6D8qWii5SdxMD0H5UvHoPyooouMAB6D8qCBjoPyoooAMD0H5UEDPQflRRRcBMD0H5UYHoPypaKLgeKHDJsYAgjBrGu4Ggl2jlT0NawPAps8azRFG69q9qcOZHlxlZmVC+MVoW0vTms6SJoZCrDmpYZMEZrGEnF2NJK5vW8vTmtG3l6DNYFvNjHNaMEvSt2royWhuwTdOa0IZunNYEE1XoJugzXPKBrGRuwzAYGauwz471hRTcDmrkM3TmsJQNoyNyGb3q5FN71hxz8DmrUU/TmsJQNVI3I56sJN71iRz88mrKTj1rKUC1I10m96kWb3rKSf3qUTCs+Q0UzUE3tS+ccVmiYetOE3vS5CucvmY46UjTcdaoGbHemNP70KmDmXHmHPNVppwM81VmuRg81QuLnPAPJ4ArRQM5VCe6uCzbVPJ/SoBwOTzTIwVyW5JqQnitLJGd7i0mRSZ5pDQIcvNKKZnjFOU8UALQKM0ClYApaMUmaAHA0oOKbmigdyQHNLTAcU+kAfxClptAPNFhjwacKbQDikA+ikzRzQAtFJRQO4tFJR3oE3cWkooJ4oABQaQmkoA8RU8U7NQBuKcGr3Ezzmh1xEsy7W6joazpI3ifDD8a0QaV0WRcMOKicObVDUrFCGTHWtCCbpzVGa3ePkDK+tETleKiLcXZjdmbsM3SrsMvTmsGGbpzV6CfpzWtrrQi9jdimxjmrkU3vWHDN71cim6c1jKBopG1HNwMGrUc+OprFin5Aq2ko9awlE0UzYjm9+KsJP71jRy+9WEmPHNZuBopGuk59amWf3rGWf3qVZves3TLUjW+0D1FL9p9xWUZvegztS5B8xqG5HTNRSXOBWa0/vTY2knfbECffsKapi5izJcMx2qSSewqaGML8znL/AMqIIFi5+83cmpD1pN9hi8babS5pKkAzQaWkqrBcKUUgPPFFJoB240uRTKWkA8GlxTQc0A5oAWloWkpAOFKDTaUdaBjz0oHWkU+tKaBjgaWmUoNKwCg07NNyKWkA7IozxTaKAFzxQelNFGRQAbj6UEmjIxSE07ABb60ZFJR+NMDwsH3pwqIdqeK9ZM4GSqc09TUadKlQVoiR45pklmj/ADJ8relSIKsoOlNpPclOxlNFJEcODj9KkjkwQK2FjBGGAIpr6ZDKNykxsfSs/hK3KsM/bNXYpuOtVm0q6QZjxIPbg0zy7qHiSGQfUVSaYWsa0U9WY5unPFYkU+Dg8fWrMdx71LgNSNuOcetTpOBWKlwBjmpkuPcc9qydMtSNkTZ71Is3HWsqF5ZCBHHI+fRTWhbadqEuMx+Wvq5rJpLctNvYm87NOR2kO1FZj2Aq1baQq4aeUufQcCtGCKOFdsaKg9qylOK2NFFvco21gzANcNtHZB1NaUSIiYRQoo6mnAYrFybLSsI1NpTSUhh0oPSg9KaTmqQATSUmaTPtTAdTt1NooAfRTQcU4HNTYApwOKaKKQD+4pRxTB1pwNAC55paSgGkMcDTs0ylFAx/XvRTQcU/mgBtLk0UHrQAUZNAoxQAUUYpaAuJ7UCkLH0pu40BceTimE0ZpKQHhwFPUUqqTUirXsJHntgi1Kq5oUelSxrzmtEiGORelTxrTUXPap0X2pNgkPjXkVZjXkU2JQMGrES8is2zRIliWrUS8c1FEtWY1rBstC/Z4HHzQxt9VqSPT7JvvWkf5U9BxVmIdKzcmjRRRHHp9gD/AMekf5VbhtLVCCttEP8AgNIuc1MlZyk+5aSRNHheAAB7VJ1FRCpF6VDLFpwGab6U4E1ACUrUlJQAUU2WRIkMkjqiDqzMAB+JrltW+I/gnTJTFc+IrNnHVYSZcf8AfIIqJVIw+J2NIUp1PgTZ1ZOKYeleeXPxm8DRqSl7czEfwrbMCfzqa1+LfgSeMMdYaEn+GWBgR+lSsVQ/nX3mzwOJSvyP7ju6M1xll8T/AAVeX4s4tYQMTgO6FUP4muxjdJUEkbq6HkMpyD+Nawqwn8LuZVKNSl8cWh2acKZRVmQ/OKKZmn0AOU+tLmmg4NKDmhq4C0tJRUAPBzS5pimpBQAnenDrTaUGpGh1OB9aYDS0DHZFLTKKBD6YaKTNAxwPrQWpuaSgBc0lBpM0xXFzQaQ0hOKBHjCLwKkUdhSqvHFSqvtXtpHnthGtTItIi84qZFA7UNiHIvFWI0piLmrCDFZtlocik8VZiTFRxLzViMZrKTLSJYhxxViMVHGvFTIMVk2WiVBmrKCoIxU6nis2aEq1MnQVXB5pwcjvUPcZZyKcGwKreZSGU0rDTLm8UeYKpeYfWuL+K/jf/hE9GUWhjfUrnIhVuQijq5H6D1P0rOrONKDnLZGtGnKtNQhuzsdb17SdFtTdatf29nEASDK+C30HU/hXinjj47XDyPa+E7QRIMg3dymWPuqdB+P5V49rmrX+rXz3d/eTXU7nJeRyx/D0rPUdPWvn8RmdSppDRfifS4bKqVLWfvP8DY17xLr+vyeZrGr3d4RyBJIdo+i9BWOWOaV8jqaZ1PvXmyk5O7Z6atFWiKGPrRuPrSYoPWpHdjt7Y6mtfQfE2u6FOs+l6pdW5HVVkO0/UdKx6UdCKqMnF3TE7SVnqe6+BfjmSy2niy2BBIAvLdcEf7yf1H5V7TpWo2Oq2Md9p11FdW0gykkbZB/wPtXxAK6r4f8AjfWfCOoLJZT7rZ2Hm278o49/T6jmvUwuaSg+WrqvxPKxWVU6i5qWj/A+wPwo6VieDfEuneKtGj1HT5MZGJYifmib0P8AQ963BXvwkprmjsfNzhKEnGSs0LTsj0pvenDHpVEi5FFAo9KlgLSrTfWlpAPzkUDrQOlFIBaXNIKKQ0FFFFAC0lGRSE0BcWgmkFBpiClzSGmE0AOJwKbRSU0B5Ki8VKooUHAqZFxXtXPO6ginNTItCrU0a4qGykhY1xUyKSaRRU8S1m2Wh6Dip4xgCmRr61NGKyZSJEFSqKYgx1FS5wRUMtD0OKkDAd6hyPWkLEVO5ehY3+4prS49Krs+OpqJpc0+UVy0ZjSeYf71UzL70wzc8E0+UnnGeJNdstB0e41S/kKwwr0H3nbso9ya+XvGGv33iHV7jVL4/PM3CA5WNB91B7Af1rr/AI1+JX1XxENFgk/0OwOHweHlP3j+A4/OuBl8tVMjHJA+VfUnp/jXzGZ4p1ZunHZfmfXZVhFRpe0l8UvyKSrknPQfe/wp7KUj8xh8zfdFPj2omXGccn60yWQs6Z6IMAe9eTY9S5E4O8k84OPxpo65p0hGAB1703oR6UiQpD1pw+Zv1ppGDigY4Y4B9abnpTgMj3yKTFABxxSrweaFwRjFAHNIpHVfD3xXqPhLWkvLOTfE2BLET8si+h/zxX1j4d1ey13RrbVbB98Fwu4Z6qe6n3B4NfFUfQgfhXr/AOz34u/szV20G8lK2l8w8nPRJuAPwbp+Venl2LdKfs5PR/gedmWCVenzx+Jfij6FHvTsmmc5p1fSHyg5TnrS0g9uaWkwCnLjvTaWpAeKU9aQUppMBM0uaSikAtIaM0HrTABQRQKCQKAA0hOKM8ZpppgBOaSig4FNK4BTSfSgtTSaaVgPNFXgVKq0IOAKlRa9W5wWFjXHXFTKKRRUiDNQykh0a1Oo6UxBxUqDms5MofGOKmUYpiDmpKhspD1NO3YqPNITU2GPZ6Y0nrUTyYqtLL71SiK5O8vvULy+9V3kJqMtWigQ5E5mPpWF441/+wfDlzqC4M2NkAPeQ9PwHX8K1NxJry3486iB/Zmlocsd07j2+6P61y4+t7DDymtzsy6isRiIwe3U8ukd2lZ3cvIxLM56knqahd9xX06mnSEANzz2qFSS34Yr4a592xzMSh+lM5zR1pwX9aVyWJjIJ/Kkx0FTInAJoKEvwOlA7DYo2aVVAyTVq6snhjR2GA3H4123gHw2gtp9a1XEUCptjDDkk+nv2/E0zUdMm1UtJHB5OnQFpJrll2r06AnqewFcjxK57LY7I4V8l3uzz8DkinLGzLuq1BayXN0Y4EZizZA9q6m38J3cWhSXc0ZUEArng1rUrRgtTGlQlUbsccEIOaWZduHA+U1p3dk8IUleCKpsf3ZjPPX/ABrSMlJXRMoOLsxiJwHXmrlozxsJI3KsDkEdQR3HuKhsCu3awzngirUURWXCnr8wNMcHqfWfw+10eJPB+n6uxUzyJ5dxj/nqvDfn1/GugA7V49+zJeA6ZrumF23RzR3UaE8BWGxsfiFr2CvrcFVdWhGT3PjcwoqjiJRW3+Y5eOKWgUV0s4goooqQHqad2pi9KcOKACijFHepAKM0tIetMAprHtSnoaaaYBmkooOO9NIAprHNBNIaqwDcUlLmkoA89QdKmUVGnapU616TOEetSxio161LHUsokXpUsQqMVNH3rMZIg5p9MXpSsagpAxx061E74zzQ7YqvK/WqSE2JLJweearO9EjdTmqztzWsUQ2PLnPWgE561GCM1LGM1YiRR3rw340zGTx08Z/5ZQRoPyz/AFr3aJcmvBfjKmPiDdAf884j/wCOCvDz1/7Ol5/5nu5BFfWG/L9UcXIpJoRKmwTtH4n+lTpHsXpzXyR9bbUpeUSeKvW1mzvjGTj8qt21k0kZZFJA7+3rXZeF/D3nWgd13HqeOcVzVcRGCOijhpTZwn2XbOIu9d78MPBEutXx1C4gDW0ZwiMOHPcn2FTad4PfUvF72ce9YRhiyjOARX0T4T0Gy0nTY7O1hCRooU46nHv7nmvPxmOtHljuz0cHgLy5pbI4+60TR7K3BurSW6ZeEhjwwY+m0Vzeu+Fdf8VbEu7YaTpEZzHbj77+5A/lXuK2MSsGxyOmR0oe3Vv4Rge1eUsTKLukes8PGSs9jybwz8N9M0tRIbZGkJGQwyQB/n9K3/Efh23n0WW1ijVNyEMQOTXbC1RPmIqhqabomULn0FHtpSd2x+xjFWSPmzxbonlWPCfcXOenGK80nGJSo6g19EfEGzP2CaARqeOMjoK80sfAN9IGuruNo0Ybuf4R/j0r18JiFGL5jyMZhXOS5ThAm1Acc4q9bkYO4gkqGHt/k1e1PSZbeWSPaTjpx1rFmZ41X1ViPwr0adVT2PNnSdN6npv7PmpfZPiRDbE/JfQSwEe5Xcv6rX0cOlfIvw01BbHx1oN4zbRHeRBz6Avg/oa+u2G1iPQ4r6XJ5Xpyj2Z8xnkf3kZd1+Q4HIo9KRe/alFeszwwooo/CpAWnKeKZTxzQAq0vekzSigA+lNzzS0UAIelMpxNIaAEoJFFNPWrSAbmkJoPWkoAKKKKAPP46mWoo+1TLXpM4eo5etTRiolHNWFFQyxy1MnSolqdRWbAdTWOBTj0qKU0hkUjdzVWVqllbqKqTv71rFEsilkGTUBfJpsr8kVCG5xW6Rm2W0PNWIR0qpE2auwA4qJFItwJ0rwb4z4/4T65cY/1Uf6DFe/2w6V88/F4sfHOos3ABGB7Yrwc8f8As69T38gX+0v0f6HLLhcnv2rS0fT5b+QKozk9azLdGmkRFGcnAr1TwbpKW0COy849K+Hxdf2cdNz7nCYf2srvYuaJ4XD2yx+X7E+1dxo/hqWIhxGUHXGMVXt9asdGVTMgmmxlYlP6n0FRN8TLxZCsVpbGPPYM36143LVqao9u9Knozt9B0O1tZ2uNo81sZOOeK62zCqABnivKrH4hSthp9OjGf7pK5/Piu18N+KtK1HaEm8uXvG5Ga5qlOotZI6IVKctIs68KDSFMHpUsDI6BlORTpXRF3MQKxLu07FK4U/jWfOqnqP0rI8Y+MYNJ3wQRNNcEZUAcCvO57/xbr07C3S5fc2MRghR/QVrCi5at2RMq1tErs9A1Wx02XEtzLBHg8F2ArL1C2t54mSCSKXj+Ag/yrnrP4f8Aia6w09/FACckNKWYfiBWtH4F161QeTqNpKVHHzMGH44rZOlHTmMm6kteU4nXtBjMjMI+R1xXkHjDTzY3xRlwGyRX0u+jan5QXUY0aReN6sDu+vvXkXxk0gRvDMqch9p49a6sJW5aqVznxlDmot22PLtIL/2paiM/OZkC/XcK+3mBLH1zzXxZockVn4jsLqZQ8UFzG7qehCuCa+0YnEgDqcqw3A+oNfd5M1afyPz7PU1yfP8AQdg+tKKKK9pq58/cKKKKTAKXNJRSAeOlFA6UtABSE4paa1ACGkNFFAATimGnN2ptWAw0UrUlABRRRQBwSDpUoFNT7o9aevWvRZxLcfGKmUUyMVKorOTKHoKmXrUcdSCpY0K+AM1Wlbkmp5D8tVJT8tCQMrzN1NUriTOasTtWfcNjNdEUZSZBK43VGr881HK53ZzSK2T1rS5NjRtyMj3rQtzkYrKt36GtK2NRNFRZq23QV4P8aLFo/FMl3tOyZihPuDwPyNe62rdK4/xxo0OqXl3YzAL9oRXicj7j9j+deXj8M8RRcI77o9PLcUsNXU5bbP5nhmhDFzbsf+emD+de5aDZmaKJUwu4cE9BXjX9n3ej67Jpt/C0c0cgb2Yeo9QRXvPhi2W4sUjVipI4I7V+YZinCaUj9Wyy0qbcdTXtdE8Kaagl1JFvJ+pMr5yfp0oudb8FQttOmacp7fuVrzD4kWfiHSbneFnmjb7rKpOa4CD+1dQudk1wLVTkh7klEyO2emaing1VV+YK2N9k2uQ9/u9W8Ky/ItnZbScYUbf5VHaafpZmS5sRJCQc/K2a8K0WG4vXt7e31Zvt00yxJbC1JB3Pt4fO3gEn9K9l8P28/hvVv7D1G6S5k34WWN1MUqkjaVwcq3+yevbNRiMDKlDmi7l4XMIVZ8slY9g8N6gJbdVZuQKsa1eAW7AHnFc3ZQyWtyhUkKa09RjJGK8Zyse0oXkcretZrcNcSxKz9y3Ssi68cxWzeVaxb0DbdxISMH3PStTxtax2ukyTzsyREqjEDJ+Y4AHqSeBXkni3QbSfSotTiuLq6vfPBGlokwjSDpsDheW9Wz34rvwOGVfWT0ODH4r6vpFanZ6l8V7myB328e3B27JA27HGRjtms2y+MM5f5gG9s4rg9N8E6zqss/leF76JWhRYV89lVHAAZyzjJBIJx74HSup8OfBHVZbkNq18tvGMH90NxP516E6OFpL3mjzY4nF1X7iPS/DvjJ/EkiQRQtnGXOOlcl8arENp5wPm3rge+a9O8OeH9N8NaSLazjO7HLt1NcL8TEe8CQRLukZxtH415DqRVVOnse3GnN0n7Tex4z8PPC8mveNbfSruAm3Xc9xk/eC9s+/FfU2jWaadpsNijuyQKEQscnA6c1598KtJY65f6mIljtYT5SNtwZJSBuI9gMfia9Kr9NySn/syqNas/L+IaqWI9hF3UfzFyc9adkUyivZPnh9FIDmlpNXAKKKKlqwBT1OaZTloAdUdPPFMoAKDR3ooQCN2ptOIOabVgIRSGnUhHNADaKU0lAHDKOBUiDmmr0FSxivQZyWJFGKcKaKctZsCVOlOBqMGnqeKQxJDxVOc1bk5qnP1qo7iZTuTzWdcnrV+56ms656V0QMmUJT81Irc0k3U0xTzUOWpVi/bPnHpWpasOOaxYDjitC2kxjmtHqidmbts3Ss7xZGQ1reL/Cdjf0qxbTdKs3kS3uny25xllyp9CORXO04u5otUed/ETR31a6027tQnn28Mm7PBdcjAz7c/nXU+BZSLaHJ/hFQQrcGwe6NvJ5dsSksuwlEz2J6DOKb4YlG7KABSx2gdMZr8t4qTWOmumn5H65wm4vAU311/M9Z0yGO5gCsoYehFJd+EdGugwksIRuOThByfpVbw3OQFFdjbNvUfLmvk+ecdUz6irSjJao4M/C7ws5ydKtgSckiFQTW3Y+B/D9vEY49MtApx/wAu6dunaurjiJ52gUTqI4y3HFVLEVmtZM51QpJ6JHLa1AkDoF7U64jDojewqPWm82ZSTkZ7VZcgQL7CudSbO5InjtQ0aMFBI6GoprEyn94ob6jNX9Jfcgz0rT2RkdqqEnsjGoknqjn4rBU6DH04qZbZUGcAVsGJT0xVO+/dIScU5c27HBxvZHOa04RSBXn+sW09/q9ta2rqs8r7Yy3TcQcD867PWblXZueK48p9o1+2iV2Ry52OCQUYAlTx1wQOK2wcHVrRgursGLn7KhOb6Jv7jtLLTv7ItI9MaAQSW42SJ6P/ABfrk596mrf8Swedo+kawkYHnw+VMyRhF8xf1Pfk+lc/mv2LA1lVw8ZJW6W7WPxHHUnTryTd9b39RaKTPFANdZyC0ob2pKBQA/0opAc0tJq4BT16U0dacTipARqbSk5pKACiiimgEJoHSlxzRiqARulNp9GB6UBcjxSEU6igDh0B4qVRTEHFSCu5s5BwpwpopagB1KDTQaM0ADGq89T9aimXg1UQM+4U5qhcLwa1ZlyKoXCe1bxZkzHmXk1Cau3EfJqsV9RSlEpMdGcEVbhfaRk1SHBqdD61UXYTNSCXGOa7v4XaQNV1Vr+8ES6Zp6+bcPOpMTEDIRj2z1+grzeOQrXrTo+gfAeGeOK4t59cm/eOsgZZYyTgEfw5UYwOfWvNzWq6dFQh8U2or5nfllKM6vNP4Yq7+RxnxE8Q32rWk2n2rix0iTfD5drgHyy2VycYPfHHQ1y/h+E2rrASGCcAjuOxrRMquhRgCpHIqiifZ59wOV7H2r5jifKaFHAKdOOsWte9+59Zwrm9etmDpzfuyT07W7fI73R7gRbWzXX6fr0IjCFF+tea2N0DEOavQ3YUgA1+aLmT0P0+XLJanqCamsv+rx+BrK1O/eW7+yo2ABlj61kaLdMF4JY/pVm9ga4Yyq/lydmFTbX3jOyWws8RZ1BOeelbL2bCEFkO3b1rirptfhuFOY51XoyjacfStFtW1u5txBHbXMeRhieBT5EtS+ds6GyhbyztcAA8+1MS5JuJYBKWZBuVh3BrmRY69IBGdSe3h6lIgNx/4Ef6Vp2lpJbp80pLHqxPJrN8qdyneRafU5IpSu8/nVPVtXLQ8vzj1qlqsMpBZHBb61zV5dTgmORSCKvl5tiVJQeomq3p5+aqXh0mfxBBKedrH+RqvdKzgk5rV8N2/l6hbhRzhmb8v/r135VC+MpJfzL8zgzar/sVV/3X+R6nHElx8N5JPLh3212MO0nz4PZR+PSuXrrfDRT/AIQTxArNZg/LjzRlyfb0PofWuSNfqWBXK6sf7z/E/Isa+ZU5f3V+AUCiivQOEUc06m0u6gBaeaYDmnjkUAKOtBopKgAopaSgANFFFABRRRQAUUUU7gGKaRzTqMVS1EcSowPwpwpAOBThXa2crCl7UUVICUuaSigYoprjinCkPSgTK0i8mqs0dX5B6CoZF5xxW0WS0ZE8QqlJHg8jNbcsQ5qpJD7Vqnci1jL8vmlxVpoaYYyKdkFyIEgHntXrPxTs47H4X+EBbae1nHJErspm8z5imSevBPX8cV5WEOK9Y8Uraa58DdI1K0htLL+ypPs7RGcs7YO3j3JO7Brxc3fJUoTeymj1srXNCtFbuLPKFkI45pyMHkAPcYpMDFRucdDjHeuzNMH9dwk6Hdaeu6/EwyrG/UsZTr9E9fR6P8DRsHIcxk4YVowxFriN3J8sdR61kSpPG4MkbRXEYBZGGCQQCP0INbemSpdQAZ5r8RnBwlZn7hCanFNMZqvjqz0Z/s6QSO68YUYH5msw/FC6JO2wQYODmU8fkKl8QaH50bTIgZ+4I4asTRLI2d7cX+mwpcSTQmK5spmwJBg455wQehrroUqEviRzVpVkrw37HUaZ8RpXlH2iwjUDr85z/Kt6Lx/ZyREpbkkdQGyPzxXVeGr7wbqcdw93Yx2d3PNAmZogp8wgcjrxnIJ4FdRrOl+Gk8S6FIbaw2SySJM+VGwKm4HA65Ixz612PLKMldWPMWb1Ivlknf5Hjd1431JndobaMRKMnbE7bR7niqmo+LdZtYZZrmCdI4o1kkZrfaqqwJBJz3AJr2DxtrnhfSoL37PB/adxc252Q20e8PtJwGYcAZPX615p4wXUPEa3tzrdtFaaNK0Lra/xyOi42swxlMnpjt+FRUwWGpLXc2w+OxVeXuR07s5qw8VazrcqQWNlGiPyLiTdgjuQM81vTxMQN/LDqa0fDumJb2xuXiCSSjKrjG1ew9qi1TbEGOeTXkVZQvaC0PYgpW95mMyb5wg6Dk1teHAj3VzICCyBUA9M8n+lYwDhQsY3TTNtQepPSs6ZtV8I+NocxXeoaXqIALRRl2STADLge+CPYmvZyCjKOIWKkvci7N+un4Hi8QVYzw0sJF+/JXS72s/xPa9DGoReCNclS401bSR0QxyKTP2zg9OcjH41zNdbqkx0zwFaaSx2XF5J50sZ2kqvXnjI5xXJV9/l75lOotpSdvQ/Nsf7rhB7qKCiiivQOADRRRQMctSCo1qWhgJRRRUAFFGaKACiiigAooooAKKKKACiiigDi1HApwFIBwKdXccvUTNJS7TSgGgAApSM0UUCGnijtTj0ptADWpjrmpD0ppppgQMntUTxg1cwCeaQxitFITRmvD7VE0PPStQxUwxHvVKQuUzTD68V6B8KNU0z+z9U8H60YoLPVR8k4jBkMhAUICeB2wT0NceYx3FMMQrmxuHhi6LpT2ZvhMRLC1VVj0JfHXhXUPCGp/Y9T2+W3MdwufLf/Z3dAw7iuYjnL38VpZWzaldscrbQ/NuA/vY6L6k9q9S0fx9q1npY03ULW01e2VVRBdDJVAclf9rPHX0qlqXi2V7FrTSNG07RVkUCWS0iCyMRuzyAMAhsGvLk81dP2CS7c9+np3/qx61N5XGp7eV315el/Xt5ficPqp1Aazd3V9drfX00pe6mjbdG79wn+yBhQPQVNpdx5U6yxn5G+8Kk8gDtWfdbrW9TaPlkXcfqDXgcQZBSoYdV6PSyfn5+p9Hw9xDVxFd4est7uPl5HeQbLiAehHX0rF1XRLiO4F/p3y3MZzt7OPSpPDt8GARjiuvsYlmUdDXwjcqbuj76Nqi1Mrwh4h0iWUQ6lEttcrw6SAA5/HtXbRz+HNhZTa89dpUA/wBK5+/8O6ffjNxaRyHsSOR+NZx8E6eDiOOVF9BK2D+tbRxUbaqxE6E29dTota8Q+HtOtPMWe1Yr0jUgn8AK5aBr7xPqMd7do0OmwnMMJGDIfU+1X7HwZp8EokSzQuOdz5b+dbkka2kIUAZxWFXEc2kTSnSa+Iz7wiKMk8VyWoz+dM3Pyg1sa9eEKUB5NcvcFpW8qM8nqfSsYxKbF0W5eXxZaIAPKUP+e013BwSp7qdwPofWuM0C3WHXrUD0c/8Ajprss1+j8MQTwLTWl3+SPzXi6bjj4tOzUV+bJbm4nuZfMuJWkfAGWPQDtUdNpc19JGKirRVkfKSnKT5pO7FzRmkzRTJHUUCl70FIcgp9MHHSn0mMWkooqQFpKKKACiiigBaSgUUAFFOHTpSUAJRRRQBxoPSnUgp2DXccolFLijAoEJRRRQAjUlOPSm0AIaaRTmpOtNAApwpgpQabQD1HNO2Z6U0GnK1IBpjOegpDEfQVODkUuR3FK7GVTBxTTCKunGOlRyuiLucgD1NDnZXY1Ft2RSMP0rI1yPF3bAf3Wz9MitK+1BoULQWrze5+Vf8AGseF5by6NxNjJ4AHQD0r5TP84w1TDSoU5czdtulnfc+z4byXFUsVHEVY8sUnvu7q2wQO1tKGUnFdp4c1dXQKzAEcGuWkgDL71X2T27+ZAxVh6dD9a+AdpKzP0FXi7o9at9SCYywIrQh1KJhy2R6Yryqy1+VEC3MLBv7ynINaVv4jhIHOPxrCVKSOiNWD3PRZr+IqRGuDWHq+pBQecntWAfEkQQ7Q0jHsoJrMnmu76XLIYk9CealUmDqLoOu5pLm4bB+hpqxrEmAOvJNTLEI0wKYUJ5OatRsRe5nXE8tpfQXkXLQtux/eHcfiK7W0uYrq2juITmORQw/+v71xt7EZH2gZJ4FRxyajp19K9lMArNho2XKNgYzjt0619FkubrAtwqfA/wAGfN59krzFKVPSa/Fdjus0ornrHxNC2EvoHtn7uvzof6j8q3La5guE3W80cq+qMDX3WHxtDEq9KSf9dj8+xeW4rBv99Brz6ffsSg5paQU5RXScI6iilFBY9cHrTqaDilBPrQAtFFBpNAFFFFSAUUUUAFKBmilWgBQKQilyM9KU0AMGO9LxRx6UbfegDj1XgZp+KUdBS123OVoZgUYFOoNFwsMKim4NS4ppFO4rEZppGKkK+lIRQBHRTtv1qeysbq8kZLaEybRudsgKg9WJ4A+tDkoq7KjFydkiqaTFdXB4OugYBdzbDO4RAi8ZPTLH8egNWLnw3YWhVnhuPKWXY8k8m3JweAoxyfxxnNczxtK9k7nTHBVWrvQ40VYtrW5uMm3gkkAGSVHH511Lx6FY+IZNMOlPLJDnlXDs2ApOFJ5IDDIA4BUk81c0uwuL/XPMuNsdooaYJHHjcq4XYNy5GSeRwQFGOtctXMop2grs66OWXXNUlZHNW+halLO8HlIjou5w0gyo7EgdBWgPC1yqfvLpS5UsBHGWA+pOP0zXUW88YP2Wz0u3hSQBiyKPnJY8ep+p9T71LbNHJc/aWYeU8fkW8aoo8xQxzIW67S3CjOCAD34Sxk27ClhacU2l9/8AwDhPEFmo1U6fpcIjS2UJNM7FjI5AJwOgxmq0elxx/PLmWQd35x9PSut8QSY8QlJdgSa2VoSqYyVJDAnuRwfoRWXcIAxr4DOsdiZYidGcnyp7dD9KyDB4WGFhWpwXM1q+pzuo24KYAAGR/OudsYSmFPUdTXY36ZhbGN2K514wl0xAwGO4D2PP+fpXjxZ7U9xVjpTBk8Vbhg3jgVZS1bGcUnJIrluZZs9w5QH8KRbJQfuKPwraS3I61MtuD2o50L2Zkw2wHQVcijx0FXRbj0oMW3tUuSGoFRkpjJxirRXmhYiT0z9BUtl2sVIIArtO4GIxkZ7t2H9fwqlNGGY45rZvUMUIh3A4OWwcgt/9bp+dUAneolK5VOPUrJaqTyKt2+mRMQ0amOTsyHB/MVJbhd/JwK6nwdoc2vXojjV4rNQTJN93djqqHufUjp9avDUq1Soo0tycViaOHpOdV6DPCeh6pqMmZpF+xBignb75I64Hce/86s3emPBevaxzRSSKfu7trAYyMg9K9AGnrFCtlFMLWOBVJ8psFAOn+6P1PNNu7mzdJpprOG4t7aJmaWWIbzgHhRjjPP1z6V+jYavWoUlCU+Zrds/K8UqGKryqRp8qeyWh59Jpt6iM/kMwX7+zDbfY46Gqo4JBGCOorsdC1abUo7qGwtbe3J05bu2WOMEEvwOQWLEEHnHOeAcZqbS7G01OytnvPMubm5iV2QqCYc+4zzz3P511U8xv8SOarlqjs7epxVFbGoadpv8AaMllp+q2xuIx80EsgBJ3lCFPc7lIx2IxVO80y/tF3XFpKi/3sZH5iu+GIpz2ZwTw9SG6KwOaKYKXJrYwHUUUUkgCiiipAKUcmkpV60AOpaTvS0AJS0lLQByQBwMUuKUdKWuw52tRNtIR6U6ii4WGYNJipKTFAhhp0MMk8yQxIzyOcKo6k0qxlnCqCzE4AAySa7zwfpMdj5sskZa+WEuSP+Wf+yPfHU1nVqqmtTWlRc9eiMWy8LoIpLm6lZoLcBpygwo/2Ae59+APWuhW3MGoQ6ba2oR92+FI1Hl8AtkE8b1BUmRsgE4Ud6uX0UEenPbwxBLaOSARxIvBG4MAO3IySx6YJ7VLoP8Ao0F7dtIwty00UMapgPyuGU9SBgDPUkn2r5vFYqdWpyt6H0uFoQpUnNR/4JLqNuun+HmdJpri406AugjYuWlOVDtuPzkEk4PHtXM2FxeyeKls9YlkvW1CBprK0u5khKiLL740GTjEioX9V6YHO34mjmngg0a3jhlF8qbmkbkNu+8VyPlTrj+Ike9YmkSzXnxNkhudSuE/sWKaK2to4ykdxDsiDMehkZWI+bAQGTau4oaVJt1NOhnWsqOurd38v+HLnhSxurS81LUtS1dLvVr1wzxxhmt7MjAEcLMAQuBzxy3fgVrWepNLdgTMsu35CzD5kz2HfFOsbRXil1G8QwpK+4RLwzE9vYf41GW0+8ukWD5HhVnYiQNgDpkdzz6126R2OC/Nv/wxTtIDazXlzcbBHHMYkXJUsqjAAJPLFiQMcc+1Klg8siajrMMaTBiYLZGLrCoJ2MBgANg4zkY6AmtKeINEJra3dZThY1ZADGMh2LZ4B9+xPqeKUejXFzcvJd6rLOCxYqj+VGOndRjH41hqbqcXu7GX48tp77QIr3TVHm6bIZwuOZE24dR74wffFcil+1xCsqnIYZBBr0ySfStJ2QXl1bK8j4WPzwxHBOSCcn7rfiDXMa/oJgupb6EvLDOxkmIX/UsfXgfKf0Oa8TPMGqv7+mrtb/5n0fDeYqh/stV2T+Fv8jkpZZGyMGqLwOzgkd+Pb1rqHsFKZXB9xUIsRnkV8o2j7dK5lWkbocMK0ogpA4xVj7MABkdOB/hT1iA6VjJ3LiQbF9qMAdAKtiEYo+zKagopM30qN8t2/WtIWa9cfpTZYUQcnHqT2oTSE2ZLjbjPU8AAdaek6W7Hp5o7Z+5/9f8Al9eiXjgZWLK56seGP+ArNMbnhVNaKN9ydWSXVwpJYtWZdX6ICcjj9K2dM8O6nrE6w2du8rHJz0VQOpLHgAV3/hb4e6LpM6TaqqapqXDpEU/dp6EKeD9W+uBXoYTLKmId1ou55mPzijg1Zu8uy3OX8C+C73Wrb+2dclbTtEWNpck7ZJkAzlfRP9rv29a9H0y9hN5NbadYLNb2sQS3QLsXzN3Clz93avJGOM5JyQo3LxQsMf2h2JLKwij4LkfdGR/BnH1x6ZFUwLO21G+1BI1JEZe6cglVXALAKo+Y/L945PYccV9RhsLTw0bQ+8+JxuOq46XNV6bLov8AgmboDWZl1+COTKx3KzXFwWU+YfLXeyqo4GF4Jyc59hWNfNd+I7m2gsrcNbJN5kCQ/fSNkYJMc8eZiRSyvwnH3icVoa7ZXtzo/m6La/Zri+1KELHauIpGgjfLb8E56FiFwcEbsYNbugLpyWDWGjz6ZHdANJcx2KgLIynYSMdAGXYD/s47Vo7y91mcWqfvrcxrG0GiTxW1gIZL1Q815e+WWjgUkFwqk5LOF5PJ+XoBgV0ly+mXkSCZbmJ3hEpjjMkbbW9QuMnjp1HNZwRbedLK4WITTRtLNFzkwIAJGGO5YonJ6Z9KjsRNLqkus+W/lQ5MhVcs+wMQqgdfvdKqnGxnWm5K5z9hqNnf2mozeDdERfs1mJYdV1oy/Z5G+ZVUFiX+Voxu+7wwYE5527LQrttt/qt7cXwdcRRQvlWGcrISoUKdpxhQOO5JNcd8Krawu/Curme+ZfCv22VUiniMTzM0jly7kkupLJhuCzKxHy4Fddbz6lqSNCjXthHb7JXiQKnkIDxGGXO5hswVPUN7CpqSXMkbUovlbX3kN7oenXVyLcW1wjnafOjYEDPYkn5unIGSPxrltY0i500rIxEtu/Mcy9GHbPoa7nVtRtbe8ig0hBcXdxJt+8cRAjORjrwc+3XnGKyvDc/m6HdwymK6igiEmXfeOXZSCoUEA4znk5zxmumhj5U58l7oxrYFVKftGrHF5NOra8QaDNZA3MEbeQckoSC0f5dRWKDmvdhNTV0eDODg7MKKKKbRIU7im0UgHkUopAc0tABijmjJpaAOUA4FLinBeOlOC113MGMxQRmnhaXb9aYrEWKXbUm2tTw7p5ubkzSR74ov4f77dlqJzUFdl06bnJRRreDdIaKRryeNfMWIyLvOBED0J+v8q6bw80cr3DW53gSiIyv/AMtnIycewHH8vWsnWJlV4tMWYuJHzceTy8shLYQDsqhDz7fWtvSLeS1msrecRwyBZGSJORuZu57kLgZ9zXgPFOrWPbq4ZUsPp1/q5a1SOC/gi0+G4kQtiYRrGVRkXOUJH3Q2e/qKqRJItjpkE+yKSJBFIpXGChwAoPqWTaT1GPWl0m4nZtVnbBkcBlZTu8tQ21Uz6j5j68ipo7pI7Ge/umLGzG8HgnJOFJz/AHSSf17VyuKk3PqbRnOEVDovzaMr4hXUWj+H7u/0+2MmtSwtFaJCyiaRwmCisQQoUDJbHG3NZPhbTI9EFstrPt1bWobnUL+a4zIYVJV2ZQQCyrIyKoYjIOeuc3tMisY5re21MzX9yw3wi4jB8kCQIJOehkJVhnsKTRruLUrnXdUMjSWt1cCKC4YY3RQbkkUZP3RIj88Ak9zk10QSbuc820nF6/1saF40FxYpAzyCJ2JLzPh5S3rtAJJHYc49quWdrFp6b/KhjiZcySeWFjjUdj7nPT2NZd5e3sc9tZ21q8N/JGJWdoRKLdGB/dDkDdnbljxyevGL99fS2nh29uUnW8ubSF2G1cgyBMgYQMeuOgJ56VXOpXtpYjkcbLuF1HNdQOhNxDEyq6bIwjLhs4253Fu+CAO2KWCyWTT5tMRpkhkRVWcsCxwR1B7nHP1P1rm45bjTtMfUZry6muZbmJI40kklLKSqklSCR87NwAf4ck846SO8XTmv5L35LdLzy4nVl6sASOvY5z6c+hw4yjy2YShNP3Tii00jxwadbXeZHZRGZWjjDByjqSAGwQxIG7BO3HALHp3vIbC6g0GcXl3t+X7Q0QZ3m4y2B1/1igYXAAJPAqlp8Uuqapb6oumz2Vh9qiuYZROkiXW47VYLjIBDbsjHXJ5rqvs0MV1dCzt7SK7klZ2WOcxvJuIyWYoTkgDgZHAHaueCcJXR1VpRqRUZL/h/Uy9c8O3Wo3Fpc2EiRyeQBJFIuxMAdeBkNkgYxj6VzF3DcWaB9QsrizBON0qfJn/eHH61tar4in0+NJbe6s5dTFwLW7jmmYQW/wC7dtsYI3SsCmdo+duegwK3tLvv7btYDdRPPE00UQ8uJ8BnjDsXUr8oAIGW4B9DxXl4rKqGJbmvdf4HrYLOsVg4qM1zR/H7zg0eGQfK6N7A0+C1luLlILaJpnc8Kp7dySeg9zXV6rceEbrTktb6SHT7e0O4mbELlQ5TO84bBOceuOM5q/omj+HlsruziTzrtk+YmVxI0RIZeCfu8AZHBxXlPIp82kk0e1/rLT5G3Bp/eeeX11a6frltol1cRf2hdKXghjcSGRQTyNmQOmOea2ZNGv4ImmntWjjQZcsRlB6sucge5FdJB4K0q0nv7qwhu7Oa9hMdxdxzlJhHg5RZMbkUHDZGOnJxUfhjRPClho8E+nXh1KFYmiW8kuDOzEAhirD77HJDN07YzxTeRS01/H/gGa4li07J/d/wdPxOYKoqHDhj229PzrOmRHJJk3Y67eQK9Et7HwzYaM2pRaOl0qoj7RmQhWOAQXbpzk56AGoLLxTa3N0+m6DoS3dysfmFAwgGws4D7T0UlQRnqHBGRk1MMhkvin9xo+I4vWFNv1aRxlh4Zvb24SJLSSMOwXzJkKqM/qfwrorfwdo2mfvtYuTKVYDYoKrycDgZJySOproF86G6in1C/WCSKYsLa0YyIVwQN/C5PQ+mSeuBhdetrDW9Mu7aCeW3klhYE4wenUe4xXp4fK8PR1au/M8nFZ1isRonyx8v8xXuILK2VYlitoLeOVmAwCAMKNvPHLY4HbFU9HRNL0p9RulMNzdsbiXz0VHycYD4JGQNq9TnCjuavwWE1w9hBdQFWktlMxSU4AVgxBDKepI68/lWf5Vtc7dT1uZGht9yxRpkQuwZl3lSAecgYYkDC455r0b3PJSRJpRutTY3IilZGOFMuQzDpkjsCMYHX1Aqp46vI47f+zIkaOMMizyAukcTPkRsSvMuWGwop3fOMletdBcPLf6XLDpsiWc5IEfmtgHkEnC89M9O+K4PVLeTRdU/s9YotNu9jTWd4zNJblcqzod33SSi84JwjdOpmo3Y0opSkaWizpFp1/rVuYbK5ja3s4fMm84QiR03jag27skqAB1X6kx+AtPmF1Df2zS2cdqjQXL3AXaymSR/KVV+66koCD90cDkmjwfaQXmmat4LnEdhKSFjmskJIGwHeH5AYAjHcAjoTgdO6TTxyQ6RYTQvGxSOW6i8uKM7iGYL1duN2cc7hURV7M0qS5bxXX8imNU0zS9b1W/v766nhjh8ppJQhjUoDI8aY6tg8j1AHXGeXXxBP400O+tZrXUdAht4Xv7ea1kCLLEszLAd7YHzhPMK8DaRVH4gXlrKbXw7f6LfX97peq2d3HFBMsb37lwGnZQPnVSyyOBxyoJBzjo9L8N6rpNjFo/iC+k8U2d7Z+TeK6rGgki3SAomckSMwHYII1Het4WSuclTdFW4s0015NGgk8+OO5je5lkG4zy/ZhmeYnIwCikKP7o9a2fCgeDT9Y+ywiSeZ/OTc/8Ax8AqAZAOykk4rP1V57u/aS9jKCSdJFtS+zEfMTsxHUcjHOeRWp+70S1W4uZEbUvK2Kq/cTC42YHbvz6nFedFt1XN7I9eaSoRprd20/Epw6dqd3/otvp8dhHJGA8qoQwAyvUnOec8Y4+tbdhFHDp7LHKZxFOz+cVHzuCWP/AR0B9siortdZ1G3S0nBt4LoMkjRHDxDHUU/WIrW5tv7Pt52tDEYwGC5G3Iwp9Q2MetdlGnytySuebiq7qJQbSXl/mZty7XPlzQvHPY3Kr9nMYyAxBbcx7qw4z9BXEaxZGyuiq8xN93nOD3X8P5EV0kHn2mivYXkXkXtl++gKcK/wC8baAB7cEdw3SrOsWNvqVmrwhUWVEZMchcj5SPbsfrXfhcTyyuzlr4b3bfc/67nDg5oolR4pWikUq6Eqw9CKK9nfU8hqwUUUVIDh9KWmg04GgBRS0lLQBzYHApQKaDThmupMy5Q7UmaUClxQ2NIWGOSaVYo13O5CqPU13GhQLZohUg/Z42mxuGCR8oJ/Ek+2BXM6Enl/aL9t222j+XAyd7cDHvXYaNaApd2uB5ggRNx+6eXb/0Lr615mNqvm9mj08JS5abqP8ApFbSFWEXmoz7N8MarGzIcmQq36nOAo6fUmtSOWT+2ILqVy0iwQIEJH7tn3M547kBR/KsfVo5XIsBFLIquULZ2gsUYnaPUbgATnHJxWtcFFv7pvNYxxT4wF+4kcKFsevU/jXkUHyy5O356s9DFLmjz91+GiLGiQny9VlhljeSO6lt0UJsEZDksPc4KjPtWXq8MkGhX1vsCRyyW8TR8MdrSgOMHoCD1PAGaJ75rPU9PNlK8H9uTAlvLyqybwSMerAuWz02jFStex3GoSQAB7dlfhuehyGOep3etdMaSlddv1OJ1ZRs+j/Qp6rPLbnV9WCPJIJxHbBYi7M6HCtg9Su0YzwOtT2UcdpZ6JpjtNPJPbRw4chpCvDSyPjjA3YJ9WA5qtrMMSyI2oXj+Xb+ZMYkXIYs5O5uOnIAHc+vNQy3c9hcX2qXMf2rUlhQNFCTv85iRDbxDGFVEYux5OTk8DmrONwVpk2qXVppl5dfajA+t6jcbgiAlo7cyLGpwM4AVcZPfPQA4VrdbrSItL1Bwkl/LHPfRRyMHjhC7wpKngsUAwOxbr1qnomlXsNw2r6gqLellW3tY3LYYIQrTvnc5w/Ck4yc47je01ZYJy80sM+pXCBrl0G0bRkbsZ+VF+7nq20Dk9M0rvU2bstNX/X5GfcXEOo+N4be33RyW0bSSzSz7VhSIj5o4Qctu8wgO3ClehxUulNDfayi2Ni8WlWCvdLEIDK14zL987uEkLs3BJkbBzsB5k8P6Va6HsvEkuLmfDKZnIRpWdtxCoOnPVjgDHc1s20NkVkS30+NXCmUQCRtvzHbuKjg5+Y/hSvd6jceVWWxk6VDez6pJJcqq7dSW5v7hk/dRIi/uLdCwG5hldxTIUhhkk1t6lBbC5F9PfRafJ8zkyOAjKg5fcegAwc9s4+sFzYSXs9mJnFuLcloIyQit8hXaq+gBzxVXx6sFn4UtZNQls4UiuNpN0+zKsjqQjH7rYPXB4zjHUS3y3Y1Hnkoo5rxfqum2HxCt9Q037DPPcJJy7sY3uYFYYdlB2BOM4HHX3rtJLW51DTJ5oJ7WK/1AI8BSWRMxKMDLjBDYZj0+UnviuHt/D2pXdzdBLC6vQJo4rmZ4TGl7ACT+8ZvLXanVRGxyTuYv1ruPDlhcw6elhe3dtLLFcvLE8ZiQqC5PKKxBBXafXnJ5rKLvubVUopW3Rzdz4a0TQtK/tW6ne5t0eS3+zWMiWqIs8gbbvZgW2uSwckMc8AdKdrN9d2V3daZbNpmh3kkbzCGxje91KRTIFEo+6F3IT1OVPPIyKn+JLQaP4aWGZ4pHudQSS2jlby8GItKSAUcvhQcBV3NgYIrK8PaT/bV3e3d9axN4WW5gls21FJNskKAkGPdIXJx/eCqCWJDMKlpX0NINyjzTZ1Onxx6/ouoJJ/a+62kZLW4+3rJLPgfLIojOwAk8Bvxx2p3niC20+O30xdMW71iztoo7i2W4jit4WKgqG5JAYkL8ob5mA5zmtTVNdjstFuNZilQafatujhLLbKy5zkkjAUAMxwCSAcA5rktPl1PSz4n8eXTwaYZBILT7cEdmUMuJAE2/KQQAp5zjc1N6ERXNc7G2m/tbSb+20S3hjuyPs1zHeEGO3JUblKrkkgEgLjtg8VFpEUfh+z/ALNt5NQvG2hZJNQlZ2b0IUYwB0AHQAAVhfDO7gGpXOrm0lsdOvIGu2vHv2NtI5blURlUIqgMeduTuwGADV18LIL37Zul8pZMvc3CACUDtGvUjkEOOOMChClo7EMmlW77ZtQc2igl1SKRgzcY+6O3Xqai0aXS59cNvbJNcwFCDIz7lEgPIPOANoPHPfOOMt1qOxu5ftV3cSLa+aCpdSBI38KBQcuc8henrxVyJLCxsIHupv7IeRWW3E7IsqYQ5CoCVBVQTgbsAZ6UmHQskGF5dSeeW7eOaREjRgoO4gCM8ABVPc9+SeMVTj0i3vJWvb+yiaZeWll+SEknd8o6sASBuIGSKtRaPpd7pNskMktzao/mBHc+XOwYnMi4G4b/AJug5AIrz1dRnu/GKr4llYPb6hLb3NnOzSlYzG7RPCkQwA4fq+TsjUnk0IUVfY9CuZ7OwK6lNbQTW4xm4t3LeUDgA7T1HTkVLquq6NJpiTNLZXaSKWgjeRcScbuCcjoM59q4bw7dQWnxOfSNJvrSTRtVW4WSzKsWSWFQjqB0C9AWJxgKijgmluxcWnghrqw0SKSCPV5rixt7a4aJ5VDt5Ywwyd5GCg/h4HFA+XY0dJt2u9JN5Lqkd5qc9qmoafbWQCKkaFSPLV8AhjjBccFz2Ara16K6u4rfVrCN598Pywh8gEjI5GcemeR19qh1wpZ+J49Wkmt4LSy0W5N2rkjbHldpAAwRkMM9gOByaXwqDpPhfQNOvJ4LS5is0V44FLRDIHAyc+wJ96EiXLTmOZ+KegNqXhFvEf2MnW9MRQkuxy726yrIyFV+aRdwDbBguVCkgFqX4b6vL4t1CTXNS1qzv/sqTyW9jDbp5lrFK+1Q7r1cCOSNgpIb1OBWJ8TvFfie0mm025urXTNjSfZ90LCG9dDlUZucQuJoIyx6vvAwBkM+Glvp/hW7t4Ps81nFbSrYNZxjC27Kkvm3LkksY3beE3cjAxkYqm+XcIwc4tnpOl2eladOsUMk032jP2dnG4RKTyinrywJ9cmsOKaKC1ivWYajezTNaRyFcIJB5mDg9cZxzWvLbzW11ArKQIrg7W7bWII/UEfiK5T5JCumtdon203cTLajesJVjhyT3G/t3f0FctWNrJf1sdmHkpXbd+/4nX6NdOthdXl1dLOfMcgo+4Ko4x7YKsPrVPRrpru3ivH8ve9y7OQcqFUZX6fKRkdjmpLwwz6TJa+H5IXntQo8k4AYHnDZx15bPfn1qjo1xb6VNc2l86R3ksvnANkxlpBtUEgYBJHI6d++K35/ZyUX2OKFNVoSqLV30S7Cxf6fZizM4cvbebaTPgyBwSGUg9cHA9wce9NtJAbJoZS+EkkjZXzuVGywGfbJwfYd6j1LT7tWa4GnLhsM0atzGSI1O0jp908dOBWreuJjIgQfu5CrHHIwuVP0zxTpXcm2i6rioqMdU9fT+vzOV8VafvBvosswVfMOPvj+99eOa5vcfau6ty5tZIpCGktZijcDJjJHOOn3WB/CuU1yyNndnauIpMlR/dI6r+Fevg6/MuV/I83F0HF833/5lKigHIoruZwhTlptPU1IC0o6U2lFAHOgZApQMUAYApRXSQwoxS1LbQmeeOEdZHC/maG7K40ruxv6dakaH5TBQZ8ynnnsQOPYH866Dw0pW/vLrlVlcY3H77bmYgD2DN+GPSs7SJVngEqhR+9MajHCkdB+RA/GtSNZJLjEpSNoo2e2RXGSCAN59MHgfU14ddKclUPXUnCMqXT+v+AElnb6ZdLes8lxcKSlrGx4ZypGPyJz6DJ7UkWy0lt7aNzIIGIZycl2JZ3P4nP6Ul9dC0cLtM06RgebI2SOBkj0JzVN5GtbNLi1je4uJCUiDj5EbvvI9s81zqMVJ8po5ScFz630X9dEjIs9QvU8OeH9Ss491tBMzvEw3PHGd5GCedxB2kjru9K1YwEu7toh/wAtREo+jEn8M/zrLvIxDbRaTJcM/kwmdJJCFEhViVB7/KdpPYDFaVlMr6cb8opBky8YySZDhWTj/awMjtzXfThywV99PvPOlU56jttd29G9CzYQNNf3wQKqs8KNLtBOFQZY56nI4H+TWuLlmlj03R90YUlmunYNL8zZeTJGFzjJJ5wMAdMQ3t+9loEsNpIst7JayMpiQNvcusYYLnG0M+cnjjmq/hbH9jxSkSNc30koTzHGFhQ43E4AA+XJbjJ9jWFVO6SOugopNs15n+xWVpaWisqynCuSS7tjHJPJduvUk59Bmr2nQizjvDLA0khjiaQFxlIwDgMx98nHJ/kGWiRtd/aZHU+UP3G5eYI8De3PRnx/3yFHc1NazHUPtdpJKYI5J4mSaNBnaWGxBnuduATz1PAxXNPSd/uOmDvDltp1fzH6zPHa3zBIoJHMJeDew2xhVyAEzycbjzhRjJPNS+HZJvsF7qrm6lDqDG4IKvxyQcZYKcYOMDBwD3rxWcer6wJoolOkW77CYmKbhGMFWzy/I+mB3JONqC5aS1laSNZI3Tylt8YTnooHoB/MVze9KTb26HTLlhTUUrvr/kU/DcP7hL67NgL5pGYO7u22NtpbgnhiOe3XoKxoTp2o+JbO4NvbQ2wkEayyMbkXEW8na24bUy3OevQVs65dRutvo1rFElzE6yb47YSRIyg4T0D8Ac8DisrSLS51G5UyDUVtXkYlpIC88Lgg/K2NqDnsPX0rGVR8yhHU6qdK8JVZ6X29CXxL4b1i9vJ7/VL4XFha332iKFp3XbbBDvQLGFBJ4HzlsDP0rm7bV5dMiFn4U8PeHdNTMEUUlzFPJI6sW2ocpuZ/KVTjqM4OMCuj+ItzcXS3OmSsEtoIluI1eGZZSY5AGfeh5BH3fU81Q8P6JDdeJbqPWtOkSzvCbu38j7TGjqylD52flDbW5UHOSSRWqleVkYKHLSUpm7pRt18OQXGsz6reS6lCZXjvWEUiKQQDsXAifbgfLgjnoc1ENJitfDtto2kxXk9qXdrfynIkUMSSjP2werk/dPOan8XaPrN5AIdPVLZYCWtjCAEPcI467STk+4B5GQaWoXVzZ/Da4a5tLiBrydbUg3PlGNWIVn39dvXGPmYEAdcjV2SucqvKSS6l8eItCsC9vdwz3D2cj7zFYPIEkUAEIcfMw3hNy9ScDuBi3Ph+41TXv7d1e/t9GVSwhiimZXaJssGkRlB3k4ypO07cYOKk0mBtL0ey1O5cT6gztZWNy8pLwQZPO3G0PjOFCjaMAnAJqz4b0ufULuZmBhAWNpnlj815flYANN0dsEH5eAP1ydRN2OuFHlTncm8d8afp+lNeyPZTfK2138+cr23oMAHjPTJ9AK2bhYiLKKaI20iRqrW+4OIh/vdzjHrXJarIbpYbcmKC3iTEEIlMaRsHEfCRksQc5OTn6c12yvb3Gi299qKzRGIYbdHsaXA6BT69h17VEKl5N9B1qLhTguupk2rXCz67fuHN1pwaC0jVcrEu0kMqbj8x4y3BIHYVh6Po9zrF3c3370x3DRzSzqyxs2YWjcLIu4h+n3NoHQe+pomoXk11eeI3Crp8sjRyReYFUgYCnDAEnrx+HOcVfuL2G0t/K0fT/sMd9C05uZMxpHjAIIP3TtyR246YzUqV7SKlFxbhbV/h3Rg6j4g1mWLz7XU/sKqvlrI0YeG3kwoKzLy2AFyOc5kAx8prS1S/eLUPD3izbf2dm5kttQgKKAgcFY3kHU7XXauM/f7DNc7EzfbreK1A1K9y8T712RTLnLDZ08wcNuPUYI6V03ilobO2tNMtBeFrVQVZTvzuBj+YN/rDhixU9RSp1nJNsqvhoxlGMVuZ/jdtPsrPUJvDy2SarrLCG4vm2yRW6BAC8g3AiPaVBKc5ZTg1h2A/t34eeHH0LS/tVlo5Ly6dOWS686LiBl5JUb9zYbJKnvXY6xY6XcWUml3umQvCto8Zl8sEgIFOdg52k4Ix3GK5vwxbXWjaRc6tDdC81C6bYsscmVvXUCM3EvH3ui7ScARg9cmupbnCn7l/M39AS8n0ew0pbe8hsrSFYrq51BQ0syxkfIR0O4Dk9gT3FZGpu194lm1CCUeXPb+XJERjOwhkkyfRSykcAZzyckatprs99q99YTqQ1rcGIQxyAeZiMSIT6BwSNpzgYzWdfyRaJ4fn8VWd3Z3SfZg2nCSUIlxJIuI1Le+cDHU1SWpi3a5kePLNZLbSdevtVhj04pFY3yXEmY4n8z9zPGCCPOWQqcnqFA75CeHbVNH0m3vvEtxc6Ygjiih05ZN07mDzEWSVx80hdMcHgHGMcVP45bUNd0vSL2a2gudDRre6uLQRsWuvMA8orkZGx2Vj04DAg1U1WRpPG95f6ppp1GPT57iEMgYJGkYhkgjxjDOzvnPQDPWoqXubYd3g1f8Arsd9pF1bXNnCdOnuTG2XWO4RmMgJ42s3TnkAHp26VxnhKK7ubmzuEsRb2tmrPFbM5AmeZRuLE5J2sjdR6AdKdpWq6j4o1SOC/Z9ItVGbSJQVeVwu4sN3Xy8Kc4wN+K6W/fytZtZoRJMkkymZ4wNrAoUAY+mWzTjBTfM+hlUqSop01vL8FqZ/iKCCCZ/ENg7LcWkga4jiOPNxtGD26BVJ/u5pni64S7sdOubW5khZ5P4ecHGcN7gjGPU065024tdEl/0tDIsUVnPIGCqkSMT5nbDDcOCcY471Jp1s03hiWSCMwySXJnCyKMq28ZHPTOD+dc2ITnKVNdVf7jswko04wqvW0rfJovPePe2cd7aTlUKjeigbo2IBw359KrSzqw8+Vflk2rOAOVcdCPocMPxrB0bVHtfMuU/e24GNQgjTlpGbHmDPb/AjuK2ddUWyuAWkRipYLywUZ5x3xn8s1dCv7WnzroGIwnsKvs2t9v8AIa1qINVaeIBormLFxg8sFU7GHv1H0x6VR1u3F2k0HAcnzF/2Tk4/A8itKydZGtgHVwx3ROG+Uj+IfQjnHqtUJgWu5CRjECLjuDlv8K66cuVpxOWUbtqfY47JHBGMUtXNchEV6XUjEg3HHZs4Yfnz+NUVNe9CSnFM8WceSTQ6iiihogctOHFR08cjmkBgDtSgUg7U5etdKIHACr2ir/pplxkRRs/44wP1NUa0tIUmGciQRlmSPOOvUkf98hj+FYYiVqbN8LG9aJreG5GFtJEvL7PNGe7ggHb+H8s1s2DLDZLdIgWYOIyzDIVN+R+HzH/IrJ0GO3jshfSTje5eOJlJxGp7L6/Uj/GrsN9FNftAzHYkTDDN2x1Prn9MD1rxoaQi5fI9Sv71SfKvX5FfxES8odZVWG4i69WwOCB+Hf3qq8qppP2twVMMubfBOAdhU/Uc1a1W6FqtsVthJCsOVDNwcjnI78AH6msjV7trsIUULbxD7q9V7c9vx/lVxjGE3O+pm5Tq04U0tL7+X/DGX4leG6jsZJ5cTlJYFZ1+V1cKG3eh6Y9zXWeF9PmuvC1tFcrNbmQfOCf3hUZUYPbIHX0Nc5apaT2zQ38JubNUG6IDLSNuAVBjuTXYW9re3savqUrIW5NtC5VE9iRyx9e3oK9KnBSgm3o/zPLrSlTqNJarbta90WWs9BhUR3osThUTExDEhSSowfQkkcVbt7nw4sflpLpwXGMAKBjOcfmSadY6ZZwLiG0iX6IBmryWcGzm3hPsUBpS9ku5hzV32/EijtdGugfKFtIG5bY4Ofrg1L/ZFt9ma3hMkKElgI2xtJzlh6Hk81HNo2nXBzJZxZH8QQAj8qbHpBhObW+u4fQCUsv5HNYS5JdfvCNStB7fcyf7DdRwxxW00YiijCRxspG3AIByOp78iquhQ3enR2cWoCQskxeSYvvBJbqWwOwHUVP5usWhPmJDeRj0Gx/6j+VT22r2kziF2a1mP/LOddpP0PQ/ga5p4VN8yV/T/I7KeZSjFwfXv/n/AMEx9ItNOi06+1fU7SCW2t7yQwxW+4hn3AEkE/Mc4HPAwa0P+Epukuyri1KRT7J0RWLKpwEC5xlic5PQVa1G1S4tWtfNkti5DfI2AxBz/npWO0Wo2eqRXEgLszAuAcQkjHRQCxJ6465ryq2Hq0rOnt17n0OFxuHxV1W+LWyb0+X4/Mu61qT3vjOw0y0tD9ptC06mad40kXZzwvBwSvDD1xzXE6xFP4t+IEFnFfWtnqawNFqNtMZZvIhI2v5WCApZWI52tk544rvLrTdQs9aXUtJ/exSlnkikYBizkZLE9lUcKO556Vzvh2z8R3vjJtV2wadEly0V4gWP94qNnzWI+Z2YHYATheWPQAiUupfNBRvB7L8euhuXVzZadnTNPs1dbYtG0t0TIRznaM9ufp+FQaVq8V9bLa/YIrjSvJG0wxCNQe3lgdTgH7uMEY4rO1aW28Ram7pEZrYvzEhISYAYHmgfeHcD1x6Vupp15chIiy29vxvYZ8yTj7vHCp6jv3x0rp9lNryOF1qUN37xYOi20mnNY2F/GtnJH8kTKrrHzkuvcknqTkVAmlXQsZrO61wxJNkN5ecgbcKBk8Y4P4Vbj0yGGTzBukk2hN8jcADsFGAPwp4h2nJkVBnnYgUfnWiwsHq2c1TM6kdIL7ypDp+kWMci2LKk0iuPPZS7KWOSVHAHPNUL3TtHnhaC7vL14TEkYjCbVXac7hwfmJzk+5raN7bQ8G6Bb3kz/KpIr9ZDiN3f6IcVf1Smlbl0MP7TxDd1U1/rzMrV59A1TSYtLuLvy4YypXJ5JUYGc9etGu2dn4ggskg1dIXsyDGUUMCcY5APsK3lLSffQkY/iFVbnTNNuOZrGBm9TGAfzolQoSVnEKeMxlNqUJp27rv95VisotC0920XTxdXZwuWlVWxzjG7rjPA9OM1Xj0db/TEe9m+z6yZAfPAMeZFBCnB4ztOCV6c46VYbS4If+PY3cQ7COYsB+DZo+1Pb8PcuFHaaA4/MUvqcJfC/kX/AGrWh/EWve/+ZkN4mMavaQWs0CxQmAxu4QxsVJDgtzjO1cdAXXNL4bt2ubCLS5H8q6sZpEcSR+WZUzkuqj3YDPrTtQ0jStYkSVSiSrJvc20gYSAsrMrKeQCVB4wcjNY2g+GNY0ey1GU60L3UltZY9O85fLVWYu7K54yjMU4xxgnPNY/V6kZXkdix2HqU7Q0f9dTd1ZrbS9W1PX5g7rbWbTpGhAExzhcZ6uThAc/3RXnnh3VbzU/hnqtiNatJ9a0u2SexTyvKjWWMNGDJGVwAJxICACB5anjGa6a/KadaW3hq1tob+11m3/0RZZhIWuOXlP8AtIAFc/UkdDXOfCmW5tdZ8VatqAe5Nq8OnruhRYpnG5ppoivRZH3Flx98N3JxooWMnUurmt40uZNQ8NaJq1tdSSXk8sN/aIgLxeaLViOByY+GcDuxA71s+K9Rjk8N2witJ5DqksabIpMFDjexdh0AKbWPTrWD4/t4NO8NpDZ3Ig8qfyYppMswMjq8SjHVBKYQQB9wY+tPxdpwmvbXTzZXAgjsFMs5mWCONfJuBI/II3DdzngF1z05iaeqRpScGoyl0uXvhhZzfaYLy+0u5Rre2Eayz3JdbctFHvSPP3gWBy3JySc12k0OrS3Jk07UrbYuUaJlBCtx175x/MVi+EZrJfA+lzWs9t5VvBGmIJGkQfIuFVmALcFcEjJznjNW5ruC3vtM1WSVbZrlzBcBUz5qgHBJ7BSCc05pUqZjBvEV27eny1LMei3UrXC3s0axTzCWYR8eYQCOR7/Ln6VU8T3awXEemRXMdvZx2oaRADu4OF56kHgYz3zW3qt3cQywLaJFNKTvkiLjcYgDllA684/OuZ1KJ726S9aEtHew7wJlx9nVR88ZbPB6Ee4PrXDivdhaG56mAbnUUqnw209f+GMu/BjinlRGeKKeLyp7fHmO6kqQ/v17DkjrmuqujFqSLe2MolVWKPsP3WXqPqDXH2sjrFBdEhL7zd4t0488je45B43EkY77a3P7O1S1tRc2suJWKu6qdoUZ3HK9O/P0rmwDdpaaHfmcYpx1Sadl5/1bfYXTUCXqwY2pv8wfIcRsT8wz024IwPr6U+42rebzEYnlUAxE5AO5jux2H3s/hUWj6wbq8kjxD9oa1/eEIyZl+ZlGCOAU5/oOlW5Xe4sXBkU7WGJSR8yFVYEntnOD+derh3FxTieLiudVGp6XMHXYlaxcrj93JvBHUg8H+lYArp72EbZIGU+Y0RAOeGz0x+nNctk5xXr4OV4tHnYuNmmSrigUyng5rraucgU5TTaUGoAwhS00U6ukgcDmtnRTIFSGOAyl2ZiAeeUZenp0/OsUetblvAGsr7dhUjsDECy5y5UNkc9Qf5iuLHSagkjuwEU5tvt+ZfjQW+nwWMy5uEUzuM/KrN/APb/D3o0+NohJKJFWXqXIGWIUnCj8M/gaV3W4KXAcG7u0jdoAeY8/e/DcMfhS3gktojEWJ2REyEAcyPgKM+y7j+P5ee4L3ZdEdvtHaUOrf9fiVpJYpLe23MoWVDEQhyId3zIAT1Ge/uPesm5je0uTIy7JV754PPXHQ9KnSKOTQo7c3ZIeEAMnynAYYkB/4GDj6UkN409gbaSGMTp/q1nIIVh/AxHoe4ooxVRxUuquv8grTdGMpR1SbTXl3NPwdGtw8lyYEiVDxhcAvyMj8D07ZrtLSMfw8/Wsnw5CBpFvI0AikdAxTOdhPUVtWg5Gehr0G9DypJJvQnVG6hz+FMuGuY1xEpc+8mB/KrCgAZp6g496wc7PYykroypL+/g/1lrKw7mNg/8AMCrFtq1rJgSy+Qx/hmQxn9eP1q9hcfMV+lMZIyCPLDe3Bo54y3iYclSL0lf1LCnKblKsvYg5zVa8htbiPyZ4lPfDLxVc2kKNvt0uIGHUxDj8RyD+VMbUDAdt0UkX12mM/k3B/A0owd7xYp1Fa1Qr3C3dgAbZvPtv4rd+Rj27j8PypE1KG5CxxTBHfhYZ2GWI7Kx4f6ZDD2rRjNjfKVjkSTHVc4I/DqKxtT8OSSeY9lcIwfl4bld6Ofr3/HkdiK3hKEnaejOWpCotaWq9fy/r5FXVdV8V2nnHThPcyRQuq2UwyZJHYBSHODtUE8cEY6mrfgvw5Y+GtKuoLaaWVLiVpZTJJ8uTxy5xkY9P1qz4aeaC3mjns7u1liUhoXn8yI/7UbHIx7ZGO9ctqNxf6jqDBprHIPAuZ5Lkr9I40CD8c1NPBQnWbWlvn9x0zzOvHDxpvW/y+/09DtdOu7CNPJsVjkVBjECbYl9s96fPr9tG/krJG8v9wHP/AI6uT/KubsdLnnRftt1d3YH8H2SZIh/wAKorVt7WWFRHB9uhQfwW+nrGPzJzVzo0U97/ANen6HLDEYlra39dr/qWTcandt8kU4X0IWIfrub9Kemm3srCSX7Ip/2w8p/8eIH6VLaqAArrqQ/66FRn8jVvdtAxDKfTLVhKTWkUdUKalrUbf9eg2GxniGBeAH/ZtkUD9KmMV0BzdK3/AAHb/I01HLctEw/Fj/SlMkI+9hfqSP5isW5Pc6oqmlZfmxFhlI5lb8JWoMLtwZpge2JjTkkgJ+UqT2w4qRlyQQmfxqeZotRT2K/kzqflu5QfQ7W/pTyLzHEkD+zKV/kTUrKTzkikA29QaOYORGfc2UM+TeacjHs8YBP5jBqKKyeL/jyvZAv/ADyl+Zf1rW3Y4yfxpCQcZANWq0rWM/q8L36/j+BlWmmWaG3C2sNvJbMWt1RBsjYgglB/DkMQcY4NcVJo6eG5PE99d2kdql7cboDBIWjkiAMhYqfuvuaTI7nGOpr0kopGDUVxEk0JgnjWWNuMMMg/Woum7nRDmirHnkU1rrNpo+txqkkEWy5DOpz5UlqrcDpnKL16YrB8W6pDqzS6UsNul/qUZ0iIywGbMjRCcjjG6JcqznocHPbPWX2g/wBj6Ld2FiWbThYPAscrs7pyxGWJywwxHXOK5a61E6e0Mjy28cpjUCNpAm1nC7ix6A444PGR6U40+aVkOpWVOHM+h1NhLp2g6ZbwzRzX0MbJBLOyBmZtnMrgcAMQAAB1arWuP/aFqt3Y3Vo2n2wEUsLLwASC/GOu0gAY/iPrVKe4t7p5NNgaC2nlePcGAYR7SpAx/ESSACAcE5NFvPqVjJNpck++W7kxF8+HkGMDyzjAx8nJ77vQVx42SUuV/D+p6GV024qa+PfXt3+4t62k+natJepDLskl3JI5JZMAARoFPAJA46YBq5C8Uik3Ki4fVIgkqwSZQAHacc88sc/T8KvsC0jaZPM92htSGd/vs2OcnjkismPU4LS3lttPguBGloYYoo0+ZJgruQeMgkDg89uOa5OVU5Nt6Pp5noKbrU1FL3l18un4lN20rRdetbaERSQoRDLK7b3jcAlRjtgNkn0+lSeJdRvbTU1m028gdxCAtqz8SOxJBPr8oJxnt71T0K1ik1iO1CIbe0hP2pJV3MxAKI2cdwDwO31rLmzealCIoFZgwFvE2fMjnIJDSnuuFBP17c1y+0lGk1HS70sd3sYTrpzd+WOt+t/y/wAjft2gu9R0vxFazeUl0jQzRhSBK5GA3vgjGT2APrUuqXfl6UJtMRZYpH84eW2CUBy2M8Z4GB6Zpl1fado1tZaffW7OFhKStFFmOLIGQB1OSQABzz9ahgga0ae1R0lgwbm0IIIMZPzL6Ha2OmeGyeuK9CDteK36+TPMnHmanJOy2v1V3+X5Ek7Ga1VkZHZBuR14BHYj2P8AUVyd6oS7mUdA5x9M1racZLe11K0eZy9jPIqt38tl3p7AYOAPQCqGs/8AIQc4AyFJx0zjB/lXp4CpzO76o4MdTUFZdH+ZUBpwJplOWvTPMJAaBTR9adSaAwx2oBo7CityCSCNpZVjRdxY9K6oLHHdxw4fbIrysi9eVK/jwAB71iaCj7p5UHzBAin0ywyefQVtWEzvYrfSNCk6v5EkghJwvJTAzxlSOvOSTgdK4MTNOfKd+Hi40+buV0uZraWNre2MUP2Z47ZiuVVEXCEt2JOCc/407xAxINtGdpjUtknG6Qr1J7HnrVbXvLsorKMNL9nig8qIs7Msy5BdGC8ltqnHB6nPSp9YltZDcfZS0rbI2L5+Ug55A9fl6/UdRXmpv3qbeun5HfZJ06iV1r+el/v+8zEd4rS35dkhKrMqoPmjcBWJHsdp496ztR8y2nJSNWydsyquChA/1h9RwoPp19a2JooV0O4uZ8Or27o6yYC9+MnjnjrXPxSz3sFvw/8AaCIMxIuGkXsQD345AyMdODWtOny8sL6tXXy/zX5GdSrzOdRLROz+f+Tv956rpWV06Be6xqP0FalufkQjkism0bCFMqSMZ29B7VpW7jYTyecV3SWh5VRq5cUnH3cfjUoYgDAqsJCBgVBI12/yrOsQ/wBlMkfnWXJcwlKxeZkBy7AfjUTPbE48zP0BrKbSpZZCZNX1FhnojhB/46KH0iwiBa5u7gj/AKa3Tkn9a0VKC+19yOaVWp/L97L0kFk6kedcL7pvH8hVOW1EfEGsatGp6rgyD8mFRiy0raTHE8o6ZWNiB+J4qlc3Gh252EWgcfwvKu7/AL5Xca6KcHeybfyOSrNPV2+9/oSXVrMxV2uLa4K8q01n5Tr9HRlIpYte1GzlCTWkVxGD1F9GW/8AHyD+eazprdbs/wCjRbFPTyrEc/8AApMfyrMnsEjmbaq+YgyzTXWAn+8sQUD8SK6VRhNWnr8rf5HJ7WcJXjdf18zv0ure4P223RoZWiKyAyDnkehKnvyfesi7fVHJltNZunUZ/dwSQtj8Dj+dUfDd/HLY3ltFM1xEE/eXEFqIokPorHLM351Ba3lkZv39rbNdxKokMuI92emJBwu7PGflOeCDxXLGhKnKXl/XU6p1vaJWe/y/InGooWC6jrmrQEcESW0kf/jy5H5Gr9lZ6JfYxr93KT/08sP5ipLPWfDyTtaTy3ek3p4MVzmN/wAG5Vh+YqzKmsIvn6Q+lavH/ckAhl/B1+U/iBVSnJaWcfuS/L9RQop9pL5t/n+hJH4YsWUY1G+Yf9d81I3hPTt2Xku347zGsuPxVdW0/kaloOoWMvQDO4H6EcH8K1LfWGuyGgM+f7rtsP6rWU1i4at6d7r9DeDwMny8qv2t/mA8KaWpyn2pfcXDj+tD+Hoo/wDU6hqkX+7dsf51ZE99nL217j1Vo3H5cVbhuVYASGRT6SRlTXPKtXW8r/idUcPhnooW/Ay10e/X/V67fY9JUST+YoFhrcYBW9spvQSWxQ/mp/pW3kHuMe1O4PQ/nUfWJ9bfcjRYSn0b+9/5mKp1VD++tpBz962ut3/jrircc92uB5m//Zni2N+Y4q4fvcin8nvxUSq36I0hRcdpMijkZuJoSh+uQfxqUIMdMUAYH1p+dp45FZNnXGPchxg80yQgcetTMQc+lV5ATz6UJl8pUvQCuSNw6NnuK8D+I8dzbeMrOxliS4tLiZUYk5ZgWJ2keh+Xp0wK95uWyCp6HivG/jHHs1PQNQjjJnjmliDL1DbDt47nPT6V1UXbU48THmSRueFXa5sp9VeWNvNvUcSNIAvkrIPmz/tYzjucD2rqNClW5v8AUtfS8NzArmC3iKEeWQFB+90POOOxOa4rwhGZfCUttEbYW1rbfKTjyywXcrAnkBWXjPXmut0K6DeEVNs6XtxbOTcLGMGSUgsBzjOcrz3ryq7i6iS2Sv6v+rnt4eMlTk5bt8vonb9LIv2t+ftcvkzjzoWCzYXJBbnBz/SqeuxMNYyskxm1CJCLSOTy3AXIJDdBggN6nFV/CU0dxpQlE0n713eZpZA/lFfvgkdgB+ta0V022bVJQ0KmLZAsxx5UQ/jb0Zuv0rjSc6a5vU9OVqVZ8ivpb+vnqP8AEtpKbea90/M+9Gjlt0bAmzhQSRz8vNUbPUNH0mzgHlhp7iNBPJbneoIQ5O89cKp5H1q8kU8+hSxafcLDM8glLDnjGR+B4PuAR3rnEurS48Ly6fHBNazsG+ybEzJLgclRxjPzcZ6HGelXUk4T5o7taf8AAMKMFUpckndKVnbTTz9ClqSx2+oJd2FxLMk8aXMkNwNo8t9w3N67FU4XqPvc1cHm2Nt4eCsZZYg/7mJdhkt5GCKDxwo3ISD1K+1bVrp1iNJs7+9dJ5bNFY3C8hiAQM464yQB61yj6gl74mjvr23jFvDdJ5DpNtMaKpO+YHoF3AkEAhmxU+z9k7t/Fb5bM2jV+sLlSuoXu++6S6f5mv4izb2F7PBvd2tjyhwX2nA/QY+lZerlJJYrhPuzRhxzmtPWnW7i1HS2RkCW4khkALb0B3NnHupx64z3rDeJIbK2RF28Fm92fDk/iWJ/E16+Glauktv+HPGrJvDty3/4YipRSUV655Y4HNPWohUiGgDEHQc0tNB4FT2MYluB5mPKT55Cf7o5P+H41s2krijFylZGlI1vYeHLqa5t5Xb7OceXhnwxUEhenykg8/3a0NKRd+s2q7vKidNpKkHeHZSy44wc5/4ESaraPF/aEkkVw8qG5Uxj5trLz6jp2/KtDw/aTQaHcXF/PBHPeL5JVSRErB9qKpb5gSR0Pdq8WteVRPp/X+Z66cacJRvrovyt+TI/EyrDoTWhe2e5eUC3XdhiWzxn+FiN2G45rH0aY75LeQmaCUmISrhirABtz+hJJyfukhSOuau69a3BcanI0ksjxi12NFhY3BGHIBBK5xkDODyKyY2ks7i0kQqRC8jSqjKfJycMu7o2Mng9tv1ry8TWlTxSk1a1vuPTweHjVwUop3bv9/8Aw5B4wt1trKG7dS06S+QgEhUMjEnBPQfMMgnuaovJC9nbTQuI4XCogRkVoZBkYUj1PykD1960PFN3dxXP7+UfZ0BlQwceYu7BBXkkgMOcEH0rm3DmOJ2jt1tZ3EjK5XLjn58Ac8hfqB3Oa9ijb601CPT+n6Hi1+b6inUmk773/D17eZ6r4ZmT7JCM5DJ3PeuhtG4YD615z4D1WK601djnzInIOemQcV3dvNmJWDde4r0a1O0jyozU4qRqM3fGKGlVWDNnnk4qqkodMZ6UnmYbBPFYKBnKQt3e3wBWzskYn+KWTaP05qktnrd05NxrCWv+zaQAH/vpsmrayzSvshQuOx/+vRfXWn6bH5up38UII+5u5J9scmtovl0itfS7OacVLWT0+5GfJ4esJTuvri8v36/v7hmH5DirESafp8BeztII41HzPgIi/VulZt3q91drt03TikTfdmvOFPusQ5b/AIFUC2EYIu9buptRnX/VxMP3af7qDgV0qM5L94/l/wAA4219hL1/4JK9zPqbH7N5t3F3YFobb8xh5PwwKq+WJyII41vvLbCxwr5dujenH3j9OfVq2Bp9zqCBr6RorUcrax8bh/tn09qbYXgvpmt9EVRawny3vEUBBjqkI7n1foPc1XtEl7vT7l8/8vxMXRc3r/wX8v8AP8C1Z2MsEYkunFxeICFiRvLgtQRgDA7/AJmuc8SaPJp9vHexSBI4mMQmdRiHcfmjlHQxseD2VufuscXPE6iCFbG3kMuoSD9zHuJSEn+NvVvc8k89BVvw7q8Ou6fhkV7lojHcQt926UfKev8AEOoPQgjseM4upTtV3XX+u2/6m1oP93s/6/H+l2MO0uXe2+xmxW9iQkPpU7fvIiOv2aQ8+/lk/Q4q5osVnchpNDupJ/LPz2rsYbuA9x2zj8ayLi2TS71bWWTdZN/x53EmRtUHiKQ9QAeA3VD7VoX1rFOBdX/nxSwkKuow8T27dhMB99fRx2rulGNvdej/AK2/p+pwqXM7T3XX+v109Do7W71sQkWs8WpxDh7a8XbKvtkcH8qsW+v2kPy31neaUw6mSPzYfzGcfpWRa6jqFs8aazCL2MjMOo2nLlfUgfe/n9a6WzuIru3WZJY7mBuBKnIPsR2NeXWio/FHTuv6t96uenh5SltLVd/6uvk7F+w1CK6j8yGSC5i7SWz7x+I6irkbxyj92wYd8H+dctc+HtKkm8/7ObeU9JrdzG35rUb2evWo3WerLeKPureplsegkXDfnmuR4enL4ZW9f6/yO+OIqwXvRv6f1/mdawUkcAGkCsDnd+dcimu67aH/AE/SbvaOrxAXCfphh+tamn+J9NvCIxIizDjYx2N/3y+DWc8JVir2uvLU1hjKUnZuz89DZdm5+Qtj0NQvewxL87sv1Qn+Qp0Uqv2IPuKm3jI3d+5rntbc6d9mV4r9XOYmhuF6YRwGB+hqxBNFMSgYh+6MMMPwqtd6Vpt3zPZxMx/iAwfzFZ82nz2hxZ3kjxjpDOfMC/Qn5h+daKNOS0dmTzVoPVXX9f1uzYbPSopWwMVnWGqO0ptrmNoZs4Cuchv91u/0PNW5z8ufas5QcXZnVTqRmropXZKjPUCvIfjferp72MknyxPdRyBsfdPIJH+e9epXd2kcpjk4VuK83+OOlHUvB7SBgJbGVJ8/9MwRu/T+Vd2FbjK9jgxkVOPLfqL4VH2G4ktIrBry3v441uI0YAQoUKqQOmMcnPUMCOhrt/DGkfYYpIbrUVlE0e18qsbSMGJV8d2xhfwFeb2OpSWWnSW9mhBIMl1OWxgZBKqx+7hS+PQjiuj1jTbNbKzS4vXN5cxyBecB2EfUufuDk8npu9q8nEuMZSmlqvkld7Lue3hITlCFOUrKXzk+VbvsdhLoIgtRFC4a3DmSSFAV385C5BGFB5KjrgCqUwu725K3cEkUcEmSjKQ0pweSB0A7evpWbpkt5d2dy2mmSw1S3VRkyHyZVzl3VOfc5/ixz1xW14V167vjNpl+7LcG382Jk+V2TGMsV4VjkEAVwylCbUdr/cz0oqtSjKe7W/dX6+fqWnt7m1tLi4COb2ZCsKhdzLno5X0B59qwNOubrRHmF9cyMptS8aT5B3YBJkfpGMjaFB5NaVtqzErCI0tJSAcOS7Sc4zvbluo/PHXNQeMJ4ZtNgsr2JJZnIlkwdqxKP4j6HkHb3wcdqKri4+0i9Y/cTRjNT9lON1N699DK8KTSjWIYI45ZIoztuIYnKwWh8s/dHRlbOQfX14NYviCFNJ1CWS5g+zkB5ZJgN8ckRk3yDaf72Y04Oc+wrR8Oypbarb3F9IIGiV7PdFIRACNqqNp5JJOMjjpzmrN/fw+IFutLEkcMiul1aSSpvSWBSpZiMYXow59Pas6aU6Ku/eu7HVVlKjiXaPutK7+f9dNh99EE8QadfrujkdJbdIw42mAjeXwRyT8ox1Aye1U9RgSOz3I7OoZMFhz0Yc/hgfhVzR5zfaJDql4qvJLJNLEYX3qgwUyp9SM8VHffPo8YjKMrhpdy9+hBHtjPHvXr0XHmU11dzxKilyuD6XX5mKtLTB1p9eyeQmFPU0ylBwKBn//Z" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%" alt="Oma"><div class="vbadge">✓</div></div></div>
+    <div class="pmeta">
+      <div>
+        <div class="pname">Oma Fitness Hub</div>
+        <div class="phand">@omafitnesshub</div>
+        <div class="ptagl">Glow from within. Train with purpose. Live luxuriously well.</div>
+      </div>
+      <button class="fbtn">+ Follow</button>
+    </div>
+    <div class="pbio">Your all-in-one wellness destination — empowering women through fashion, beauty & self-care, and guiding men to peak performance through smart training & nutrition. Every body deserves its best life.</div>
+    <div class="ptags">
+      <span class="ptag">Fashion Tips</span><span class="ptag">Beauty & Skincare</span><span class="ptag">Wellness Routines</span>
+      <span class="ptag">Healthy Living</span><span class="ptag">Men's Training</span><span class="ptag">Nutrition Plans</span>
+    </div>
+    <div class="pstats">
+      <div><div class="psn">12.4K</div><div class="psl">Followers</div></div>
+      <div><div class="psn">892</div><div class="psl">Following</div></div>
+      <div><div class="psn" id="pst-art">3</div><div class="psl">Articles</div></div>
+      <div><div class="psn">98%</div><div class="psl">Satisfaction</div></div>
+    </div>
+  </div>
+  <div class="pcont">
+    <div class="qcard">
+      <div class="qtxt">True wellness is the harmony of a nourished body, a glowing spirit, and a style that tells your story.</div>
+      <div class="qauth">— Oma Fitness Hub</div>
+    </div>
+    <div class="sdiv"><div class="sdivl"></div><div class="sdivtxt">✦ For Her — Glow, Style & Wellbeing</div><div class="sdivl"></div></div>
+    <div class="pcol2">
+      <div class="pcard">
+        <div class="pch"><div class="pcico">👗</div><div><div class="pctit">Fashion Tips</div><div class="pcsub">Style for every woman</div></div></div>
+        <div class="pcb">
+          <div class="fashg">
+            <div class="fi"><div class="fico">🪞</div><div><div class="ftl">Dress for your body</div><div class="fdc">Celebrate your silhouette — choose cuts that highlight what you love and feel confident every day.</div></div></div>
+            <div class="fi"><div class="fico">🎨</div><div><div class="ftl">Build a capsule wardrobe</div><div class="fdc">10 timeless pieces in neutral tones that mix, match, and always look elevated. Less is more.</div></div></div>
+            <div class="fi"><div class="fico">✨</div><div><div class="ftl">Athleisure done right</div><div class="fdc">Seamless leggings + oversized blazer + white trainers = effortless gym-to-street luxury.</div></div></div>
+            <div class="fi"><div class="fico">👜</div><div><div class="ftl">Accessorize intentionally</div><div class="fdc">One statement piece — gold hoops, structured bag, or silk scarf — transforms any outfit.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pch"><div class="pcico">💄</div><div><div class="pctit">Beauty Tips</div><div class="pcsub">Glow from within</div></div></div>
+        <div class="pcb">
+          <div class="bgrid">
+            <div class="bitem"><div class="bico">💧</div><div class="bnm">Hydration First</div><div class="bds">2–3L water daily — the most affordable skincare routine.</div></div>
+            <div class="bitem"><div class="bico">🌿</div><div class="bnm">Clean Skin</div><div class="bds">Double cleanse every evening. Makeup-free skin glows.</div></div>
+            <div class="bitem"><div class="bico">☀️</div><div class="bnm">SPF Daily</div><div class="bds">SPF 30+ every morning — the #1 anti-ageing step.</div></div>
+            <div class="bitem"><div class="bico">🌙</div><div class="bnm">Night Routine</div><div class="bds">Retinol, peptides & moisturiser while you sleep.</div></div>
+            <div class="bitem"><div class="bico">💆</div><div class="bnm">Gua Sha</div><div class="bds">5 min facial massage to boost circulation daily.</div></div>
+            <div class="bitem"><div class="bico">🍓</div><div class="bnm">Eat for Glow</div><div class="bds">Vitamin C, omega-3s and antioxidants for luminous skin.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pcol2">
+      <div class="pcard">
+        <div class="pch"><div class="pcico">🌸</div><div><div class="pctit">Daily Wellness Routine</div><div class="pcsub">Morning to evening</div></div></div>
+        <div class="pcb">
+          <div class="tline">
+            <div class="tli"><div class="tltm">6:00 AM</div><div class="tldot"></div><div><div class="tlnm">Wake & Hydrate</div><div class="tldc">Warm lemon water, 5 min journaling, set your intention.</div></div></div>
+            <div class="tli"><div class="tltm">6:30 AM</div><div class="tldot"></div><div><div class="tlnm">Movement</div><div class="tldc">Yoga, pilates, or a brisk walk — 20–40 min to energise.</div></div></div>
+            <div class="tli"><div class="tltm">7:30 AM</div><div class="tldot"></div><div><div class="tlnm">Nourish Breakfast</div><div class="tldc">Protein + healthy fats + fibre. Fuel your glow.</div></div></div>
+            <div class="tli"><div class="tltm">12:30 PM</div><div class="tldot"></div><div><div class="tlnm">Mindful Lunch</div><div class="tldc">Step away from screens, eat slowly, take a short walk.</div></div></div>
+            <div class="tli"><div class="tltm">7:00 PM</div><div class="tldot"></div><div><div class="tlnm">Self-Care Wind Down</div><div class="tldc">Skincare ritual, herbal tea, stretch, no screens at 9 PM.</div></div></div>
+            <div class="tli"><div class="tltm">10:00 PM</div><div class="tldot"></div><div><div class="tlnm">Beauty Sleep</div><div class="tldc">7–9 hrs. Sleep is your most powerful recovery tool.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pch"><div class="pcico">🌿</div><div><div class="pctit">Healthy Living</div><div class="pcsub">Small habits, big results</div></div></div>
+        <div class="pcb">
+          <div class="p-tips">
+            <div class="p-tip"><div class="p-tipn">01</div><div class="p-tipt"><strong>Move daily</strong> — even a 20-min walk reduces stress and boosts mood naturally.</div></div>
+            <div class="p-tip"><div class="p-tipn">02</div><div class="p-tipt"><strong>Prioritise sleep</strong> — 7–9 hrs regulates appetite and keeps your skin radiant.</div></div>
+            <div class="p-tip"><div class="p-tipn">03</div><div class="p-tipt"><strong>Eat the rainbow</strong> — colourful whole foods deliver vitamins your body craves.</div></div>
+            <div class="p-tip"><div class="p-tipn">04</div><div class="p-tipt"><strong>Protect your peace</strong> — set boundaries, rest without guilt, invest in mental wellness.</div></div>
+            <div class="p-tip"><div class="p-tipn">05</div><div class="p-tipt"><strong>Cycle with your body</strong> — tailor workouts to your monthly cycle for optimal energy.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sdiv"><div class="sdivl"></div><div class="sdivtxt">✦ For Him — Train. Fuel. Perform.</div><div class="sdivl"></div></div>
+    <div class="pcol2">
+      <div class="pcard">
+        <div class="pch"><div class="pcico">🏋️</div><div><div class="pctit">Personal Training Plan</div><div class="pcsub">Weekly split — intermediate</div></div></div>
+        <div class="pcb">
+          <div class="wweek">
+            <div class="wday"><div class="wdl">MON</div><div><div class="wdf">Chest & Triceps</div><div class="wdd">Bench press, dips, cable flys — 4×10</div></div><span class="wbdg bstr">Strength</span></div>
+            <div class="wday"><div class="wdl">TUE</div><div><div class="wdf">Back & Biceps</div><div class="wdd">Deadlift, pull-ups, barbell rows — 4×8</div></div><span class="wbdg bstr">Strength</span></div>
+            <div class="wday"><div class="wdl">WED</div><div><div class="wdf">Cardio + Core</div><div class="wdd">30 min HIIT + 15 min abs circuit</div></div><span class="wbdg bhi">HIIT</span></div>
+            <div class="wday"><div class="wdl">THU</div><div><div class="wdf">Shoulders & Arms</div><div class="wdd">OHP, lateral raises, skull crushers — 4×12</div></div><span class="wbdg bstr">Strength</span></div>
+            <div class="wday"><div class="wdl">FRI</div><div><div class="wdf">Legs & Glutes</div><div class="wdd">Squat, RDL, leg press, lunges — 4×10</div></div><span class="wbdg bstr">Strength</span></div>
+            <div class="wday"><div class="wdl">SAT</div><div><div class="wdf">Endurance Run</div><div class="wdd">5–8 km steady state or zone 2 cardio</div></div><span class="wbdg bcar">Cardio</span></div>
+            <div class="wday"><div class="wdl">SUN</div><div><div class="wdf">Active Recovery</div><div class="wdd">Stretching, foam rolling, light yoga</div></div><span class="wbdg brst">Rest</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pch"><div class="pcico">🥩</div><div><div class="pctit">Nutrition Plan</div><div class="pcsub">Muscle building — 80kg male</div></div></div>
+        <div class="pcb">
+          <div class="macrow">
+            <div class="macbox"><div class="macv">2,800</div><div class="macl">Calories</div><div class="macbr"><div class="macbf" style="width:100%"></div></div></div>
+            <div class="macbox"><div class="macv">175g</div><div class="macl">Protein</div><div class="macbr"><div class="macbf" style="width:75%;background:#8C6A40"></div></div></div>
+            <div class="macbox"><div class="macv">320g</div><div class="macl">Carbs</div><div class="macbr"><div class="macbf" style="width:85%;background:#5A7840"></div></div></div>
+          </div>
+          <div class="tline">
+            <div class="tli"><div class="tltm">7:00 AM</div><div class="tldot"></div><div><div class="tlnm">Pre-workout</div><div class="tldc">Oats, 2 eggs, banana + black coffee</div></div></div>
+            <div class="tli"><div class="tltm">10:30 AM</div><div class="tldot"></div><div><div class="tlnm">Post-workout</div><div class="tldc">Whey protein shake + rice cakes</div></div></div>
+            <div class="tli"><div class="tltm">1:00 PM</div><div class="tldot"></div><div><div class="tlnm">Lunch</div><div class="tldc">Chicken breast, brown rice, broccoli</div></div></div>
+            <div class="tli"><div class="tltm">4:00 PM</div><div class="tldot"></div><div><div class="tlnm">Snack</div><div class="tldc">Greek yogurt, mixed nuts, apple</div></div></div>
+            <div class="tli"><div class="tltm">7:00 PM</div><div class="tldot"></div><div><div class="tlnm">Dinner</div><div class="tldc">Salmon or beef, sweet potato, spinach salad</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pftr"><span class="ptxt">OMA FITNESS HUB</span> &nbsp;·&nbsp; Fashion · Beauty · Wellness · Fitness · Nutrition &nbsp;·&nbsp; <span class="ptxt">Live Your Best Life</span></div>
+  </div>
+  <footer>
+    <div class="logo" style="font-size:1.1rem;cursor:pointer" onclick="go('home')">OMA FITNESS HUB</div>
+    <div class="fc2">© 2026 Oma Fitness Hub. All rights reserved.</div>
+    <div class="fl"><span onclick="go('home')">Home</span><span onclick="go('articles')">Articles</span><span onclick="go('write')">Write</span></div>
+  </footer>
+</div>
+
+<!-- ══════════ SHOP / WORK WITH ME PAGE ══════════ -->
+<div id="pg-shop" class="pg">
+
+  <!-- HERO BANNER -->
+  <div style="background:linear-gradient(135deg,#3D0A20 0%,#8C2050 45%,#E8457A 100%);padding:3.5rem 5%;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0px,rgba(255,255,255,.03) 1px,transparent 1px,transparent 20px)"></div>
+    <div style="position:relative;max-width:700px">
+      <div style="font-size:.68rem;color:var(--pink-l);letter-spacing:2px;text-transform:uppercase;margin-bottom:.7rem">✦ Work With Me</div>
+      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);color:#fff;line-height:.95;letter-spacing:2px;margin-bottom:1rem">LET'S TRANSFORM<br>YOUR LIFE <span style="color:var(--pink-l)">TOGETHER</span></h1>
+      <p style="color:rgba(255,255,255,.75);font-size:.92rem;line-height:1.75;max-width:520px">Whether you want to get fit, glow up your skincare, master your style, or build a healthier lifestyle — I have a service designed just for you. Book directly, pay securely, start your journey today.</p>
+    </div>
+  </div>
+
+  <div style="max-width:960px;margin:0 auto;padding:2.5rem 5% 4rem">
+
+    <!-- CONTACT STRIP -->
+    <div style="background:var(--pink-p);border:.5px solid var(--pink-b);border-radius:16px;padding:1.2rem 1.6rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem">
+      <div>
+        <div style="font-size:.68rem;color:var(--pink);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.3rem">📩 Book a free 15-min discovery call first</div>
+        <div style="font-size:.84rem;color:var(--text)">Not sure which service is right for you? Message me directly and we'll figure it out together.</div>
+      </div>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap">
+        <a href="https://wa.me/+2348125679232?text=Hi%20Oma!%20I%27d%20love%20to%20book%20a%20discovery%20call%20with%20you" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff;border:none;padding:.6rem 1.3rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;text-decoration:none;transition:opacity .2s">💬 WhatsApp Me</a>
+        <button onclick="window.location='mai'+'lto:Praiseezeh31'+'@gma'+'il.com?subject=I would love to work with you'" style="display:inline-flex;align-items:center;gap:6px;background:var(--pink);color:#fff;border:none;padding:.6rem 1.3rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;transition:opacity .2s">📧 Email Me</button>
+      </div>
+    </div>
+
+    <!-- SERVICES SECTION LABEL -->
+    <div class="slbl">✦ Services & Packages</div>
+    <h2 style="margin-bottom:.5rem">CHOOSE YOUR PACKAGE</h2>
+    <p class="sdsc">All services are delivered online — via WhatsApp, email, or video call. No gym required.</p>
+
+    <!-- SERVICES GRID -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:3rem" id="services-grid">
+
+      <!-- 1 -->
+      <div style="background:var(--white);border:.5px solid var(--pink-b);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(232,69,122,.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="background:var(--pink-p);padding:1.4rem 1.4rem 1rem;border-bottom:.5px solid var(--pink-b)">
+          <div style="font-size:1.8rem;margin-bottom:.5rem">💪</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;color:var(--dark)">Personal Training Plan</div>
+          <div style="font-size:.7rem;color:var(--pink);letter-spacing:1px;text-transform:uppercase;margin-top:2px">For Men & Women</div>
+        </div>
+        <div style="padding:1.2rem 1.4rem;flex:1">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--pink);line-height:1;margin-bottom:.3rem">₦15,000</div>
+          <div style="font-size:.7rem;color:var(--muted);margin-bottom:1rem">one-time · delivered in 48hrs</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem">
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Custom 8-week workout plan</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Tailored to your goals & equipment</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Video exercise demonstrations</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>WhatsApp check-in support</div>
+          </div>
+        </div>
+        <div style="padding:0 1.4rem 1.4rem">
+          <a href="https://wa.me/+2348125679232?text=Hi%20Oma!%20I%27d%20like%20to%20order%20the%20Personal%20Training%20Plan%20(₦15,000)" target="_blank" style="display:block;text-align:center;background:var(--pink);color:#fff;padding:.7rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">💬 Book via WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 2 FEATURED -->
+      <div style="background:var(--dark);border:2px solid var(--pink);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 32px rgba(232,69,122,.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="background:var(--pink);padding:.35rem;text-align:center;font-size:.65rem;color:#fff;letter-spacing:2px;text-transform:uppercase;font-family:'DM Sans',sans-serif">⭐ Most Popular</div>
+        <div style="background:rgba(232,69,122,.15);padding:1.4rem 1.4rem 1rem;border-bottom:.5px solid rgba(232,69,122,.3)">
+          <div style="font-size:1.8rem;margin-bottom:.5rem">🌸</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;color:#fff">Full Transformation Package</div>
+          <div style="font-size:.7rem;color:var(--pink-l);letter-spacing:1px;text-transform:uppercase;margin-top:2px">Training + Nutrition + Coaching</div>
+        </div>
+        <div style="padding:1.2rem 1.4rem;flex:1">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--pink-l);line-height:1;margin-bottom:.3rem">₦45,000</div>
+          <div style="font-size:.7rem;color:rgba(255,255,255,.5);margin-bottom:1rem">per month · most popular choice</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem">
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:rgba(255,255,255,.85)"><span style="color:var(--pink-l);flex-shrink:0">✓</span>Custom training plan (updated monthly)</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:rgba(255,255,255,.85)"><span style="color:var(--pink-l);flex-shrink:0">✓</span>Personalised nutrition & meal plan</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:rgba(255,255,255,.85)"><span style="color:var(--pink-l);flex-shrink:0">✓</span>Weekly WhatsApp check-ins with Oma</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:rgba(255,255,255,.85)"><span style="color:var(--pink-l);flex-shrink:0">✓</span>Fashion & beauty wellness guide</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:rgba(255,255,255,.85)"><span style="color:var(--pink-l);flex-shrink:0">✓</span>Progress tracking & accountability</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:rgba(255,255,255,.85)"><span style="color:var(--pink-l);flex-shrink:0">✓</span>Priority response within 24 hours</div>
+          </div>
+        </div>
+        <div style="padding:0 1.4rem 1.4rem">
+          <a href="https://wa.me/+2348125679232?text=Hi%20Oma!%20I%27d%20like%20to%20join%20the%20Full%20Transformation%20Package%20(₦45,000/month)" target="_blank" style="display:block;text-align:center;background:var(--pink);color:#fff;padding:.7rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">💬 Book via WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div style="background:var(--white);border:.5px solid var(--pink-b);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(232,69,122,.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="background:var(--pink-p);padding:1.4rem 1.4rem 1rem;border-bottom:.5px solid var(--pink-b)">
+          <div style="font-size:1.8rem;margin-bottom:.5rem">💄</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;color:var(--dark)">Beauty & Wellness Guide</div>
+          <div style="font-size:.7rem;color:var(--pink);letter-spacing:1px;text-transform:uppercase;margin-top:2px">For Women</div>
+        </div>
+        <div style="padding:1.2rem 1.4rem;flex:1">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--pink);line-height:1;margin-bottom:.3rem">₦8,000</div>
+          <div style="font-size:.7rem;color:var(--muted);margin-bottom:1rem">one-time · PDF delivered instantly</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem">
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Complete skincare routine guide</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Fashion & capsule wardrobe tips</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Daily wellness routine planner</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>30-day self-care challenge</div>
+          </div>
+        </div>
+        <div style="padding:0 1.4rem 1.4rem">
+          <a href="https://wa.me/+2348125679232?text=Hi%20Oma!%20I%27d%20like%20to%20purchase%20the%20Beauty%20%26%20Wellness%20Guide%20(₦8,000)" target="_blank" style="display:block;text-align:center;background:var(--pink);color:#fff;padding:.7rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">💬 Book via WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div style="background:var(--white);border:.5px solid var(--pink-b);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(232,69,122,.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="background:var(--pink-p);padding:1.4rem 1.4rem 1rem;border-bottom:.5px solid var(--pink-b)">
+          <div style="font-size:1.8rem;margin-bottom:.5rem">🥗</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;color:var(--dark)">Nutrition Plan Only</div>
+          <div style="font-size:.7rem;color:var(--pink);letter-spacing:1px;text-transform:uppercase;margin-top:2px">Men & Women</div>
+        </div>
+        <div style="padding:1.2rem 1.4rem;flex:1">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--pink);line-height:1;margin-bottom:.3rem">₦12,000</div>
+          <div style="font-size:.7rem;color:var(--muted);margin-bottom:1rem">one-time · delivered in 48hrs</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem">
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>7-day personalised meal plan</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Macro & calorie targets</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Grocery shopping list included</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Supplement recommendations</div>
+          </div>
+        </div>
+        <div style="padding:0 1.4rem 1.4rem">
+          <a href="https://wa.me/+2348125679232?text=Hi%20Oma!%20I%27d%20like%20to%20order%20the%20Nutrition%20Plan%20(₦12,000)" target="_blank" style="display:block;text-align:center;background:var(--pink);color:#fff;padding:.7rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">💬 Book via WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div style="background:var(--white);border:.5px solid var(--pink-b);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(232,69,122,.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="background:var(--pink-p);padding:1.4rem 1.4rem 1rem;border-bottom:.5px solid var(--pink-b)">
+          <div style="font-size:1.8rem;margin-bottom:.5rem">🧠</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;color:var(--dark)">1-on-1 Coaching Call</div>
+          <div style="font-size:.7rem;color:var(--pink);letter-spacing:1px;text-transform:uppercase;margin-top:2px">60 minutes via Zoom/WhatsApp</div>
+        </div>
+        <div style="padding:1.2rem 1.4rem;flex:1">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--pink);line-height:1;margin-bottom:.3rem">₦20,000</div>
+          <div style="font-size:.7rem;color:var(--muted);margin-bottom:1rem">per session · book 48hrs in advance</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem">
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Deep dive into your goals</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Personalised action plan</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Fitness, nutrition & mindset advice</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Follow-up notes & resources</div>
+          </div>
+        </div>
+        <div style="padding:0 1.4rem 1.4rem">
+          <a href="https://wa.me/+2348125679232?text=Hi%20Oma!%20I%27d%20like%20to%20book%20a%201-on-1%20Coaching%20Call%20(₦20,000)" target="_blank" style="display:block;text-align:center;background:var(--pink);color:#fff;padding:.7rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">💬 Book via WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div style="background:var(--white);border:.5px solid var(--pink-b);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 28px rgba(232,69,122,.1)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <div style="background:var(--pink-p);padding:1.4rem 1.4rem 1rem;border-bottom:.5px solid var(--pink-b)">
+          <div style="font-size:1.8rem;margin-bottom:.5rem">👥</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;color:var(--dark)">Group Wellness Program</div>
+          <div style="font-size:.7rem;color:var(--pink);letter-spacing:1px;text-transform:uppercase;margin-top:2px">WhatsApp Group · 4 Weeks</div>
+        </div>
+        <div style="padding:1.2rem 1.4rem;flex:1">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--pink);line-height:1;margin-bottom:.3rem">₦5,000</div>
+          <div style="font-size:.7rem;color:var(--muted);margin-bottom:1rem">per person · next group starts soon</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem">
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>4-week group challenge</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Daily tips, motivation & check-ins</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Workout & meal plan included</div>
+            <div style="display:flex;align-items:flex-start;gap:7px;font-size:.76rem;color:var(--text)"><span style="color:var(--pink);flex-shrink:0">✓</span>Supportive community of women</div>
+          </div>
+        </div>
+        <div style="padding:0 1.4rem 1.4rem">
+          <a href="https://wa.me/+2348125679232?text=Hi%20Oma!%20I%27d%20like%20to%20join%20the%20Group%20Wellness%20Program%20(₦5,000)" target="_blank" style="display:block;text-align:center;background:var(--pink);color:#fff;padding:.7rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">💬 Join via WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="slbl">✦ How It Works</div>
+    <h2 style="margin-bottom:2rem">SIMPLE. FAST. EFFECTIVE.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3rem">
+      <div style="text-align:center;padding:1.5rem 1rem;background:var(--white);border:.5px solid var(--pink-b);border-radius:16px">
+        <div style="width:44px;height:44px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#fff;margin:0 auto .9rem">1</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--dark);letter-spacing:.5px;margin-bottom:.4rem">Choose Package</div>
+        <div style="font-size:.74rem;color:var(--muted);line-height:1.55">Pick the service that matches your goals and budget</div>
+      </div>
+      <div style="text-align:center;padding:1.5rem 1rem;background:var(--white);border:.5px solid var(--pink-b);border-radius:16px">
+        <div style="width:44px;height:44px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#fff;margin:0 auto .9rem">2</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--dark);letter-spacing:.5px;margin-bottom:.4rem">Message Oma</div>
+        <div style="font-size:.74rem;color:var(--muted);line-height:1.55">WhatsApp or email to confirm your booking</div>
+      </div>
+      <div style="text-align:center;padding:1.5rem 1rem;background:var(--white);border:.5px solid var(--pink-b);border-radius:16px">
+        <div style="width:44px;height:44px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#fff;margin:0 auto .9rem">3</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--dark);letter-spacing:.5px;margin-bottom:.4rem">Make Payment</div>
+        <div style="font-size:.74rem;color:var(--muted);line-height:1.55">Pay securely via bank transfer or mobile money</div>
+      </div>
+      <div style="text-align:center;padding:1.5rem 1rem;background:var(--white);border:.5px solid var(--pink-b);border-radius:16px">
+        <div style="width:44px;height:44px;background:var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#fff;margin:0 auto .9rem">4</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--dark);letter-spacing:.5px;margin-bottom:.4rem">Start Your Journey</div>
+        <div style="font-size:.74rem;color:var(--muted);line-height:1.55">Receive your plan & begin your transformation!</div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="slbl">✦ What Clients Say</div>
+    <h2 style="margin-bottom:1.5rem">REAL RESULTS. REAL PEOPLE.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3rem">
+      <div style="background:var(--white);border:.5px solid var(--pink-b);border-radius:16px;padding:1.4rem">
+        <div style="display:flex;gap:4px;margin-bottom:.8rem">
+          <span style="color:var(--pink);font-size:.9rem">★★★★★</span>
+        </div>
+        <p style="font-size:.8rem;color:var(--muted);line-height:1.7;font-style:italic;margin-bottom:1rem">"Oma's transformation package changed my life. I lost 8kg in 6 weeks, my skin is glowing, and I finally feel confident in my body again!"</p>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--pink),#8C2050);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;font-weight:500">A</div>
+          <div><div style="font-size:.78rem;font-weight:500;color:var(--dark)">Amaka O.</div><div style="font-size:.66rem;color:var(--muted)">Lagos, Nigeria</div></div>
+        </div>
+      </div>
+      <div style="background:var(--white);border:.5px solid var(--pink-b);border-radius:16px;padding:1.4rem">
+        <div style="display:flex;gap:4px;margin-bottom:.8rem">
+          <span style="color:var(--pink);font-size:.9rem">★★★★★</span>
+        </div>
+        <p style="font-size:.8rem;color:var(--muted);line-height:1.7;font-style:italic;margin-bottom:1rem">"The nutrition plan was exactly what I needed. Simple, affordable meals that actually taste good. I have so much more energy now!"</p>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--pink),#8C2050);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;font-weight:500">K</div>
+          <div><div style="font-size:.78rem;font-weight:500;color:var(--dark)">Kemi A.</div><div style="font-size:.66rem;color:var(--muted)">Abuja, Nigeria</div></div>
+        </div>
+      </div>
+      <div style="background:var(--white);border:.5px solid var(--pink-b);border-radius:16px;padding:1.4rem">
+        <div style="display:flex;gap:4px;margin-bottom:.8rem">
+          <span style="color:var(--pink);font-size:.9rem">★★★★★</span>
+        </div>
+        <p style="font-size:.8rem;color:var(--muted);line-height:1.7;font-style:italic;margin-bottom:1rem">"As a man I was sceptical but the training plan was incredible. Gained 4kg of muscle in 2 months. Oma knows her stuff!"</p>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--pink),#8C2050);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;font-weight:500">T</div>
+          <div><div style="font-size:.78rem;font-weight:500;color:var(--dark)">Tunde B.</div><div style="font-size:.66rem;color:var(--muted)">Port Harcourt, Nigeria</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div style="background:var(--pink);border-radius:20px;padding:3rem;text-align:center">
+      <h2 style="color:#fff;margin-bottom:.6rem">READY TO START YOUR TRANSFORMATION?</h2>
+      <p style="color:rgba(255,255,255,.8);font-size:.88rem;margin-bottom:1.8rem;max-width:480px;margin-left:auto;margin-right:auto">Join hundreds of women and men who have already transformed their bodies, skin, and confidence with Oma Fitness Hub.</p>
+      <a href="https://wa.me/+2348125679232?text=Hi%20Oma!%20I%27m%20ready%20to%20start%20my%20transformation!%20Can%20we%20talk%3F" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--pink);padding:.9rem 2.2rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">💬 Message Oma on WhatsApp →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="logo" style="font-size:1.1rem;cursor:pointer" onclick="go('home')">OMA FITNESS HUB</div>
+    <div class="fc2">© 2026 Oma Fitness Hub. All rights reserved.</div>
+    <div class="fl"><span onclick="go('home')">Home</span><span onclick="go('articles')">Articles</span><span onclick="go('profile')">Profile</span></div>
+  </footer>
+</div>
+
+<!-- DELETE MODAL -->
+<div class="moverlay" id="del-modal">
+  <div class="modal">
+    <div class="mtit">Delete Article?</div>
+    <div class="mtxt">This cannot be undone. The article will be permanently removed from Oma Fitness Hub.</div>
+    <div class="mbtns">
+      <button class="mcancel" onclick="closeModal()">Cancel</button>
+      <button class="mdel" onclick="confirmDel()">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══ DATA & STORAGE ══
+const KEY='oma_hub_v5';
+const EMO={Fashion:'👗',Beauty:'💄',Wellness:'🌸','Healthy Living':'🌿',Fitness:'🏋️',Nutrition:'🥗','Mindset & Motivation':'🧠'};
+const BG={Fashion:'linear-gradient(135deg,#3D0A20,#E8457A)',Beauty:'linear-gradient(135deg,#1a0520,#d4508a)',Wellness:'linear-gradient(135deg,#0a2010,#40a060)',
+  'Healthy Living':'linear-gradient(135deg,#0a2015,#2a8050)',Fitness:'linear-gradient(135deg,#200a10,#c03060)',Nutrition:'linear-gradient(135deg,#201500,#c07020)'};
+const emo=c=>EMO[c]||'✦';
+const bg=c=>BG[c]||'linear-gradient(135deg,#3D0A20,#E8457A)';
+
+const SEEDS=[
+  {id:1,title:'5 Fashion Tips Every Woman Should Know',category:'Fashion',author:'Oma Fitness Hub',date:'1 April 2026',
+   excerpt:'Building a wardrobe that works for you doesn\'t require a huge budget — it requires intention and a few timeless principles that every woman should know.',
+   content:`<p>Building a wardrobe that works for you doesn&#39;t require a huge budget — it requires intention. Here are five timeless fashion tips that every woman can start applying today.</p>
+
+<h2>1. Know Your Body Shape</h2>
+<p>Dressing well starts with celebrating your unique silhouette. Instead of following every trend, choose cuts and styles that make <strong>you</strong> feel confident and powerful. An A-line skirt that flatters your waist, a wrap dress that highlights your curves, or straight-leg trousers that elongate your frame — these are worth so much more than whatever is trending on social media this week.</p>
+
+<h2>2. Invest in Neutral Basics</h2>
+<p>Cream, beige, black, white, and camel pieces form the backbone of every great wardrobe. These neutral basics mix with everything and never go out of style. When in doubt, reach for your neutrals and build from there. A crisp white shirt, a well-fitting blazer, and dark denim can take you almost anywhere.</p>
+
+<h2>3. One Statement Piece Per Outfit</h2>
+<p>The secret to looking effortlessly put-together? Let <em>one</em> piece do the talking. Whether it&#39;s a bold red bag, a silk blouse with a print, structured gold earrings, or a blazer in an unexpected colour — build your outfit around that one hero piece and keep everything else simple and supportive.</p>
+<blockquote>Style is about knowing who you are, what you want to say, and not giving a damn about anyone else&#39;s opinion.</blockquote>
+
+<h2>4. Dress for the Life You Want</h2>
+<p>Don&#39;t save your beautiful clothes for "special occasions." Wear them now. Life is the occasion. When you dress well every day — not to impress others, but to honour yourself — your confidence shifts. Your posture changes. You walk differently. Try wearing your favourite outfit on a Tuesday and see how it feels.</p>
+
+<h2>5. Fit is Everything</h2>
+<p>A well-fitted affordable piece will <strong>always</strong> beat an expensive ill-fitting one. This is the single most impactful fashion upgrade you can make. Find a good tailor — hemming trousers, taking in a waist, adjusting a shoulder — these small changes transform the look of an entire outfit and it usually costs very little.</p>
+
+<h2>Bonus: Build Your Signature Style</h2>
+<p>Beyond these five tips, the most important thing is to develop your own signature look. What makes you feel like the best version of yourself? What colours energise you? What silhouettes make you feel strong? Build around those answers and your wardrobe will start working for you rather than against you.</p>
+
+<p>Remember: fashion is fun. It&#39;s an expression of who you are. Don&#39;t take it too seriously, but do give yourself permission to show up fully, every single day. 🌸</p>`,readTime:'5 min read'},
+
+  {id:2,title:'The Ultimate Morning Skincare Routine',category:'Beauty',author:'Oma Fitness Hub',date:'1 April 2026',
+   excerpt:'A consistent morning routine is the foundation of healthy glowing skin. You don\'t need 15 products — just the right 4 steps in the right order.',
+   content:`<p>A consistent morning skincare routine is the foundation of healthy, glowing skin. You don&#39;t need 15 products — you need the right four steps in the right order, applied consistently. Here&#39;s exactly what that looks like.</p>
+
+<h2>Why Morning Skincare Matters</h2>
+<p>While you sleep, your skin repairs and regenerates. By morning, you have a fresh canvas — but also surface oils, mild bacteria from your pillowcase, and overnight product residue. A morning routine prepares your skin for the day ahead: sun exposure, pollution, blue light from screens, and the elements.</p>
+
+<h2>Step 1: Gentle Cleanser</h2>
+<p>Start with a gentle, pH-balanced cleanser to wash away overnight oils and any residue. If you have dry or sensitive skin, a micellar water or cream cleanser works beautifully. For oily or combination skin, a foaming or gel cleanser is ideal. The key word is <strong>gentle</strong> — avoid anything that leaves your skin feeling tight or stripped, as that&#39;s a sign you&#39;ve disrupted your natural moisture barrier.</p>
+
+<h2>Step 2: Vitamin C Serum</h2>
+<p>This is your secret weapon. A Vitamin C serum applied in the morning:</p>
+<ul>
+  <li>Brightens the complexion and evens out skin tone</li>
+  <li>Protects against free radical damage from UV and pollution</li>
+  <li>Boosts collagen production over time</li>
+  <li>Fades hyperpigmentation and dark spots</li>
+  <li>Gives your skin a healthy, lit-from-within glow</li>
+</ul>
+<p>Apply 3–5 drops to clean skin, press gently (don&#39;t rub), and allow it to absorb for 60 seconds before moving to the next step.</p>
+
+<h2>Step 3: Moisturiser</h2>
+<p>Lock in all that goodness with a moisturiser suited to your skin type. For dry skin, look for ceramides, hyaluronic acid, and shea butter. For oily skin, choose a lightweight gel moisturiser with niacinamide — this will actually help regulate sebum production over time. Apply morning and night without fail — even oily skin needs hydration.</p>
+<blockquote>Dehydrated skin produces more oil to compensate. Moisturising regularly is one of the best things you can do for oily skin.</blockquote>
+
+<h2>Step 4: SPF — Your Most Important Step</h2>
+<p>The single most impactful thing you can do for your skin long-term is wearing <strong>SPF 30+ every single day</strong> — rain or shine, indoors or outdoors. UV damage is the primary cause of premature ageing, hyperpigmentation, and skin cancer. No serum, no cream, no treatment will undo what the sun does without protection.</p>
+<p>Apply SPF as the last step of your morning routine — <em>after</em> moisturiser — and reapply every 2 hours if you&#39;re spending time outdoors.</p>
+
+<h2>The Full 4-Step Morning Routine</h2>
+<ul>
+  <li><strong>Cleanser</strong> — 60 seconds, gentle circular motions</li>
+  <li><strong>Vitamin C Serum</strong> — 3–5 drops, press into skin, wait 60 seconds</li>
+  <li><strong>Moisturiser</strong> — penny-sized amount, upward strokes</li>
+  <li><strong>SPF 30+</strong> — the most important step you can&#39;t skip</li>
+</ul>
+
+<p>Stick with this routine consistently for 6–8 weeks and you will notice a visible improvement in your skin&#39;s texture, brightness, and overall health. The best skincare routine is always the one you&#39;ll actually do — keep it simple and stay consistent. 💧</p>`,readTime:'6 min read'},
+
+  {id:3,title:'Beginner\'s Complete Guide to Strength Training',category:'Fitness',author:'Oma Fitness Hub',date:'2 April 2026',
+   excerpt:'Starting a strength training journey can feel overwhelming. With the right fundamentals you\'ll build muscle, boost confidence, and transform your body.',
+   content:`<p>Starting a strength training journey can feel overwhelming — there&#39;s so much conflicting information out there. But the truth is, getting started is simpler than you think. Master these fundamentals and you will build real muscle, boost your confidence, and genuinely transform your body within weeks.</p>
+
+<h2>Why Strength Training?</h2>
+<p>Strength training isn&#39;t just about building big muscles. Here&#39;s what it actually does for your body and mind:</p>
+<ul>
+  <li>Increases lean muscle mass and boosts your resting metabolism</li>
+  <li>Strengthens bones and reduces risk of osteoporosis</li>
+  <li>Improves posture, balance, and everyday functional movement</li>
+  <li>Releases endorphins — significantly improving mood and reducing anxiety</li>
+  <li>Builds discipline and mental resilience that carries into every area of life</li>
+</ul>
+
+<h2>The Big 5 Compound Lifts</h2>
+<p>Before you touch an isolation machine, master these five compound movements. They work multiple muscle groups simultaneously, give you the most return on your gym time, and build a foundation of real, functional strength.</p>
+<ul>
+  <li><strong>Squat</strong> — the king of lower body exercises. Builds quads, hamstrings, glutes, and core.</li>
+  <li><strong>Deadlift</strong> — the single best full-body movement. Hamstrings, glutes, back, traps, core.</li>
+  <li><strong>Bench Press</strong> — primary chest builder. Also works triceps and front deltoids.</li>
+  <li><strong>Overhead Press (OHP)</strong> — builds broad, strong shoulders and upper chest.</li>
+  <li><strong>Barbell Row</strong> — develops a thick, strong back and improves posture dramatically.</li>
+</ul>
+<blockquote>Master the basics with perfect form before adding weight. One week of good technique will save you months of injury recovery.</blockquote>
+
+<h2>Progressive Overload is Everything</h2>
+<p>The single most important principle in strength training is <strong>progressive overload</strong> — gradually increasing the demand placed on your muscles over time. Your body adapts to stress. Once it adapts, you must increase the challenge or you will plateau.</p>
+<p>How to apply progressive overload:</p>
+<ul>
+  <li>Add 2.5–5kg to your lifts each week when the current weight feels manageable</li>
+  <li>Add an extra rep before adding weight</li>
+  <li>Reduce your rest periods to make the same work harder</li>
+  <li>Track every session in a log — progress that isn&#39;t measured doesn&#39;t happen</li>
+</ul>
+
+<h2>Your First 12-Week Programme</h2>
+<p>For a beginner, 3 full-body sessions per week is ideal. This gives each muscle group enough stimulus to grow while allowing adequate recovery between sessions. A simple structure:</p>
+<ul>
+  <li><strong>Monday:</strong> Squat, Bench Press, Barbell Row — 3 sets × 8 reps each</li>
+  <li><strong>Wednesday:</strong> Deadlift, Overhead Press, Pull-ups — 3 sets × 6–8 reps each</li>
+  <li><strong>Friday:</strong> Squat, Bench Press, Barbell Row — 3 sets × 8 reps (slightly heavier than Monday)</li>
+</ul>
+
+<h2>Rest Days Are Where You Grow</h2>
+<p>Muscles don&#39;t grow during training — they grow during recovery. Training creates tiny micro-tears in muscle fibres; rest is when your body repairs and rebuilds them stronger. Aim for at least 2 full rest or active recovery days per week, prioritise 7–9 hours of sleep, and eat enough protein to support repair.</p>
+
+<h2>Nutrition: The Missing Link</h2>
+<p>You cannot out-train a bad diet. If building muscle is your goal, aim for <strong>1.6–2.2g of protein per kilogram of bodyweight</strong> daily. For an 80kg person, that&#39;s 128–176g of protein per day. Spread this across 4–5 meals. Eat in a slight calorie surplus (200–300 calories above maintenance) to fuel muscle growth.</p>
+<p>Great protein sources: chicken breast, salmon, eggs, Greek yogurt, cottage cheese, lean beef, legumes, and whey protein.</p>
+
+<h2>The Most Important Thing</h2>
+<p>Consistency beats intensity every single time. Showing up three times per week, every week, for 12 weeks — even when motivation is low — will produce far better results than sporadic intense bursts followed by long gaps. Build the habit first. The strength follows. 💪</p>`,readTime:'8 min read'}
+];
+
+function getArts(){
+  try{
+    // Try main storage first
+    const s=localStorage.getItem(KEY);
+    if(s){
+      const arr=JSON.parse(s);
+      if(Array.isArray(arr)) return arr;
+    }
+    localStorage.setItem(KEY,JSON.stringify(SEEDS));
+    return [...SEEDS];
+  }catch(e){return [...SEEDS];}
+}
+
+function saveArts(arts){
+  try{
+    // For articles with large images, strip base64 data to save space
+    var lite = arts.map(function(a){
+      var la = JSON.parse(JSON.stringify(a));
+      if(la.content && la.content.length > 500000){
+        // Article has very large content (likely embedded image/PDF)
+        // Save only the text portion
+        var tmp = document.createElement('div');
+        tmp.innerHTML = la.content;
+        // Remove img and iframe tags with large data
+        var imgs = tmp.querySelectorAll('img[src^="data:"]');
+        imgs.forEach(function(img){ img.src=''; img.alt='[Image - re-upload to view]'; });
+        var iframes = tmp.querySelectorAll('iframe');
+        iframes.forEach(function(fr){ fr.parentNode.innerHTML='<p>[PDF - re-upload to view]</p>'; });
+        la.content = tmp.innerHTML;
+      }
+      return la;
+    });
+    var str = JSON.stringify(lite);
+    // If still too big, save text only
+    if(str.length > 4500000){
+      var minimal = arts.map(function(a){
+        return {id:a.id,title:a.title,category:a.category,author:a.author,date:a.date,excerpt:a.excerpt||'',readTime:a.readTime||'1 min read',content:'<p>'+(a.excerpt||a.title)+'</p>'};
+      });
+      localStorage.setItem(KEY, JSON.stringify(minimal));
+    } else {
+      localStorage.setItem(KEY, str);
+    }
+  } catch(e){
+    console.error('saveArts error:', e.message);
+    // Emergency save - just save article metadata
+    try {
+      var emergency = arts.map(function(a){
+        return {id:a.id,title:a.title,category:a.category,author:a.author,date:a.date,excerpt:a.excerpt||'',readTime:'1 min read',content:'<p>'+(a.excerpt||a.title)+'</p>'};
+      });
+      localStorage.setItem(KEY, JSON.stringify(emergency));
+    } catch(e2){ localStorage.removeItem(KEY); }
+  }
+}
+
+function go(pg){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.nl').forEach(b=>b.classList.remove('on'));
+  document.getElementById('pg-'+pg).classList.add('on');
+  const nl=document.getElementById('nl-'+pg);
+  if(nl)nl.classList.add('on');
+  window.scrollTo(0,0);
+  document.getElementById('read-progress').style.width='0';
+  if(pg==='home')renderHome();
+  if(pg==='articles')renderArts(artFilter);
+  if(pg==='profile')document.getElementById('pst-art').textContent=getArts().length;
+  if(pg==='shop')window.scrollTo(0,0);
+}
+
+// ══ READ PROGRESS BAR ══
+window.addEventListener('scroll',()=>{
+  const pg=document.getElementById('pg-read');
+  if(!pg.classList.contains('on'))return;
+  const h=document.body.scrollHeight-window.innerHeight;
+  const pct=h>0?(window.scrollY/h*100):0;
+  document.getElementById('read-progress').style.width=pct+'%';
+});
+
+// ══ HOME ══
+function renderHome(){
+  const g=document.getElementById('home-grid');
+  const arts=getArts().slice(-3).reverse();
+  if(!arts.length){
+    g.innerHTML=`<div class="no-art">No articles yet. <span style="color:var(--pink);cursor:pointer;font-weight:500" onclick="go(&#39;write&#39;)">Be the first to write one! →</span></div>`;
+    return;
+  }
+  g.innerHTML=arts.map(a=>`
+    <div class="acard" onclick="readArt(${a.id})">
+      <div class="acard-img" style="background:${bg(a.category)}">
+        <span style="position:relative;z-index:1;font-size:3rem">${emo(a.category)}</span>
+        <div class="acard-cat-badge">${a.category}</div>
+      </div>
+      <div class="acard-body">
+        <div class="atit">${a.title}</div>
+        <div class="aexc">${a.excerpt}</div>
+        <div class="amet">
+          <span>${a.author}</span><span>·</span><span>${a.readTime}</span>
+          <button class="aread-btn" onclick="event.stopPropagation();readArt(${a.id})">Read →</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// ══ ARTICLES PAGE ══
+let artFilter='All';
+function filterArts(cat,btn){
+  artFilter=cat;
+  document.querySelectorAll('#art-filters .chip').forEach(c=>c.classList.remove('on'));
+  btn.classList.add('on');
+  renderArts(cat);
+}
+
+function renderArts(cat){
+  const all=getArts();
+  const filtered=cat==='All'?all:all.filter(a=>a.category===cat);
+  const rev=[...filtered].reverse();
+  const featEl=document.getElementById('art-featured');
+  const gridEl=document.getElementById('art-grid');
+
+  if(!rev.length){
+    featEl.innerHTML='';
+    gridEl.innerHTML=`<div class="no-art" style="text-align:center;padding:4rem 2rem;grid-column:1/-1">
+      <div style="font-size:2.5rem;opacity:.3;margin-bottom:.8rem">✍️</div>
+      <div style="font-size:.9rem;margin-bottom:.5rem">No articles in this category yet.</div>
+      <span style="color:var(--pink);cursor:pointer;font-size:.85rem" onclick="go(&#39;write&#39;)">Write the first one! →</span>
+    </div>`;
+    return;
+  }
+
+  const[first,...rest]=rev;
+  featEl.innerHTML=`
+    <div class="feat-lbl">✦ Featured Article</div>
+    <div class="feat-card" onclick="readArt(${first.id})">
+      <div class="feat-img" style="background:${bg(first.category)}">
+        <span style="position:relative;z-index:1;font-size:4.5rem">${emo(first.category)}</span>
+      </div>
+      <div class="feat-content">
+        <div class="feat-num">01</div>
+        <div class="feat-cat">${emo(first.category)} ${first.category}</div>
+        <div class="feat-tit">${first.title}</div>
+        <div class="feat-exc">${first.excerpt}</div>
+        <div class="feat-meta">
+          <span>${first.author}</span><span>·</span><span>${first.date}</span><span>·</span><span>${first.readTime}</span>
+        </div>
+        <button class="feat-readbtn" onclick="event.stopPropagation();readArt(${first.id})">Read Full Article →</button>
+        <div style="display:flex;gap:5px;margin-top:.8rem" onclick="event.stopPropagation()">
+          <button class="abtn btn-sm" onclick="editArt(${first.id})">✏️ Edit</button>
+          <button class="abtn del btn-sm" onclick="askDel(${first.id})">🗑 Delete</button>
+        </div>
+      </div>
+    </div>`;
+
+  gridEl.innerHTML=rest.length?rest.map(a=>`
+    <div class="acard" onclick="readArt(${a.id})">
+      <div class="acard-img" style="background:${bg(a.category)}">
+        <span style="position:relative;z-index:1;font-size:2.8rem">${emo(a.category)}</span>
+        <div class="acard-cat-badge">${a.category}</div>
+      </div>
+      <div class="acard-body">
+        <div class="atit">${a.title}</div>
+        <div class="aexc">${a.excerpt}</div>
+        <div class="amet">
+          <span>${a.author}</span><span>·</span><span>${a.readTime}</span>
+          <div class="aact" onclick="event.stopPropagation()">
+            <button class="abtn" onclick="editArt(${a.id})">✏️</button>
+            <button class="abtn del" onclick="askDel(${a.id})">🗑</button>
+          </div>
+        </div>
+      </div>
+    </div>`).join(''):'';
+}
+
+// ══ READ ARTICLE ══
+function readArt(id){
+  const a=getArts().find(x=>x.id==id);
+  if(!a)return;
+
+  // Set hero
+  document.getElementById('r-hero').style.background=bg(a.category);
+  document.getElementById('r-emoji').textContent=emo(a.category);
+
+  // Set meta
+  document.getElementById('r-cat-badge').textContent=`${emo(a.category)} ${a.category}`;
+  document.getElementById('r-tit').textContent=a.title;
+  document.getElementById('r-adot').textContent=a.author.charAt(0);
+  document.getElementById('r-meta-info').innerHTML=`
+    <span>${a.author}</span><span>·</span><span>${a.date}</span><span>·</span>
+    <span class="rmeta-badge">📖 ${a.readTime}</span>`;
+
+  // Set body
+  document.getElementById('r-body').innerHTML=a.content;
+
+  // Read more
+  const others=getArts().filter(x=>x.id!=id).slice(-4).reverse();
+  document.getElementById('r-more').innerHTML=others.length?others.map(o=>`
+    <div class="rm-card" onclick="readArt(${o.id})">
+      <div class="rm-cat">${emo(o.category)} ${o.category}</div>
+      <div class="rm-tit">${o.title}</div>
+      <div class="rm-meta">${o.author} · ${o.readTime}</div>
+    </div>`).join(''):'<div style="color:var(--muted);font-size:.82rem;padding:.5rem 0">Write more articles to see them here!</div>';
+
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.nl').forEach(b=>b.classList.remove('on'));
+  document.getElementById('pg-read').classList.add('on');
+  window.scrollTo(0,0);
+  document.getElementById('read-progress').style.width='0';
+}
+
+// ══ WRITE ══
+let editId=null;
+function editArt(id){
+  const a=getArts().find(x=>x.id==id);
+  if(!a)return;
+  editId=id;
+  document.getElementById('w-title').value=a.title;
+  document.getElementById('w-cat').value=a.category;
+  document.getElementById('w-author').value=a.author;
+  document.getElementById('w-content').innerHTML=a.content;
+  document.getElementById('write-heading').textContent='Edit Article';
+  updateWC();
+  go('write');
+  toast('✏️ Editing article — click Publish to save changes');
+}
+
+function publish(){
+  const title=document.getElementById('w-title').value.trim();
+  const cat=document.getElementById('w-cat').value;
+  const author=document.getElementById('w-author').value.trim()||'Oma Fitness Hub';
+  const el=document.getElementById('w-content');
+  const html=el.innerHTML.trim();
+  const raw=el.innerText.trim();
+
+  // ── VALIDATION ──
+  if(!title){
+    toast('⚠️ Please add a title for your article');
+    document.getElementById('w-title').focus();
+    document.getElementById('w-title').style.borderColor='var(--pink)';
+    setTimeout(()=>document.getElementById('w-title').style.borderColor='var(--pink-b)',3000);
+    return;
+  }
+  if(!cat){
+    toast('⚠️ Please select a category');
+    document.getElementById('w-cat').focus();
+    return;
+  }
+
+  // Accept content if: has text OR has images OR has iframes (PDF) OR has links (PPTX/DOCX)
+  const hasText = raw.length > 5;
+  const hasImages = html.includes('<img');
+  const hasEmbed = html.includes('<iframe') || html.includes('<a href="data:');
+  if(!html || (!hasText && !hasImages && !hasEmbed)){
+    toast('⚠️ Please add some content — type, paste, or upload a file');
+    document.getElementById('w-content').focus();
+    return;
+  }
+
+  // ── BUILD ARTICLE ──
+  const words = raw ? raw.split(/\s+/).filter(Boolean).length : 1;
+  const readTime = Math.max(1,Math.ceil(words/200))+' min read';
+
+  // Smart excerpt — use text if available, otherwise describe the content
+  let excerpt = '';
+  if(raw.length > 10){
+    excerpt = raw.substring(0,180)+(raw.length>180?'…':'');
+  } else if(hasImages){
+    excerpt = '🖼️ This article contains images and visual content.';
+  } else if(html.includes('<iframe')){
+    excerpt = '📄 This article contains an embedded PDF document.';
+  } else if(html.includes('PowerPoint')){
+    excerpt = '📊 This article contains a PowerPoint presentation.';
+  } else {
+    excerpt = '📎 This article contains an attached document.';
+  }
+
+  const date=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  const arts=getArts();
+
+  if(editId){
+    const idx=arts.findIndex(x=>x.id==editId);
+    if(idx>=0)arts[idx]={...arts[idx],title,category:cat,author,content:html,excerpt,readTime,date};
+    editId=null;
+    document.getElementById('write-heading').textContent='Share Your Knowledge';
+    saveArts(arts);
+  } else {
+    arts.push({id:Date.now(),title,category:cat,author,date,content:html,excerpt,readTime});
+    saveArts(arts);
+  }
+  clearWrite();
+  // Always reset filter to All so new article is visible
+  artFilter='All';
+  document.querySelectorAll('#art-filters .chip').forEach(function(ch){ch.classList.remove('on');});
+  var firstChip=document.querySelector('#art-filters .chip');
+  if(firstChip) firstChip.classList.add('on');
+  // Force re-render articles page then navigate to it
+  renderArts('All');
+  document.querySelectorAll('.pg').forEach(function(p){p.classList.remove('on');});
+  document.querySelectorAll('.nl').forEach(function(b){b.classList.remove('on');});
+  document.getElementById('pg-articles').classList.add('on');
+  var nlArt=document.getElementById('nl-articles');
+  if(nlArt) nlArt.classList.add('on');
+  window.scrollTo(0,0);
+  setTimeout(function(){toast('🌸 Published! Your article is at the top!');},200);
+}
+
+function clearWrite(){
+  document.getElementById('w-title').value='';
+  document.getElementById('w-cat').value='';
+  document.getElementById('w-author').value='Oma Fitness Hub';
+  document.getElementById('w-content').innerHTML='';
+  document.getElementById('wc').textContent='0 words · ~0 min read';
+  editId=null;
+  document.getElementById('write-heading').textContent='Share Your Knowledge';
+}
+
+function updateWC(){
+  const t=document.getElementById('w-content').innerText.trim();
+  const w=t?t.split(/\s+/).filter(Boolean).length:0;
+  const mins=Math.max(1,Math.ceil(w/200));
+  document.getElementById('wc').textContent=w+' word'+(w!==1?'s':'')+' · ~'+mins+' min read';
+}
+document.getElementById('w-content').addEventListener('input',updateWC);
+
+// ── PASTE HANDLER — accept plain text, rich text, images ──
+document.getElementById('w-content').addEventListener('paste', function(e){
+  // Allow default paste but update word count after
+  setTimeout(()=>{
+    updateWC();
+    const content = document.getElementById('w-content');
+    // If content was pasted, give visual confirmation
+    if(content.innerText.trim().length > 10 || content.innerHTML.includes('<img')){
+      document.getElementById('w-content').style.borderColor='var(--pink)';
+      setTimeout(()=>document.getElementById('w-content').style.borderColor='var(--pink-b)',1500);
+    }
+  },100);
+});
+
+// FORMATTING
+function fmt(c){document.getElementById('w-content').focus();document.execCommand(c,false,null);}
+function fmtH(){document.getElementById('w-content').focus();document.execCommand('formatBlock',false,'h2');}
+function fmtUl(){document.getElementById('w-content').focus();document.execCommand('insertUnorderedList',false,null);}
+function fmtOl(){document.getElementById('w-content').focus();document.execCommand('insertOrderedList',false,null);}
+function fmtQ(){document.getElementById('w-content').focus();document.execCommand('formatBlock',false,'blockquote');}
+function fmtHr(){document.getElementById('w-content').focus();document.execCommand('insertHorizontalRule',false,null);}
+
+// ══ DELETE ══
+let delId=null;
+function askDel(id){delId=id;document.getElementById('del-modal').classList.add('on');}
+function closeModal(){delId=null;document.getElementById('del-modal').classList.remove('on');}
+function confirmDel(){saveArts(getArts().filter(a=>a.id!=delId));closeModal();renderArts(artFilter);toast('🗑 Article deleted');}
+
+// ══ TOAST ══
+function toast(msg){
+  let t=document.getElementById('oma-t');
+  if(!t){t=document.createElement('div');t.id='oma-t';t.style.cssText='position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:#3D0A20;color:#fff;padding:.75rem 1.6rem;border-radius:100px;font-size:.8rem;z-index:9999;transition:transform .35s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;pointer-events:none;font-family:DM Sans,sans-serif;box-shadow:0 4px 24px rgba(61,10,32,.35)';document.body.appendChild(t);}
+  t.textContent=msg;t.style.transform='translateX(-50%) translateY(0)';
+  clearTimeout(t._t);t._t=setTimeout(()=>{t.style.transform='translateX(-50%) translateY(80px)';},3200);
+}
+
+// ══ ARTICLE TEMPLATES ══
+const TEMPLATES={
+  fashion:{
+    title:'The Ultimate Fashion Guide: Building a Wardrobe You Love',
+    cat:'Fashion',
+    html:`<p>Your wardrobe should tell your story — not follow someone else&#39;s rules. Whether you&#39;re starting fresh or refining what you have, this guide will help you build a wardrobe that works beautifully for your real life.</p>
+
+<h2>Why Your Wardrobe Matters</h2>
+<p>What we wear affects how we feel, how we&#39;re perceived, and how confidently we move through the world. A thoughtful wardrobe isn&#39;t a luxury — it&#39;s a tool for self-expression and confidence.</p>
+<p>The goal isn&#39;t to have the most clothes. It&#39;s to have the <em>right</em> clothes — pieces that fit perfectly, reflect your personality, and make getting dressed feel effortless.</p>
+
+<h2>Step 1: Clear Out What Doesn&#39;t Serve You</h2>
+<p>Before adding anything new, audit what you have. Pull everything out and ask yourself: Does this fit well right now? Does it make me feel good? Have I worn it in the last 12 months?</p>
+<p>If the answer to any of these is no, it&#39;s time to let it go. Donate, sell, or recycle — but clear the space for things that truly serve you.</p>
+
+<h2>Step 2: Build Your Core — The Capsule Wardrobe</h2>
+<p>A capsule wardrobe is a small collection of versatile, timeless pieces that work together. Here are the essentials every woman should own:</p>
+<li>A well-fitted pair of dark denim jeans</li>
+<li>A crisp white shirt or blouse</li>
+<li>A classic blazer in black or neutral</li>
+<li>A little black dress that fits perfectly</li>
+<li>A quality cashmere or cotton jumper</li>
+<li>Tailored trousers in a neutral tone</li>
+<li>A trench coat or smart overcoat</li>
+<li>White trainers and one pair of classic heels</li>
+
+<h2>Step 3: Dress for Your Body — Not for Trends</h2>
+<p>Trends come and go. Your body is yours forever. The most stylish women aren&#39;t those who follow every trend — they&#39;re the ones who know exactly what works for them.</p>
+<p>Learn your body shape, understand what silhouettes flatter you, and invest in those styles. When you feel good in what you wear, confidence follows naturally.</p>
+
+<h2>Step 4: Quality Over Quantity — Always</h2>
+<p>One beautifully made piece will outlast five cheap ones and look infinitely better doing it. Shift your mindset from buying more to buying better.</p>
+<p>Before any purchase, ask: Will I wear this at least 30 times? Does it go with at least 3 things I already own? If not, put it back.</p>
+
+<h2>Step 5: Accessorize With Intention</h2>
+<p>Accessories transform outfits. A silk scarf, gold hoops, a structured handbag, or a quality belt can take a simple outfit from basic to polished in seconds.</p>
+<p>Invest in a few key pieces: a quality leather bag, a watch, a set of gold or silver jewellery that works for you. Let one accessory be the statement of each outfit.</p>
+
+<h2>Your Style Is Your Signature</h2>
+<p>Fashion is one of the most personal forms of self-expression. There are no rules — only guidelines. Wear what makes you feel like the best version of yourself, and you&#39;ll never go wrong.</p>
+<p>Start small, build intentionally, and enjoy the process of creating a wardrobe that truly feels like home.</p>`
+  },
+  beauty:{
+    title:'Complete Beauty Routine: Morning to Night for Glowing Skin',
+    cat:'Beauty',
+    html:`<p>Glowing, healthy skin isn&#39;t luck — it&#39;s the result of consistent, intentional care. This complete morning-to-night beauty routine covers everything you need to build skin that radiates health from within.</p>
+
+<h2>Understanding Your Skin First</h2>
+<p>Before building a routine, you need to understand your skin type: oily, dry, combination, sensitive, or normal. Using the wrong products for your skin type can cause more harm than good.</p>
+<p>A simple test: wash your face, wait an hour without applying anything, then observe. Shiny all over? Oily. Tight and flaky? Dry. Shiny T-zone but dry cheeks? Combination.</p>
+
+<h2>The Morning Routine: Protection & Radiance</h2>
+<p>Your morning routine is about protection — shielding your skin from the day ahead. Keep it simple and effective.</p>
+<li><strong>Step 1 — Gentle Cleanser:</strong> Remove overnight oils without stripping moisture. Use lukewarm water — never hot.</li>
+<li><strong>Step 2 — Vitamin C Serum:</strong> The ultimate morning ingredient. Brightens, protects from free radical damage, and boosts collagen over time.</li>
+<li><strong>Step 3 — Moisturiser:</strong> Lock in hydration. Look for hyaluronic acid and ceramides for plump, healthy skin.</li>
+<li><strong>Step 4 — SPF 30+ Sunscreen:</strong> Non-negotiable. Every single day, rain or shine. This is the number one anti-ageing step, full stop.</li>
+
+<h2>Midday Skin Care: Refresh & Protect</h2>
+<p>If you wear makeup, carry a SPF setting spray or SPF powder to reapply protection throughout the day. A facial mist with hyaluronic acid keeps skin hydrated and refreshed.</p>
+<p>Drink at least 2 litres of water. What happens inside shows on the outside — hydration is your most powerful skincare tool.</p>
+
+<h2>The Evening Routine: Repair & Restore</h2>
+<p>Night is when your skin does its deepest repair work. Your evening routine should support and amplify that process.</p>
+<li><strong>Step 1 — Double Cleanse:</strong> Oil cleanser first to remove makeup and sunscreen, then a gentle cleanser to clean the skin itself.</li>
+<li><strong>Step 2 — Exfoliate (2-3x per week):</strong> A gentle chemical exfoliant (AHA or BHA) removes dead cells and improves texture over time.</li>
+<li><strong>Step 3 — Treatment Serum:</strong> Retinol for anti-ageing and cell turnover. Niacinamide for pores and oil control. Peptides for firmness.</li>
+<li><strong>Step 4 — Eye Cream:</strong> The under-eye area is delicate. A good peptide eye cream reduces puffiness and dark circles over time.</li>
+<li><strong>Step 5 — Rich Moisturiser or Face Oil:</strong> Seal everything in with a nourishing night moisturiser or a few drops of rosehip or squalane oil.</li>
+
+<h2>Weekly Treatments for Extra Glow</h2>
+<p>Once a week, treat your skin to a hydrating face mask and a gua sha massage. The mask deeply nourishes while the gua sha boosts circulation, reduces puffiness, and gives your skin a lifted, glowing appearance.</p>
+
+<h2>Beauty From the Inside Out</h2>
+<p>No skincare routine works without the foundation of good health. Eat plenty of colourful vegetables, healthy fats (avocado, salmon, nuts), and Vitamin C-rich foods. Sleep 7–9 hours. Manage stress. Exercise regularly.</p>
+<p>Glowing skin is a reflection of a healthy life. Your routine is the last mile — build the foundation first.</p>`
+  },
+  wellness:{
+    title:'The Complete Wellness Lifestyle Guide for Women',
+    cat:'Wellness',
+    html:`<p>Wellness isn&#39;t a destination — it&#39;s a way of living. It&#39;s the daily choices, rituals, and habits that accumulate over time to create a life of energy, clarity, and deep contentment. This guide is your roadmap.</p>
+
+<h2>What Does True Wellness Look Like?</h2>
+<p>True wellness is multidimensional. It&#39;s physical health, yes — but it&#39;s also emotional balance, mental clarity, spiritual groundedness, meaningful relationships, and a deep sense of purpose.</p>
+<p>You can be physically fit but emotionally depleted. You can eat perfectly but live in chronic stress. Whole wellness addresses all of these dimensions together.</p>
+
+<h2>Morning Rituals: How You Start Shapes Your Day</h2>
+<p>The first 60 minutes of your day set the tone for everything that follows. Protect them fiercely.</p>
+<li>Wake without an alarm when possible — honour your body&#39;s natural rhythm</li>
+<li>Drink a large glass of water with lemon before anything else</li>
+<li>5–10 minutes of journaling or intention-setting</li>
+<li>Move your body: yoga, a walk, stretching, or light exercise</li>
+<li>Eat a nourishing breakfast before checking your phone</li>
+
+<h2>Movement: Find What Makes You Feel Alive</h2>
+<p>Exercise isn&#39;t punishment. It&#39;s a celebration of what your body can do. The best workout is the one you actually enjoy and will repeat consistently.</p>
+<p>Aim for 150 minutes of moderate movement per week. Mix strength training (to build muscle and bone density), cardio (for heart health), and flexibility work (for mobility and stress relief).</p>
+
+<h2>Nutrition for Hormonal Balance</h2>
+<p>Women&#39;s nutritional needs are unique and shift throughout the month. Understanding your cycle and nourishing accordingly can transform your energy, mood, and performance.</p>
+<li><strong>Follicular phase (days 1–14):</strong> Lighter, fresher foods. Increase iron-rich foods after your period. Energy is building — this is a great time for higher intensity workouts.</li>
+<li><strong>Luteal phase (days 15–28):</strong> Increase complex carbs and magnesium-rich foods. Cravings are natural — honour them with nourishing alternatives.</li>
+
+<h2>Sleep: The Foundation of Everything</h2>
+<p>Sleep is not passive. During sleep, your body repairs tissue, consolidates memories, balances hormones, and detoxifies the brain. Skimping on sleep affects everything — mood, metabolism, skin, immune function, and cognitive performance.</p>
+<p>Aim for 7–9 hours. Create a wind-down ritual: dim lights by 8pm, no screens after 9pm, a warm bath or shower, chamomile tea, and a few pages of a book.</p>
+
+<h2>Stress Management: Your Mental Health Matters</h2>
+<p>Chronic stress is one of the most damaging forces to the female body — it disrupts hormones, accelerates ageing, impairs immunity, and depletes energy reserves.</p>
+<p>Build a daily stress toolkit: breathwork (4-7-8 breathing), meditation (even 5 minutes counts), time in nature, journaling, creative expression, and meaningful connection with people you love.</p>
+
+<h2>Building Your Wellness Community</h2>
+<p>Wellness is not a solo journey. Surround yourself with people who energise you, inspire you, and support your growth. Set boundaries with those who drain you. Your environment — including the people in it — shapes who you become.</p>
+
+<h2>Your Wellness Is Your Greatest Asset</h2>
+<p>Invest in it daily. Not just when you&#39;re unwell — but as a continuous, loving commitment to yourself. You deserve to feel extraordinary in your own body. Start today, one small choice at a time.</p>`
+  },
+  fitness:{
+    title:'Complete Fitness Guide: Building Strength, Stamina & Confidence',
+    cat:'Fitness',
+    html:`<p>Fitness is one of the greatest investments you can make in yourself. Not just for aesthetics — but for energy, longevity, mental health, and the freedom that comes from living in a strong, capable body. This guide covers everything you need to build real, lasting fitness.</p>
+
+<h2>Setting the Right Foundation: Your Why</h2>
+<p>Before you write a single workout plan, get clear on your why. Not "I want to lose weight" — but the deeper reason. More energy for your children? Confidence in your body? Living pain-free into old age? Mental clarity?</p>
+<p>Your why is your anchor. On the days you don&#39;t feel like showing up, it&#39;s what pulls you back.</p>
+
+<h2>The 4 Pillars of Complete Fitness</h2>
+<li><strong>Strength Training:</strong> Builds muscle, strengthens bones, boosts metabolism, and reshapes your body. Everyone should be doing this — not just athletes.</li>
+<li><strong>Cardiovascular Training:</strong> Strengthens the heart, improves endurance, burns calories, and dramatically improves mood through endorphin release.</li>
+<li><strong>Flexibility & Mobility:</strong> Often neglected but absolutely essential. Keeps you injury-free, improves posture, and supports all other forms of movement.</li>
+<li><strong>Rest & Recovery:</strong> Muscle is built during rest, not during training. Sleep, nutrition, and recovery days are where transformation actually happens.</li>
+
+<h2>Designing Your Weekly Training Plan</h2>
+<p>For most people, 4–5 training sessions per week is the sweet spot. Here&#39;s a sample structure:</p>
+<li>Monday: Upper body strength (chest, back, shoulders, arms)</li>
+<li>Tuesday: Cardio + core (30 min run or HIIT + 15 min abs)</li>
+<li>Wednesday: Lower body strength (squats, deadlifts, lunges)</li>
+<li>Thursday: Active recovery (yoga, walking, stretching)</li>
+<li>Friday: Full body strength or sport-specific training</li>
+<li>Saturday: Longer cardio (45–60 min run, cycle, or swim)</li>
+<li>Sunday: Full rest — prioritise sleep and nutrition</li>
+
+<h2>Progressive Overload: The Key to Continuous Progress</h2>
+<p>The most important principle in fitness is progressive overload — gradually increasing the demand on your muscles over time. This forces your body to adapt by getting stronger and more capable.</p>
+<p>Track your workouts. Every 1–2 weeks, aim to either increase the weight, add a rep, reduce your rest time, or improve your form. What gets measured gets improved.</p>
+
+<h2>Nutrition for Performance</h2>
+<p>Food is fuel. Training without proper nutrition is like driving a car without petrol — you simply won&#39;t perform or recover optimally.</p>
+<li>Eat enough protein: 1.6–2.2g per kg of bodyweight daily for muscle building and repair</li>
+<li>Don&#39;t fear carbohydrates: they are your primary energy source for training</li>
+<li>Prioritise whole foods: lean proteins, complex carbs, healthy fats, and abundant vegetables</li>
+<li>Time your nutrition: eat 1–2 hours before training and within 30–60 minutes after for optimal recovery</li>
+
+<h2>The Mental Side of Fitness</h2>
+<p>Fitness is as much a mental game as a physical one. There will be days you don&#39;t want to train, weeks where progress feels invisible, and moments of self-doubt. This is normal. This is part of the process.</p>
+<p>Build discipline over motivation. Motivation is fleeting — discipline is what shows up on the hard days. Create a non-negotiable training schedule and honour it like any other important commitment in your life.</p>
+
+<h2>Start Where You Are</h2>
+<p>You don&#39;t need a perfect plan. You don&#39;t need the best gym. You need consistency, effort, and patience. The person who shows up imperfectly every day will always outperform the person waiting for perfect conditions.</p>
+<p>Start today. Start where you are. Your future self will thank you.</p>`
+  },
+  nutrition:{
+    title:'The Complete Nutrition Guide: Eating for Energy, Health & Results',
+    cat:'Nutrition',
+    html:`<p>Nutrition is the foundation everything else is built on. You can train hard, sleep well, and manage stress — but without proper nutrition, you&#39;ll always be working against yourself. This guide gives you everything you need to eat with confidence and purpose.</p>
+
+<h2>Understanding Macronutrients</h2>
+<p>Every food you eat is made up of three macronutrients — protein, carbohydrates, and fat. Understanding what each does helps you make informed, empowered food choices.</p>
+<li><strong>Protein:</strong> Builds and repairs muscle, supports immune function, and keeps you feeling full. Sources: chicken, fish, eggs, Greek yogurt, legumes, tofu.</li>
+<li><strong>Carbohydrates:</strong> Your body&#39;s primary energy source. Essential for brain function and physical performance. Choose complex carbs: oats, brown rice, sweet potato, whole grains, fruits.</li>
+<li><strong>Fats:</strong> Critical for hormone production, brain health, and vitamin absorption. Choose healthy fats: avocado, olive oil, nuts, seeds, fatty fish.</li>
+
+<h2>How Many Calories Do You Actually Need?</h2>
+<p>Calorie needs vary based on age, height, weight, activity level, and goals. A rough starting point for most active adults is 2,000–2,500 calories per day for women and 2,500–3,000 for men.</p>
+<p>For fat loss, aim for a modest deficit of 300–500 calories. For muscle building, aim for a surplus of 200–300 calories. Avoid extreme restriction — it damages metabolism and is unsustainable.</p>
+
+<h2>Meal Timing & Frequency</h2>
+<p>The best meal schedule is the one you can actually stick to. For most people, 3 main meals with 1–2 snacks works well. The key principles:</p>
+<li>Never skip breakfast — it sets your blood sugar and energy for the day</li>
+<li>Eat every 3–4 hours to keep energy stable and avoid overeating</li>
+<li>Eat protein with every meal to support muscle maintenance and satiety</li>
+<li>Have a protein-rich snack within 30–60 minutes after training</li>
+
+<h2>Building Your Ideal Day of Eating</h2>
+<p>Here&#39;s an example of what a balanced, nourishing day looks like:</p>
+<li><strong>Breakfast (7am):</strong> Oats with berries, chia seeds, and a scoop of protein powder</li>
+<li><strong>Mid-morning snack (10am):</strong> Apple with almond butter or Greek yogurt with honey</li>
+<li><strong>Lunch (1pm):</strong> Grilled chicken or salmon with brown rice and roasted vegetables</li>
+<li><strong>Afternoon snack (4pm):</strong> Handful of mixed nuts and a piece of fruit</li>
+<li><strong>Dinner (7pm):</strong> Lean protein with sweet potato and a large green salad</li>
+
+<h2>Hydration: The Most Overlooked Nutrient</h2>
+<p>Water affects everything — energy levels, digestion, skin health, exercise performance, and cognitive function. Most people are chronically under-hydrated.</p>
+<p>Aim for 2–3 litres of water per day. Start every morning with a large glass before coffee. Keep a bottle visible at your desk. Add electrolytes if training intensely.</p>
+
+<h2>Supplements Worth Considering</h2>
+<p>Food first — always. But a few supplements genuinely fill nutritional gaps:</p>
+<li>Vitamin D3 (especially if you live in low-sunlight regions)</li>
+<li>Omega-3 fish oil (anti-inflammatory, supports brain and heart health)</li>
+<li>Magnesium glycinate (sleep, muscle recovery, stress management)</li>
+<li>Whey or plant protein powder (convenient way to hit protein targets)</li>
+
+<h2>Eating Well Is an Act of Self-Love</h2>
+<p>Nutrition shouldn&#39;t feel restrictive, complicated, or stressful. It should feel like caring for yourself — choosing foods that make you feel alive, energised, and well.</p>
+<p>There are no "bad" foods — only patterns. Eat mostly whole, nourishing foods. Enjoy treats without guilt. Stay consistent. And remember: the best diet is one you can sustain happily for life.</p>`
+  },
+  mindset:{
+    title:'The Mindset Shift That Changes Everything: How to Build Unshakeable Confidence',
+    cat:'Mindset & Motivation',
+    html:`<p>Everything you want — the body, the career, the relationships, the life — starts with your mindset. Not your circumstances. Not your resources. Your mindset. This is the foundation that everything else is built on, and it&#39;s completely within your control.</p>
+
+<h2>What Is Mindset and Why Does It Matter?</h2>
+<p>Your mindset is the collection of beliefs, thoughts, and attitudes you hold about yourself and the world. It shapes how you interpret events, respond to challenges, and pursue your goals.</p>
+<p>Psychologist Carol Dweck&#39;s research identified two fundamental mindsets: <em>fixed</em> (believing abilities are static) and <em>growth</em> (believing abilities can be developed). People with a growth mindset achieve more, recover faster from setbacks, and live with greater fulfilment.</p>
+
+<h2>The Stories You Tell Yourself</h2>
+<p>Your brain is constantly narrating your life. "I&#39;m not good enough." "I always fail at this." "People like me don&#39;t succeed." These stories feel like facts — but they&#39;re not. They&#39;re habitual thought patterns that can be changed.</p>
+<p>Start noticing your inner narrative. When you catch a negative story, pause and ask: Is this actually true? What would I say to my best friend if she said this about herself? Then rewrite it.</p>
+
+<h2>Building Confidence Through Action</h2>
+<p>Here&#39;s what most people get backwards: they wait to feel confident before they take action. But confidence doesn&#39;t precede action — it follows it. Confidence is built by doing hard things and surviving them.</p>
+<li>Start before you feel ready</li>
+<li>Do one thing every day that stretches your comfort zone</li>
+<li>Celebrate small wins — they compound into massive momentum</li>
+<li>Keep promises to yourself — every commitment you honour builds self-trust</li>
+
+<h2>Managing Fear and Self-Doubt</h2>
+<p>Fear and self-doubt aren&#39;t signs you&#39;re on the wrong path — they&#39;re signs you&#39;re on the edge of growth. Every person who has achieved something significant has felt afraid. The difference is they moved forward anyway.</p>
+<p>Reframe fear as excitement. Both are the same physiological state — racing heart, heightened awareness, adrenaline. Choose to call it excitement and watch how your performance changes.</p>
+
+<h2>The Power of Your Environment</h2>
+<p>You are the average of the five people you spend the most time with. This isn&#39;t a cliché — it&#39;s neuroscience. We mirror those around us through a process called social contagion.</p>
+<p>Audit your environment. Are the people around you inspiring, supportive, and growth-oriented? Or are they cynical, stagnant, and draining? You don&#39;t have to cut people off — but you can be intentional about who gets most of your time and energy.</p>
+
+<h2>Daily Practices for a Strong Mindset</h2>
+<li><strong>Morning pages:</strong> Write 3 pages of uncensored thoughts every morning to clear mental clutter</li>
+<li><strong>Gratitude practice:</strong> List 3 specific things you&#39;re grateful for daily — rewires your brain toward positivity</li>
+<li><strong>Visualisation:</strong> Spend 5 minutes vividly imagining your goals as already achieved</li>
+<li><strong>Affirmations:</strong> Statements of who you&#39;re becoming, spoken with conviction: "I am strong. I am capable. I create my reality."</li>
+<li><strong>Reading:</strong> Feed your mind daily with books on growth, psychology, and success</li>
+
+<h2>You Are Not Your Thoughts</h2>
+<p>One of the most liberating insights in mindset work: you are not your thoughts. You are the observer of your thoughts. Thoughts arise — you choose which ones to engage with and which to release.</p>
+<p>This single shift — from being your thoughts to observing them — creates a space of freedom where genuine transformation becomes possible.</p>
+
+<h2>Your Potential Is Unlimited</h2>
+<p>The ceiling on your life is not set by your circumstances, your past, or your resources. It&#39;s set by your beliefs about what&#39;s possible for you. Change those beliefs, and you change your life.</p>
+<p>Start today. One thought at a time. One decision at a time. One brave action at a time. The life you want is waiting on the other side of the mindset shift.</p>`
+  }
+};
+
+function loadTemplate(type){
+  const t=TEMPLATES[type];
+  if(!t)return;
+  document.getElementById('w-title').value=t.title;
+  document.getElementById('w-cat').value=t.cat;
+  document.getElementById('w-content').innerHTML=t.html;
+  updateWC();
+  // highlight active template chip
+  document.querySelectorAll('.ewrap .chip').forEach(c=>c.classList.remove('on'));
+  event.target.classList.add('on');
+  toast('✅ Template loaded! Edit the text to make it yours, then publish.');
+  document.getElementById('w-title').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+// ══ DRAG & DROP ══
+function handleDragOver(e){
+  e.preventDefault();
+  const dz=document.getElementById('drop-zone');
+  if(dz){dz.style.borderColor='var(--pink)';dz.style.background='var(--pink-p)';}
+}
+function handleDragLeave(e){
+  const dz=document.getElementById('drop-zone');
+  if(dz){dz.style.borderColor='var(--pink-b)';dz.style.background='var(--bg)';}
+}
+function handleDrop(e){
+  e.preventDefault();
+  handleDragLeave(e);
+  const f=e.dataTransfer.files[0];
+  if(f) processFile(f);
+}
+function setStatus(msg,color){
+  const s=document.getElementById('file-status');
+  if(s){s.textContent=msg;s.style.color=color||'var(--muted)';}
+}
+function loadFile(e){const f=e.target.files[0];if(f)processFile(f);}
+
+function processFile(f){
+  const name=f.name.toLowerCase();
+  const ext=name.split('.').pop();
+  setStatus('Loading '+f.name+'...','var(--pink)');
+
+  // IMAGES & ILLUSTRATIONS — compress before inserting
+  if(['jpg','jpeg','png','gif','webp','svg','bmp'].includes(ext)){
+    const r=new FileReader();
+    r.onload=ev=>{
+      // Compress image using canvas to reduce size dramatically
+      const img=new Image();
+      img.onload=function(){
+        const canvas=document.createElement('canvas');
+        // Max 800px wide to keep file size small enough for storage
+        const maxW=800;
+        const scale=img.width>maxW?maxW/img.width:1;
+        canvas.width=Math.round(img.width*scale);
+        canvas.height=Math.round(img.height*scale);
+        const ctx=canvas.getContext('2d');
+        ctx.drawImage(img,0,0,canvas.width,canvas.height);
+        // Compress to JPEG at 70% quality — drastically reduces size
+        const compressed=canvas.toDataURL('image/jpeg',0.7);
+        const cur=document.getElementById('w-content').innerHTML;
+        document.getElementById('w-content').innerHTML=cur+`<p><img src="${compressed}" alt="${f.name}" style="max-width:100%;border-radius:12px;margin:1rem 0;box-shadow:0 4px 20px rgba(232,69,122,.15)"></p><p>Add your caption or description here...</p><p></p>`;
+        setStatus('✅ Image compressed & added! (~'+Math.round(compressed.length/1024)+'KB)','var(--pink)');
+        updateWC();
+        toast('🖼️ Image added to article!');
+      };
+      img.src=ev.target.result;
+    };
+    r.readAsDataURL(f);
+    return;
+  }
+
+  // PDF
+  if(ext==='pdf'){
+    const r=new FileReader();
+    r.onload=ev=>{
+      const b64=btoa(new Uint8Array(ev.target.result).reduce((d,b)=>d+String.fromCharCode(b),''));
+      const cur=document.getElementById('w-content').innerHTML;
+      document.getElementById('w-content').innerHTML=cur+`<h2>${f.name.replace(&#39;.pdf&#39;,&#39;&#39;)}</h2><p><em>PDF uploaded below. Copy the key points into the editor above.</em></p><div style="width:100%;height:480px;border-radius:12px;overflow:hidden;border:1px solid var(--pink-b);margin:1rem 0"><iframe src="data:application/pdf;base64,${b64}" width="100%" height="480" style="border:none"></iframe></div><p></p>`;
+      setStatus('PDF embedded in article!','var(--pink)');
+      updateWC();
+      toast('PDF loaded into your article!');
+    };
+    r.readAsArrayBuffer(f);
+    return;
+  }
+
+  // POWERPOINT
+  if(['pptx','ppt'].includes(ext)){
+    const r=new FileReader();
+    r.onload=ev=>{
+      const b64=btoa(new Uint8Array(ev.target.result).reduce((d,b)=>d+String.fromCharCode(b),''));
+      const mime='application/vnd.openxmlformats-officedocument.presentationml.presentation';
+      const cur=document.getElementById('w-content').innerHTML;
+      document.getElementById('w-content').innerHTML=cur+`<h2>${f.name.replace(/\.pptx?$/,&#39;&#39;)}</h2><div style="background:var(--pink-p);border:1px solid var(--pink-b);border-radius:12px;padding:1.2rem;margin:1rem 0;display:flex;align-items:center;gap:12px"><span style="font-size:2rem">&#128202;</span><div><div style="font-weight:500;color:var(--dark);font-size:.88rem">${f.name}</div><div style="font-size:.74rem;color:var(--muted);margin-top:2px">PowerPoint Presentation</div></div><a href="data:${mime};base64,${b64}" download="${f.name}" style="margin-left:auto;background:var(--pink);color:#fff;padding:.5rem 1rem;border-radius:100px;font-size:.74rem;text-decoration:none">Download</a></div><p>Add your article text here to describe the slides...</p><p></p>`;
+      setStatus('PowerPoint attached with download button!','var(--pink)');
+      updateWC();
+      toast('PowerPoint added to your article!');
+    };
+    r.readAsArrayBuffer(f);
+    return;
+  }
+
+  // WORD DOCS
+  if(['docx','doc'].includes(ext)){
+    const r=new FileReader();
+    r.onload=ev=>{
+      const b64=btoa(new Uint8Array(ev.target.result).reduce((d,b)=>d+String.fromCharCode(b),''));
+      const mime='application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+      const cur=document.getElementById('w-content').innerHTML;
+      document.getElementById('w-content').innerHTML=cur+`<h2>${f.name.replace(/\.docx?$/,&#39;&#39;)}</h2><div style="background:var(--pink-p);border:1px solid var(--pink-b);border-radius:12px;padding:1.2rem;margin:1rem 0;display:flex;align-items:center;gap:12px"><span style="font-size:2rem">&#128221;</span><div><div style="font-weight:500;color:var(--dark);font-size:.88rem">${f.name}</div><div style="font-size:.74rem;color:var(--muted);margin-top:2px">Word Document</div></div><a href="data:${mime};base64,${b64}" download="${f.name}" style="margin-left:auto;background:var(--pink);color:#fff;padding:.5rem 1rem;border-radius:100px;font-size:.74rem;text-decoration:none">Download</a></div><p>Add your article text here...</p><p></p>`;
+      setStatus('Word document attached!','var(--pink)');
+      updateWC();
+      toast('Word doc added to your article!');
+    };
+    r.readAsArrayBuffer(f);
+    return;
+  }
+
+  // PLAIN TEXT
+  if(['txt','md'].includes(ext)){
+    const r=new FileReader();
+    r.onload=ev=>{
+      const lines=ev.target.result.split('\n');
+      const html=lines.map(l=>{
+        if(!l.trim())return'';
+        if(l.startsWith('# '))return`<h2>${l.slice(2)}</h2>`;
+        if(l.startsWith('## '))return`<h2>${l.slice(3)}</h2>`;
+        if(l.startsWith('- ')||l.startsWith('* '))return`<li>${l.slice(2)}</li>`;
+        if(l.startsWith('> '))return`<blockquote>${l.slice(2)}</blockquote>`;
+        return`<p>${l}</p>`;
+      }).join('');
+      document.getElementById('w-content').innerHTML=html;
+      setStatus('Text loaded — ready to publish!','var(--pink)');
+      updateWC();
+      toast('Text file loaded!');
+    };
+    r.readAsText(f);
+    return;
+  }
+
+  setStatus('Format not supported. Try PDF, PPTX, DOCX, TXT, JPG or PNG.','#c0392b');
+  toast('Unsupported file type.');
+}
+
+// ══ INIT ══
+renderHome();
+</script>
+</body>
+</html>
